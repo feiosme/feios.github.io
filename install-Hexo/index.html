@@ -28,9 +28,13 @@
 <meta property="og:image" content="https://i.loli.net/2020/01/12/m7BhxZeSLrMwcVO.png">
 <meta property="og:image" content="https://i.loli.net/2020/01/12/v9AITYNQxu6jkha.png">
 <meta property="og:image" content="https://i.loli.net/2020/01/12/sRgiU2m6N5F3ajL.png">
-<meta property="og:image" content="https://i.loli.net/2020/01/12/zmJ6wAr7NQO4jRD.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/UqibwoNjFAnfmMC.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/1qGH6CMpn3kZaAu.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/TxaYuBhtUqNwRlV.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/UFMgHBenSXYTfx2.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/z4NXKwnkYjGMT2J.png">
 <meta property="article:published_time" content="2020-01-11T09:19:29.000Z">
-<meta property="article:modified_time" content="2020-01-12T06:06:07.000Z">
+<meta property="article:modified_time" content="2020-01-12T07:42:48.000Z">
 <meta property="article:author" content="feios">
 <meta property="article:tag" content="feios">
 <meta property="article:tag" content="blog">
@@ -43,7 +47,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1578811904894">
+  <link rel="stylesheet" href="/css/style.css?v=1578814974601">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -142,8 +146,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月11日</a>
-    <a><i class="nexmoefont icon-areachart"></i>834 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
     
     
   </div>
@@ -212,7 +216,7 @@ pretty_urls:
 <p>没错，还缺一个自己喜欢的主题</p>
 <h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>以下是我找主题的几个地方<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener" title="Themes | Hexo">Hexo | Themes</a><br><a href="https://blog.csdn.net/zgd826237710/article/details/99671027" target="_blank" rel="noopener" title="CSDN | Hexo 好看的主题推荐">CSDN | Hexo 好看的主题推荐</a><br><a href="https://www.zhihu.com/question/24422335/answers/updated" target="_blank" rel="noopener" title="知乎 | 有哪些好看的 Hexo 主题？">知乎 | 有哪些好看的 Hexo 主题？</a></p>
 <p>接下来以我选择的Nexmoe主题为例，按照文档执行以下操作</p>
-<pre><code class="bash">cd themes # 载入主题目录
+<pre><code class="ymal">cd themes # 载入主题目录
 git clone https://github.com/nexmoe/hexo-theme-nexmoe.git nexmoe # 安装
 cd nexmoe # 进入 Nexmoe 主题目录
 npm i --save hexo-wordcount
@@ -222,12 +226,12 @@ cp -i _config.example.yml _config.yml</code></pre>
 <p>参考文档：<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener" title="主题Github">Nexmoe Github</a> | <a href="https://docs.nexmoe.com/" target="_blank" rel="noopener" title="主题文档">Nexmoe Docs</a></p>
 <p><img src="https://i.loli.net/2020/01/12/ta9sAYqQXRiBoJL.png" alt="5"></p>
 <p>在站点配置文件<code>_config.yml</code>中修改主题为我们刚安装好的主题<code>nexmoe</code></p>
-<pre><code class="bash"># Extensions
+<pre><code class="ymal"># Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: nexmoe</code></pre>
 <p>因为这主题内置代码高亮，为了避免冲突需要禁用<code>_config.yml</code>中的highlight</p>
-<pre><code class="bash">highlight:
+<pre><code class="ymal">highlight:
   enable: false </code></pre>
 <p>重启Hexo服务</p>
 <p><img src="https://i.loli.net/2020/01/12/dm61pzkfPJrsCgv.png" alt="6"></p>
@@ -236,10 +240,44 @@ theme: nexmoe</code></pre>
 <h3 id="3-启用Github-page"><a href="#3-启用Github-page" class="headerlink" title="3.启用Github page"></a>3.启用Github page</h3><p>repository - Settings 选择master分支</p>
 <p><img src="https://i.loli.net/2020/01/12/sRgiU2m6N5F3ajL.png" alt="9"></p>
 <h3 id="4-绑定域名（可选）"><a href="#4-绑定域名（可选）" class="headerlink" title="4.绑定域名（可选）"></a>4.绑定域名（可选）</h3><p>CNAME <code>usename.github.io</code> 主机记录随意,其他默认</p>
-<p><img src="https://i.loli.net/2020/01/12/zmJ6wAr7NQO4jRD.png" alt="10"></p>
+<p><img src="https://i.loli.net/2020/01/12/UqibwoNjFAnfmMC.png" alt="10"></p>
 <p>[2020.01.12 12:57] <strong>本文编辑到这里此博客还没有进行下面的操作，现在我clone到Github之后在编辑余下的内容</strong></p>
 <hr>
-<h3 id="5-clone到Github"><a href="#5-clone到Github" class="headerlink" title="5.clone到Github"></a>5.clone到Github</h3>
+<p>[2020.01.12 14:55] <strong>经过多种方法尝试之后成功了</strong></p>
+<h3 id="5-clone到Github"><a href="#5-clone到Github" class="headerlink" title="5.clone到Github"></a>5.clone到Github</h3><p><del><a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener" title="Hexo官网教程">Hexo官网教程</a></del><br>因为现在github只能把页面部署在master分支，所以官网通过机器人通过clone到master的文件部署到gh-page的方法已经不能用了</p>
+<p>现在的办法是连接Hexo和git，分两部分：Hexo的设置和通过git连接到github，这时候git的作用就体现出来了。</p>
+<p>在站点配置文件<code>_config.yml</code>底部找到并修改</p>
+<pre><code class="ymal"># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:feiosme/feiosme.github.io.git
+  branch: master</code></pre>
+<p><code>repo</code>这一栏可以到github repository页面clone or download中找到<br><strong>注意：</strong>这个弹窗默认是HTTPS链接，点击右上角use SSH（图中因为已经是SSH界面，所以右上角是use HTTPS）</p>
+<p><img src="https://i.loli.net/2020/01/12/1qGH6CMpn3kZaAu.png" alt="11"></p>
+<p>在终端<code>blog</code>目录中运行如下命令,安装连接插件</p>
+<pre><code class="bash">$ npm install hexo-deployer-git --save</code></pre>
+<p>到这一步Hexo这边设置好了<br>开始设置git连接到Github的部分</p>
+<p>如果是第一次用git，需要先设置用户名和邮箱，和github账号一致</p>
+<pre><code class="bash">$ git config --global user.name &quot;githubusename&quot;
+$ git config --global user.email githubusename@example.com</code></pre>
+<p>使用ssh-keygen生成私钥和公钥</p>
+<pre><code class="bash">$ ssh-keygen -t rsa</code></pre>
+<p>如果不知道什么意思，一路回车就可以了</p>
+<p><img src="https://i.loli.net/2020/01/12/TxaYuBhtUqNwRlV.png" alt="12"></p>
+<p>我们得到一个<code>id_rsa.pub</code><br>Github 头像菜单下 Setting - SSH and GPG keys - New SSH Key 中把<code>id_rsa.pub</code>中的内容复制过去</p>
+<p><img src="https://i.loli.net/2020/01/12/UFMgHBenSXYTfx2.png" alt="13"></p>
+<p>测试是否成功添加ssh</p>
+<pre><code class="bash">ssh -T git@github.com</code></pre>
+<p>连接成功是这个样子的</p>
+<p><img src="https://i.loli.net/2020/01/12/z4NXKwnkYjGMT2J.png" alt="14"></p>
+<p>我们打通了git到GitHub的通道，在前面设置Hexo的步骤中又告诉了Hexo你希望把它部署到Github的哪个repository<br>相当于说明了小区和门牌号，现在可以指哪打哪了</p>
+<h2 id="发布第一篇文章"><a href="#发布第一篇文章" class="headerlink" title="发布第一篇文章"></a>发布第一篇文章</h2><pre><code class="bash">$ hexo new [layout] &lt;title&gt;
+例如
+hexo new 安装Hexo小记 #如果忽略[layout]会设置成post</code></pre>
+<p>使用makedown编辑好文章之后</p>
+<pre><code class="bash">$ hexo d -g</code></pre>
+
   </article>
   
     
@@ -286,7 +324,7 @@ theme: nexmoe</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1578811904895"></script>
+<script src="/js/app.js?v=1578814974602"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
