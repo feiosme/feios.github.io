@@ -1,2 +1,0 @@
-# feiosme.github.io
-blog
