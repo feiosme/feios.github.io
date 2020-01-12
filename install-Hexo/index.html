@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/01/12/z4NXKwnkYjGMT2J.png">
 <meta property="og:image" content="https://i.loli.net/2020/01/12/FJ7e5ifm1bS6w2M.png">
 <meta property="article:published_time" content="2020-01-11T09:19:29.000Z">
-<meta property="article:modified_time" content="2020-01-12T07:45:54.000Z">
+<meta property="article:modified_time" content="2020-01-12T08:34:56.000Z">
 <meta property="article:author" content="feios">
 <meta property="article:tag" content="feios">
 <meta property="article:tag" content="blog">
@@ -48,7 +48,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1578815159405">
+  <link rel="stylesheet" href="/css/style.css?v=1578822437463">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -147,8 +147,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月11日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.6k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
     
     
   </div>
@@ -242,6 +242,7 @@ theme: nexmoe</code></pre>
 <p><img src="https://i.loli.net/2020/01/12/sRgiU2m6N5F3ajL.png" alt="9"></p>
 <h3 id="4-绑定域名（可选）"><a href="#4-绑定域名（可选）" class="headerlink" title="4.绑定域名（可选）"></a>4.绑定域名（可选）</h3><p>CNAME <code>usename.github.io</code> 主机记录随意,其他默认</p>
 <p><img src="https://i.loli.net/2020/01/12/UqibwoNjFAnfmMC.png" alt="10"></p>
+<p><strong>注意：</strong>如果自定义域名，需要在博客source目录下新建一个<code>CNAME</code>在里面写上你绑定的域名，不然后续更新之后域名要重新绑定</p>
 <p>[2020.01.12 12:57] <strong>本文编辑到这里此博客还没有进行下面的操作，现在我clone到Github之后在编辑余下的内容</strong></p>
 <hr>
 <p>[2020.01.12 14:55] <strong>经过多种方法尝试之后成功了</strong></p>
@@ -269,17 +270,21 @@ $ git config --global user.email githubusename@example.com</code></pre>
 <p>我们得到一个<code>id_rsa.pub</code><br>Github 头像菜单下 Setting - SSH and GPG keys - New SSH Key 中把<code>id_rsa.pub</code>中的内容复制过去</p>
 <p><img src="https://i.loli.net/2020/01/12/UFMgHBenSXYTfx2.png" alt="13"></p>
 <p>测试是否成功添加ssh</p>
-<pre><code class="bash">ssh -T git@github.com</code></pre>
+<pre><code class="bash">$ ssh -T git@github.com</code></pre>
 <p>连接成功是这个样子的</p>
 <p><img src="https://i.loli.net/2020/01/12/z4NXKwnkYjGMT2J.png" alt="14"></p>
 <p>我们打通了git到GitHub的通道，在前面设置Hexo的步骤中又告诉了Hexo你希望把它部署到Github的哪个repository<br>相当于说明了小区和门牌号，现在可以指哪打哪了</p>
 <h2 id="发布第一篇文章"><a href="#发布第一篇文章" class="headerlink" title="发布第一篇文章"></a>发布第一篇文章</h2><pre><code class="bash">$ hexo new [layout] &lt;title&gt;
 例如
-hexo new 安装Hexo小记 #如果忽略[layout]会设置成post</code></pre>
+$ hexo new 安装Hexo小记 #如果忽略[layout]会设置成post</code></pre>
 <p>使用makedown编辑好文章之后</p>
 <pre><code class="bash">$ hexo d -g</code></pre>
-<p>以下是我更新这篇文章的截图<br><img src="https://i.loli.net/2020/01/12/FJ7e5ifm1bS6w2M.png" alt="15"></p>
+<p>以下是我更新这篇文章的截图</p>
+<p><img src="https://i.loli.net/2020/01/12/FJ7e5ifm1bS6w2M.png" alt="15"></p>
 <p>好了，教程到此结束</p>
+<hr>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="本文参考的文档-amp-教程"><a href="#本文参考的文档-amp-教程" class="headerlink" title="本文参考的文档&amp;教程"></a>本文参考的文档&amp;教程</h3><p><em>来自还没关掉的标签页</em><br><a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener" title="Github | 一个比较特别的 Hexo 主题">Github | 一个比较特别的 Hexo 主题</a><br><a href="https://docs.nexmoe.com/" target="_blank" rel="noopener" title="Nexmoe 主题文档">Nexmoe 主题文档</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener" title="Hexo | 文档">Hexo | 文档</a><br><a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener" title="cnbolgs | hexo从零开始到搭建完整">cnbolgs | hexo从零开始到搭建完整</a><br><a href="https://www.jianshu.com/p/01ebebc1d063" target="_blank" rel="noopener" title="简书 | GitHub+Hexo搭建个人博客（三）Hexo个性化配置进阶">简书 | GitHub+Hexo搭建个人博客（三）Hexo个性化配置进阶</a><br><a href="https://blog.csdn.net/qq_31001889/article/details/86625317" target="_blank" rel="noopener" title="csdn | hexo下使用markdown语法绘制流程图">csdn | hexo下使用markdown语法绘制流程图</a><br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener" title="csdn | hexo史上最全搭建教程">csdn | hexo史上最全搭建教程</a><br><a href="https://www.cnblogs.com/limich/p/7479991.html" target="_blank" rel="noopener" title="cnblogs | MarkDown和流程图诠释你的代码">cnblogs | MarkDown和流程图诠释你的代码</a><br><a href="https://segmentfault.com/a/1190000010434546" target="_blank" rel="noopener" title="segmentfault | hexo-admin后台管理博客">segmentfault | hexo-admin后台管理博客</a><br><a href="https://www.jianshu.com/p/4f56cf990bba" target="_blank" rel="noopener" title="简书 | 使用Github搭建属于自己的博客">简书 | 使用Github搭建属于自己的博客</a><br><a href="https://www.cnblogs.com/wxyww/p/xiaoshujiang.html" target="_blank" rel="noopener" title="cnblogs | 在github上搭建个人博客并在线更新">cnblogs | 在github上搭建个人博客并在线更新</a><br><a href="https://www.jianshu.com/p/1bcad7700c46" target="_blank" rel="noopener" title="简书 | 使用hexo搭建github博客">简书 | 使用hexo搭建github博客</a><br><a href="https://help.github.com/cn/github/working-with-github-pages/about-custom-domains-and-github-pages" target="_blank" rel="noopener" title="Github | 关于自定义域名和 GitHub 页面">Github | 关于自定义域名和 GitHub 页面</a><br><a href="https://blog.csdn.net/zjq_supperman/article/details/82955975" target="_blank" rel="noopener" title="csdn | Sourcetree无法推送-已解决">csdn | Sourcetree无法推送-已解决</a></p>
+<h3 id="增强插件"><a href="#增强插件" class="headerlink" title="增强插件"></a>增强插件</h3><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener" title="hexo-tag-aplayer">hexo-tag-aplayer：音频播放器</a><br><a href="https://github.com/MoePlayer/hexo-tag-dplayer" target="_blank" rel="noopener" title="hexo-tag-dplayer">hexo-tag-dplayer：视频播放器</a><br><a href="https://github.com/bubkoo/hexo-filter-flowchart" target="_blank" rel="noopener" title="hexo-filter-flowchart">hexo-filter-flowchart：显示流程图</a></p>
 
   </article>
   
@@ -296,20 +301,24 @@ hexo new 安装Hexo小记 #如果忽略[layout]会设置成post</code></pre>
 
   
   <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '0d59ccab1e48926cafc7',
-        clientSecret: 'e792a3e6019eb0d92d057702682a60f6c274ad00',
-        id: window.location.pathname,
-        repo: 'feiosme.github.io',
-        owner: 'feiosme',
-        admin: 'feiosme'
-    })
-    gitalk.render('gitalk')
+    <script id="dsq-count-scr" src="https://feios.disqus.com.disqus.com/count.js" async></script>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://www.feios.me/install-Hexo/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.feios.me/install-Hexo/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 </script>
+<script id="disqus-thread-script">
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//feios.disqus.com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
 </section>
 </div>
     </div>
@@ -327,7 +336,7 @@ hexo new 安装Hexo小记 #如果忽略[layout]会设置成post</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1578815159406"></script>
+<script src="/js/app.js?v=1578822437464"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
