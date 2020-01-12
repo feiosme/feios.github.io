@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>安装Hexo小记 - feios time</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="feios time">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <meta name="description" content="Hexo: A fast, simple &amp; powerful blog framework （官网介绍） 维护服务器是一件很麻烦的事情，有没有一种办法可以长期存在并且不用维护呢，Github page + Hexo是一个方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Hexo小记">
+<meta property="og:url" content="http://www.feios.me/install-Hexo/index.html">
+<meta property="og:site_name" content="feios time">
+<meta property="og:description" content="Hexo: A fast, simple &amp; powerful blog framework （官网介绍） 维护服务器是一件很麻烦的事情，有没有一种办法可以长期存在并且不用维护呢，Github page + Hexo是一个方案">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/01/11/U6qexRXsCdzJQmO.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/11/4gmF9XLJh3KENIy.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/11/FITCq2MoQvLjt4Z.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/PsXWH5Tqoyr4zS6.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/DZA35SKiQg9YldC.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/ta9sAYqQXRiBoJL.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/dm61pzkfPJrsCgv.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/m7BhxZeSLrMwcVO.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/v9AITYNQxu6jkha.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/sRgiU2m6N5F3ajL.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/12/zmJ6wAr7NQO4jRD.png">
+<meta property="article:published_time" content="2020-01-11T09:19:29.000Z">
+<meta property="article:modified_time" content="2020-01-12T06:06:07.000Z">
+<meta property="article:author" content="feios">
+<meta property="article:tag" content="feios">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/11/U6qexRXsCdzJQmO.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1578811904894">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="feios">
+            <img src="/images/avatar.png" alt="feios">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>2</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 feios
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://i.loli.net/2020/01/12/PsXWH5Tqoyr4zS6.png">
+        
+        <h1>安装Hexo小记</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月11日</a>
+    <a><i class="nexmoefont icon-areachart"></i>834 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    
+    
+  </div>
+  <article>
+    <p><strong>Hexo: A fast, simple &amp; powerful blog framework</strong> （官网介绍）</p>
+<p>维护服务器是一件很麻烦的事情，有没有一种办法可以长期存在并且不用维护呢，Github page + Hexo是一个方案</p>
+<a id="more"></a>
+
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p><img src="https://i.loli.net/2020/01/11/U6qexRXsCdzJQmO.png" alt="Github page _ Hexo1.png"></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装Hexo前，电脑需要以下环境</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="noopener" title="Node.js">Node.js</a> (Node.js 版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本)</li>
+<li><a href="http://git-scm.com/" target="_blank" rel="noopener" title="Git">Git</a></li>
+</ul>
+<p>mac系统可以用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener" title="homebrew">homebrew</a>安装</p>
+<h2 id="安装到本地（Mac）"><a href="#安装到本地（Mac）" class="headerlink" title="安装到本地（Mac）"></a>安装到本地（Mac）</h2><pre><code class="bash">$ npm install hexo-cli -g</code></pre>
+<p><img src="https://i.loli.net/2020/01/11/4gmF9XLJh3KENIy.png" alt="1"></p>
+<p>在电脑中选好一个存放博客的路径 然后</p>
+<pre><code class="bash">$ hexo init blog #‘blog’可以自定义
+$ cd blog</code></pre>
+<p>显示<code>Start blogging with Hexo!</code>则安装成功</p>
+<p><img src="https://i.loli.net/2020/01/11/FITCq2MoQvLjt4Z.png" alt="2"></p>
+<p>启动本地服务器</p>
+<pre><code class="bash">$ hexo s</code></pre>
+<p>如果出现</p>
+<blockquote>
+<p>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> . Press Ctrl+C to stop.</p>
+</blockquote>
+<p>则代表正常启动，它就是属于你的博客，接下来就要修改内容了</p>
+<p><img src="https://i.loli.net/2020/01/12/PsXWH5Tqoyr4zS6.png" alt="3"></p>
+<p>如果端口被占用有几种办法</p>
+<pre><code class="bash">方法1 (Mac)
+lsof -i tcp:4000 #查看端口4000被谁占用
+kill &lt;PID&gt; #杀死对应进程PID
+
+方法2
+hexo server -p &lt;port&gt; #在其他端口运行
+
+方法3
+reboot #重启你的电脑</code></pre>
+<h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>按照自己的需求更改<code>../blog/_config.yml</code>中内容，以下是我的配置，主要内容已注释</p>
+<pre><code class="ymal"># Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: feios time #网站标题
+subtitle: &#39;&#39; #网站副标题
+description: &#39;feios time&#39; #网站描述
+keywords: feios,blog #网站的关键词。使用半角逗号 , 分隔多个关键词。
+author: feios #您的名字
+language: zh-CN #网站使用的语言
+timezone: &#39;Asia/Shanghai&#39; #时区
+
+# URL
+## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39;
+url: http://www.feios.me
+root: /
+permalink: :title/ #默认 :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
+  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</code></pre>
+<p>按照上面的配置修改完之后变成这样，已经有你的样子了。但是不是觉得还少了点什么呢？</p>
+<p><img src="https://i.loli.net/2020/01/12/DZA35SKiQg9YldC.png" alt="4"></p>
+<p>没错，还缺一个自己喜欢的主题</p>
+<h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>以下是我找主题的几个地方<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener" title="Themes | Hexo">Hexo | Themes</a><br><a href="https://blog.csdn.net/zgd826237710/article/details/99671027" target="_blank" rel="noopener" title="CSDN | Hexo 好看的主题推荐">CSDN | Hexo 好看的主题推荐</a><br><a href="https://www.zhihu.com/question/24422335/answers/updated" target="_blank" rel="noopener" title="知乎 | 有哪些好看的 Hexo 主题？">知乎 | 有哪些好看的 Hexo 主题？</a></p>
+<p>接下来以我选择的Nexmoe主题为例，按照文档执行以下操作</p>
+<pre><code class="bash">cd themes # 载入主题目录
+git clone https://github.com/nexmoe/hexo-theme-nexmoe.git nexmoe # 安装
+cd nexmoe # 进入 Nexmoe 主题目录
+npm i --save hexo-wordcount
+# Node 版本 7.6.0 之前,请安装 2.x 版本 (Node.js v7.6.0 and previous) 
+# npm install hexo-wordcount@2 --save
+cp -i _config.example.yml _config.yml</code></pre>
+<p>参考文档：<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener" title="主题Github">Nexmoe Github</a> | <a href="https://docs.nexmoe.com/" target="_blank" rel="noopener" title="主题文档">Nexmoe Docs</a></p>
+<p><img src="https://i.loli.net/2020/01/12/ta9sAYqQXRiBoJL.png" alt="5"></p>
+<p>在站点配置文件<code>_config.yml</code>中修改主题为我们刚安装好的主题<code>nexmoe</code></p>
+<pre><code class="bash"># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: nexmoe</code></pre>
+<p>因为这主题内置代码高亮，为了避免冲突需要禁用<code>_config.yml</code>中的highlight</p>
+<pre><code class="bash">highlight:
+  enable: false </code></pre>
+<p>重启Hexo服务</p>
+<p><img src="https://i.loli.net/2020/01/12/dm61pzkfPJrsCgv.png" alt="6"></p>
+<h2 id="Github-page"><a href="#Github-page" class="headerlink" title="Github page"></a>Github page</h2><h3 id="1-注册Github"><a href="#1-注册Github" class="headerlink" title="1.注册Github"></a>1.<a href="https://github.com" target="_blank" rel="noopener" title="注册Github">注册Github</a></h3><h3 id="2-新建repository"><a href="#2-新建repository" class="headerlink" title="2.新建repository"></a>2.新建repository</h3><p>界面右上角+号<br><img src="https://i.loli.net/2020/01/12/m7BhxZeSLrMwcVO.png" alt="7"></p>
+<p>如果想通过<code>(你的用户名).github.io</code>访问你的博客，按照以下方式设置<br><img src="https://i.loli.net/2020/01/12/v9AITYNQxu6jkha.png" alt="8"></p>
+<h3 id="3-启用Github-page"><a href="#3-启用Github-page" class="headerlink" title="3.启用Github page"></a>3.启用Github page</h3><p>repository - Settings 选择master分支</p>
+<p><img src="https://i.loli.net/2020/01/12/sRgiU2m6N5F3ajL.png" alt="9"></p>
+<h3 id="4-绑定域名（可选）"><a href="#4-绑定域名（可选）" class="headerlink" title="4.绑定域名（可选）"></a>4.绑定域名（可选）</h3><p>CNAME <code>usename.github.io</code> 主机记录随意,其他默认</p>
+<p><img src="https://i.loli.net/2020/01/12/zmJ6wAr7NQO4jRD.png" alt="10"></p>
+<p>[2020.01.12 12:57] <strong>本文编辑到这里此博客还没有进行下面的操作，现在我clone到Github之后在编辑余下的内容</strong></p>
+<hr>
+<h3 id="5-clone到Github"><a href="#5-clone到Github" class="headerlink" title="5.clone到Github"></a>5.clone到Github</h3>
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>feios<br>
+<strong>本文链接：</strong><a href="http://www.feios.me/install-Hexo/" title="http:&#x2F;&#x2F;www.feios.me&#x2F;install-Hexo&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.feios.me&#x2F;install-Hexo&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '0d59ccab1e48926cafc7',
+        clientSecret: 'e792a3e6019eb0d92d057702682a60f6c274ad00',
+        id: window.location.pathname,
+        repo: 'feiosme.github.io',
+        owner: 'feiosme',
+        admin: 'feiosme'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1578811904895"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>
