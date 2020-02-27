@@ -28,6 +28,8 @@ for (let link of links) {
     link.className = "active nexmoe-list-item mdui-list-item mdui-ripple";
   }
 }
+
+var $ = mdui.JQ;
 $("table")
   .has("img")
   .addClass("nexmoe-album");
@@ -48,6 +50,10 @@ $("article:not(.nexmoe-py) img").each(function() {
   }  
 });
 
-
 $("#nexmoe-sidebar a").addClass("mdui-ripple");
 mdui.mutation();
+
+function search() {
+  window.open($("#search_form").attr("action_e") + " " + $("#search_value").val());
+  return false;
+}

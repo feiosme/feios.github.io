@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
   <title>为编程而生的字体 - feios time</title>
   <meta charset="UTF-8">
   <meta name="description" content="feios time">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -29,32 +30,33 @@
 <meta property="og:image" content="https://i.loli.net/2020/01/22/EtnMgcH9xYzGfXk.png">
 <meta property="og:image" content="https://i.loli.net/2020/01/22/5GatkPEgOcoC6zh.png">
 <meta property="article:published_time" content="2020-01-21T15:56:22.000Z">
-<meta property="article:modified_time" content="2020-01-21T19:25:53.000Z">
+<meta property="article:modified_time" content="2020-02-24T11:08:25.000Z">
 <meta property="article:author" content="feios">
 <meta property="article:tag" content="feios">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/01/22/vifMYc6Fg5reACG.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
+  <!--<link rel="stylesheet" href="/css/style.css?v=1582824388928">-->
+
   
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579701487657">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+  
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png" alt="feios"></a>
        </div>
     </div>
   </div>
@@ -62,20 +64,27 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="feios">
-            <img src="/images/avatar.png" alt="feios">
+            <img src="/images/avatar.png" alt="feios" alt="feios">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>6</div>
+        <div><span>文章</span>9</div>
         <div><span>标签</span>0</div>
-        <div><span>分类</span>3</div>
+        <div><span>分类</span>4</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
             <div class="mdui-list-item-content">
                 回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
             </div>
         </a>
         
@@ -93,8 +102,16 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
   
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">社交按钮</h3>
@@ -122,22 +139,29 @@
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/category/tech/">tech</a>
+          <a class="category-list-link" href="/categories/tech/">tech</a>
           <span class="category-list-count">2</span>
         </li>
 
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/category/后期/">后期</a>
+          <a class="category-list-link" href="/categories/后期/">后期</a>
           <span class="category-list-count">1</span>
         </li>
 
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/category/折腾/">折腾</a>
-          <span class="category-list-count">2</span>
+          <a class="category-list-link" href="/categories/折腾/">折腾</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/英语/">英语</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -147,8 +171,6 @@
   </div>
 
 
-  
-  
   
 </aside>
     <div class="nexmoe-copyright">
@@ -161,21 +183,34 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="https://i.loli.net/2020/01/22/1DOefsxBj6TuhdR.png">
-        
-        <h1>为编程而生的字体</h1>
-    </div>
-  <div class="nexmoe-post-meta">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://i.loli.net/2020/01/22/1DOefsxBj6TuhdR.png" data-sizes="auto" alt="为编程而生的字体" class="lazyload">
+          <h1>为编程而生的字体</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月21日</a>
     <a><i class="nexmoefont icon-areachart"></i>723 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+  
+  
+
+  <div class="nexmoe-post-right">
     
-      <a class="nexmoefont icon-appstore-fill -link" href="/category/%E6%8A%98%E8%85%BE/">折腾</a>
-    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一个特殊的效果"><span class="toc-number">1.</span> <span class="toc-text">一个特殊的效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode中的效果"><span class="toc-number">2.</span> <span class="toc-text">vscode中的效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JetBrains-Mono-苹方"><span class="toc-number">2.1.</span> <span class="toc-text">JetBrains Mono + 苹方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认字体对照组-Menlo"><span class="toc-number">2.2.</span> <span class="toc-text">默认字体对照组 Menlo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JetBrains-Mono-sleek"><span class="toc-number">2.3.</span> <span class="toc-text">JetBrains Mono + sleek</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sleek"><span class="toc-number">3.</span> <span class="toc-text">sleek</span></a></li></ol>
+            </div>
+        </div>
+      </div>
     
   </div>
+
   <article>
     <p>1月16号，JetBrains推出了一种优化代码观感的字体：JetBrains Mono</p>
 <p>看到这个消息第一反应很正常，近些年文字辨识度代替了美观程度成了新的潮流，苹果为了在Apple Watch的小屏幕上有更好的体验，重新设计了中文字体“苹方”，还有谷歌的思源黑体和小米的小米兰亭等等</p>
@@ -187,7 +222,7 @@
 <p>因此，在使用JetBrains Mono进行开发时，除其他外，重点研究了在长时间使用代码期间可能导致眼睛疲劳的问题。我们考虑了字母的大小和形状等问题；它们之间的空间量，自然以等宽字体设计的平衡；一些看起来不必要的细节和符号之间不清楚的区别，例如I和l；还要和开发字体时的编程连字。<br>来源：<a href="https://www.ithome.com/0/468/814.htm" target="_blank" rel="noopener">it之家 | JetBrains推出编程字体Mono：更适合程序开发人员</a></p>
 </blockquote>
 <p>开始以为只是优化了阅读体验，但是打开<a href="https://www.jetbrains.com/lp/mono/" target="_blank" rel="noopener">官网</a>往下翻之后，才知道这个字体有多厉害</p>
-<h2 id="一个特殊的效果"><a href="#一个特殊的效果" class="headerlink" title="一个特殊的效果"></a>一个特殊的效果</h2><p>作为一个编程字体，不仅优化了代码的辨识度，还有一个很牛逼的特性：可以把一些符号转换成更容易辨识的样子<br><img src="https://i.loli.net/2020/01/22/vifMYc6Fg5reACG.png" alt="屏幕快照 2020-01-22 上午1.25.51.png"><br><img src="https://i.loli.net/2020/01/22/L9QZFCRcl14XHmD.png" alt="屏幕快照 2020-01-22 上午1.25.43.png"></p>
+<h2 id="一个特殊的效果"><a href="#一个特殊的效果" class="headerlink" title="一个特殊的效果"></a>一个特殊的效果</h2><p>作为一个编程字体，不仅优化了代码的辨识度，还有一个很牛逼的特性：可以把一些符号转换成更容易辨识的样子<br><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/vifMYc6Fg5reACG.png" alt="屏幕快照 2020-01-22 上午1.25.51.png" class="lazyload"><br><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/L9QZFCRcl14XHmD.png" alt="屏幕快照 2020-01-22 上午1.25.43.png" class="lazyload"></p>
 <h2 id="vscode中的效果"><a href="#vscode中的效果" class="headerlink" title="vscode中的效果"></a>vscode中的效果</h2><p>vscode中需要在<code>setting.json</code>中配置字体连字以实现上面的效果</p>
 <pre><code class="json">{
   &quot;editor.fontLigatures&quot;: true, //字体连字
@@ -198,30 +233,38 @@
   &quot;editor.fontFamily&quot;: &quot;JetBrains Mono&quot; 
 }</code></pre>
 <p>这款字体只有英文，所以中文需要搭配其他字体</p>
-<h3 id="JetBrains-Mono-苹方"><a href="#JetBrains-Mono-苹方" class="headerlink" title="JetBrains Mono + 苹方"></a><a href="https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip" target="_blank" rel="noopener">JetBrains Mono</a> + 苹方</h3><p><img src="https://i.loli.net/2020/01/22/fwiDmWNeFX7IyUl.png" alt="1.1"><br><img src="https://i.loli.net/2020/01/22/viawhV924Npez1u.png" alt="1.2"></p>
-<h3 id="默认字体对照组-Menlo"><a href="#默认字体对照组-Menlo" class="headerlink" title="默认字体对照组 Menlo"></a>默认字体对照组 Menlo</h3><p><img src="https://i.loli.net/2020/01/22/tcbYZHex7GPmLaA.png" alt="2.1"><br><img src="https://i.loli.net/2020/01/22/qAlUVGESW3FnicD.png" alt="2.2"></p>
-<h3 id="JetBrains-Mono-sleek"><a href="#JetBrains-Mono-sleek" class="headerlink" title="JetBrains Mono + sleek"></a><a href="https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip" target="_blank" rel="noopener">JetBrains Mono</a> + <a href="http://f1.market.xiaomi.com/issue/ThemeMarket/015c37438aa6d4a4010604e416da2514b9e4698e3/sleek-1.0.0.0.mtz" target="_blank" rel="noopener">sleek</a></h3><p><img src="https://i.loli.net/2020/01/22/I6TLCkwsru1tx8O.png" alt="3.1"><br><img src="https://i.loli.net/2020/01/22/zqprV5YxteD2Rjm.png" alt="3.2"></p>
+<h3 id="JetBrains-Mono-苹方"><a href="#JetBrains-Mono-苹方" class="headerlink" title="JetBrains Mono + 苹方"></a><a href="https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip" target="_blank" rel="noopener">JetBrains Mono</a> + 苹方</h3><p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/fwiDmWNeFX7IyUl.png" alt="1.1" class="lazyload"><br><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/viawhV924Npez1u.png" alt="1.2" class="lazyload"></p>
+<h3 id="默认字体对照组-Menlo"><a href="#默认字体对照组-Menlo" class="headerlink" title="默认字体对照组 Menlo"></a>默认字体对照组 Menlo</h3><p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/tcbYZHex7GPmLaA.png" alt="2.1" class="lazyload"><br><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/qAlUVGESW3FnicD.png" alt="2.2" class="lazyload"></p>
+<h3 id="JetBrains-Mono-sleek"><a href="#JetBrains-Mono-sleek" class="headerlink" title="JetBrains Mono + sleek"></a><a href="https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip" target="_blank" rel="noopener">JetBrains Mono</a> + <a href="http://f1.market.xiaomi.com/issue/ThemeMarket/015c37438aa6d4a4010604e416da2514b9e4698e3/sleek-1.0.0.0.mtz" target="_blank" rel="noopener">sleek</a></h3><p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/I6TLCkwsru1tx8O.png" alt="3.1" class="lazyload"><br><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/zqprV5YxteD2Rjm.png" alt="3.2" class="lazyload"></p>
 <p>字体本身来说刚改完有点不习惯，之后越看越舒服</p>
 <p>之后我发现原来在此之前，微软也有一款为编程优化的字体<a href="https://github.com/microsoft/cascadia-code" target="_blank" rel="noopener">cascadia code</a></p>
 <h2 id="sleek"><a href="#sleek" class="headerlink" title="sleek"></a>sleek</h2><p>最后推荐这个一直很喜欢的sleek字体，贴吧上找到了miui的mtz格式文件，<a href="http://f1.market.xiaomi.com/issue/ThemeMarket/015c37438aa6d4a4010604e416da2514b9e4698e3/sleek-1.0.0.0.mtz" target="_blank" rel="noopener">下载</a>之后把后缀改成zip解压即可</p>
-<p><img src="https://i.loli.net/2020/01/22/EtnMgcH9xYzGfXk.png" alt="guide"></p>
-<p><img src="https://i.loli.net/2020/01/22/5GatkPEgOcoC6zh.png" alt="show"></p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/EtnMgcH9xYzGfXk.png" alt="guide" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/22/5GatkPEgOcoC6zh.png" alt="show" class="lazyload"></p>
 
   </article>
-  
+
+  <div class="nexmoe-post-meta">
     
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>feios<br>
-<strong>本文链接：</strong><a href="https://www.feios.me/fonts-in-vscode/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;fonts-in-vscode&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;fonts-in-vscode&#x2F;</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+    
+    
 </div>
 
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>feios<br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/fonts-in-vscode/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;fonts-in-vscode&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;fonts-in-vscode&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
 
-  
-  <section class="nexmoe-comment">
+
+    
+    <section class="nexmoe-comment">
     <!-- Unpkg -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
 <script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
@@ -240,27 +283,22 @@ var dsqjs = new DisqusJS({
 });
 </script>
 </section>
+  </div>
 </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
+<script>hljs.initHighlightingOnLoad();</script>
+
+
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+<!--<script src="/js/app.js?v=1582824388929"></script>-->
 
 
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1579701487658"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
-
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
 

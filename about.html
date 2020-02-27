@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
   <title>关于博客 - feios time</title>
   <meta charset="UTF-8">
   <meta name="description" content="feios time">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -19,19 +20,20 @@
 <meta property="og:description" content="我就是我颜色不一样的烟火 Email: i@feios.me">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-11T07:34:25.000Z">
-<meta property="article:modified_time" content="2020-01-22T07:14:47.000Z">
+<meta property="article:modified_time" content="2020-02-24T15:26:47.000Z">
 <meta property="article:author" content="feios">
 <meta property="article:tag" content="feios">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
+  <!--<link rel="stylesheet" href="/css/style.css?v=1582824388922">-->
+
   
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579701487650">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+  
 <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
 <script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
 <script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
@@ -40,13 +42,13 @@
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png" alt="feios"></a>
        </div>
     </div>
   </div>
@@ -54,20 +56,27 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="feios">
-            <img src="/images/avatar.png" alt="feios">
+            <img src="/images/avatar.png" alt="feios" alt="feios">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>6</div>
+        <div><span>文章</span>9</div>
         <div><span>标签</span>0</div>
-        <div><span>分类</span>3</div>
+        <div><span>分类</span>4</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
             <div class="mdui-list-item-content">
                 回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
             </div>
         </a>
         
@@ -85,8 +94,16 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
   
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">社交按钮</h3>
@@ -114,22 +131,29 @@
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/category/tech/">tech</a>
+          <a class="category-list-link" href="/categories/tech/">tech</a>
           <span class="category-list-count">2</span>
         </li>
 
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/category/后期/">后期</a>
+          <a class="category-list-link" href="/categories/后期/">后期</a>
           <span class="category-list-count">1</span>
         </li>
 
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/category/折腾/">折腾</a>
-          <span class="category-list-count">2</span>
+          <a class="category-list-link" href="/categories/折腾/">折腾</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/英语/">英语</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -139,8 +163,6 @@
   </div>
 
 
-  
-  
   
 </aside>
     <div class="nexmoe-copyright">
@@ -153,22 +175,37 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="/images/cover.jpg">
-        
-        <h1>关于博客</h1>
-    </div>
-  <div class="nexmoe-post-meta">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.25%;"> 
+          <img data-src="/images/cover.jpg" data-sizes="auto" alt="关于博客" class="lazyload">
+          <h1>关于博客</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月11日</a>
     <a><i class="nexmoefont icon-areachart"></i>16 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
+
+  
+  
+
+  <div class="nexmoe-post-right">
     
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#我就是我"><span class="toc-number">1.</span> <span class="toc-text">我就是我</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色不一样的烟火"><span class="toc-number">1.1.</span> <span class="toc-text">颜色不一样的烟火</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
     
   </div>
+
   <article>
     
-    <div id="aplayer-vASGGMnw" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-aEeyvdJk" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="10755" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 
@@ -176,20 +213,26 @@
 <p>Email: <a href="mailto:i@feios.me">i@feios.me</a></p>
 
   </article>
-  
+
+  <div class="nexmoe-post-meta">
     
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>feios<br>
-<strong>本文链接：</strong><a href="https://www.feios.me/about.html" title="https:&#x2F;&#x2F;www.feios.me&#x2F;about.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;about.html</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
+    
 </div>
 
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>feios<br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/about.html" title="https:&#x2F;&#x2F;www.feios.me&#x2F;about.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;about.html</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
 
-  
-  <section class="nexmoe-comment">
+
+    
+    <section class="nexmoe-comment">
     <!-- Unpkg -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
 <script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
@@ -208,27 +251,22 @@ var dsqjs = new DisqusJS({
 });
 </script>
 </section>
+  </div>
 </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
+<script>hljs.initHighlightingOnLoad();</script>
+
+
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+<!--<script src="/js/app.js?v=1582824388923"></script>-->
 
 
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1579701487652"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
-
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
 
