@@ -11,7 +11,7 @@ body {
   margin: auto !important;
 }
 #nexmoe-background .nexmoe-bg {
-  opacity: 0.2;
+  opacity: 0.3;
   background-size: cover;
   filter: blur(30px);
   height: 100vh;
@@ -346,7 +346,7 @@ body {
   text-transform: none;
   z-index: 1;
   margin: 0;
-  padding: 25px;
+  padding: 15px;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-cover h1:after {
   background-image: -moz-linear-gradient(to top, rgba(16,16,16,0.35) 25%, rgba(16,16,16,0) 100%);
