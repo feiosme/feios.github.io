@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>ESP8266简单玩法 【图片灯箱】 - feios time</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="feios time">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="最近因为一个视频入手了ESP8266">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESP8266简单玩法 【图片灯箱】">
+<meta property="og:url" content="https://www.feios.me/play-ESP8266/index.html">
+<meta property="og:site_name" content="feios time">
+<meta property="og:description" content="最近因为一个视频入手了ESP8266">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/01/13/WTYKHcpQLSVXJF2.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/13/tShYsfXRdolUveB.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/01/13/fE2g4Pom6YDsIXB.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/13/cZzbi7DEFtCMONL.png">
+<meta property="article:published_time" content="2020-01-13T12:30:37.000Z">
+<meta property="article:modified_time" content="2020-02-27T17:10:59.000Z">
+<meta property="article:author" content="feios">
+<meta property="article:tag" content="feios">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/13/WTYKHcpQLSVXJF2.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
+  <link rel="stylesheet" href="/css/style.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" crossorigin>
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1583428094653">-->
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="feios">
+            <img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios" alt="feios">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>9</div>
+        <!--<div><span>标签</span>0</div>-->
+        <div><span>字数</span>7.7k</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/5988128" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/feiosme/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/tech/">tech</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/后期/">后期</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/折腾/">折腾</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/英语/">英语</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 feios
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover mdui-shadow-3" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://i.loli.net/2020/01/13/Mu53HAvan6kIyUd.jpg" data-sizes="auto" alt="ESP8266简单玩法 【图片灯箱】" class="lazyload">
+          <h1>ESP8266简单玩法 【图片灯箱】</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>114 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
+
+  
+  
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#视频链接"><span class="toc-number">1.</span> <span class="toc-text">视频链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用它可以实现一些简单的物联网设想"><span class="toc-number">2.</span> <span class="toc-text">用它可以实现一些简单的物联网设想</span></a></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>最近因为一个视频入手了ESP8266</p>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th><a data-fancybox="gallery" href="https://i.loli.net/2020/01/13/WTYKHcpQLSVXJF2.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2020/01/13/WTYKHcpQLSVXJF2.png"></a></th>
+<th><a data-fancybox="gallery" href="https://i.loli.net/2020/01/13/tShYsfXRdolUveB.jpg" target="_blank" rel="noopener"><img src="https://i.loli.net/2020/01/13/tShYsfXRdolUveB.jpg"></a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a data-fancybox="gallery" href="https://i.loli.net/2020/01/13/fE2g4Pom6YDsIXB.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2020/01/13/fE2g4Pom6YDsIXB.png"></a></td>
+<td><a data-fancybox="gallery" href="https://i.loli.net/2020/01/13/cZzbi7DEFtCMONL.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2020/01/13/cZzbi7DEFtCMONL.png"></a></td>
+</tr>
+</tbody></table>
+<p>这个固件需要先连上开发版的wifi，进入<code>192.168.4.1</code>设置连接wifi，但似乎断电不会保存，需要重新设置</p>
+<h3 id="视频链接"><a href="#视频链接" class="headerlink" title="视频链接"></a>视频链接</h3><p>20元做一个顶级旗舰主板上才有的小屏幕(OLED)：<a href="https://www.bilibili.com/video/av81431421" target="_blank" rel="noopener">av81431421</a><br>一分钟教你做OLED时钟，ESP8266一键刷机方法与小白常见问题：<a href="https://www.bilibili.com/video/av82863964" target="_blank" rel="noopener">av82863964</a></p>
+<h3 id="用它可以实现一些简单的物联网设想"><a href="#用它可以实现一些简单的物联网设想" class="headerlink" title="用它可以实现一些简单的物联网设想"></a>用它可以实现一些简单的物联网设想</h3>
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+    
+    
+</div>
+
+
+  <!--右下角按钮<div class="mdui-container">
+    <button class="mdui-fab mdui-fab-fixed mdui-ripple"><i class="iconfont icontop"></i></button>
+  </div>-->
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>feios<br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/play-ESP8266/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;play-ESP8266&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;play-ESP8266&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'feios',
+    siteName: 'feios time',
+    identifier: 'https://www.feios.me/play-ESP8266/',
+    url: 'https://www.feios.me/play-ESP8266/',
+    title: 'ESP8266简单玩法 【图片灯箱】',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'zkN3UCgXFTNJmqsAR9ZVFaXaFhFMLBYrK4v8amJDwxMtAxBV544lMBSbkrwmDBJG',
+    admin: 'feiosme',
+    adminLabel: 'feiosme'
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <!--<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<!--<script src="/js/app.js?v=1583428094659"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+
+  
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-156065728-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
