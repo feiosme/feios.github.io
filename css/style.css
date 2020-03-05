@@ -128,8 +128,21 @@ body {
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item.active {
   opacity: 0.9;
-  background: #ff4e6a;
-  box-shadow: 0 2px 12px #ff4e6a;
+  position: relative;
+/* display: inline-block; */
+  background: #d3dce6;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,0.5), rgba(255,255,255,0) 10px) #d3dce6;
+  background: linear-gradient(0deg, rgba(255,255,255,0.5), rgba(255,255,255,0) 10px) #d3dce6;
+  border-radius: 13px;
+  border: 1px solid #acbacc;
+/* padding: 5px 15px; */
+  -webkit-box-shadow: 0 0 0 1px rgba(255,255,255,0.4) inset, 0 13px 15px rgba(31,45,61,0.15);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.4) inset, 0 13px 15px rgba(31,45,61,0.15);
+  max-width: 100%;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item i {
   font-size: 22px;
