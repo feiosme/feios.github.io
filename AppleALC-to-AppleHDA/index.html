@@ -32,7 +32,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1583520209649">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1583688921584">-->
 
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -62,10 +62,10 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>9</div>
+        <div><span>文章</span>10</div>
         <!--<div><span>标签</span>0</div>-->
-        <div><span>字数</span>7.7k</div>
-        <div><span>分类</span>4</div>
+        <div><span>字数</span>8.1k</div>
+        <div><span>分类</span>5</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -160,6 +160,13 @@
         </li>
 
         
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/项目/">项目</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
       </ul>
 
     </div>
@@ -187,7 +194,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月26日</a>
-    <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.2k 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
 </div>
 
@@ -217,22 +224,11 @@
 <h2 id="通过Ubuntu提取关键信息"><a href="#通过Ubuntu提取关键信息" class="headerlink" title="通过Ubuntu提取关键信息"></a>通过Ubuntu提取关键信息</h2><p>这里使用Ubuntu19.04提取Code/acpi，并找到有效节点<br>做成系统启动u盘之后，开机选择启动项，用livecd（不用安装）启动系统</p>
 <p>这样启动的系统root密码为空，可以用<code>sudo passwd root</code>来设置密码</p>
 <h3 id="提取Codec-acpi"><a href="#提取Codec-acpi" class="headerlink" title="提取Codec/acpi"></a>提取Codec/acpi</h3><p>组合键<code>CTRL+ALT+t</code>打开终端</p>
-<pre><code class="bash">cd ~/Desktop/ # 进入用户桌面
-cp /proc/asound/card0/codec* . # 将codec开头的文件复制到当时位置
-sudo cp -R /sys/firmware/acpi/tables .  # 将acpi/tables目录复制到当时位置,tables目录包括了全部的DSDT和SSDT
-ll   # 列表
-sudo chown -R ubuntu:ubuntu *   # 将当前目录下所有文件及目录所有人修改为ubuntu
-ll   # 列表</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Desktop/ <span class="comment"># 进入用户桌面</span></span><br><span class="line">cp /proc/asound/card0/codec* . <span class="comment"># 将codec开头的文件复制到当时位置</span></span><br><span class="line">sudo cp -R /sys/firmware/acpi/tables .  <span class="comment"># 将acpi/tables目录复制到当时位置,tables目录包括了全部的DSDT和SSDT</span></span><br><span class="line">ll   <span class="comment"># 列表</span></span><br><span class="line">sudo chown -R ubuntu:ubuntu *   <span class="comment"># 将当前目录下所有文件及目录所有人修改为ubuntu</span></span><br><span class="line">ll   <span class="comment"># 列表</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="找出有效节点"><a href="#找出有效节点" class="headerlink" title="找出有效节点"></a>找出有效节点</h3><p>终端输入<code>dmesg | grep snd_hda_codec_realtek</code>结果如下</p>
-<pre><code class="bash">ubuntu@ubuntu:~$ dmesg | grep snd_hda_codec_realtek
-[   19.282672] snd_hda_codec_realtek hdaudioC0D0: autoconfig for ALC671: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:line
-[   19.282673] snd_hda_codec_realtek hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
-[   19.282674] snd_hda_codec_realtek hdaudioC0D0:    hp_outs=1 (0x21/0x0/0x0/0x0/0x0)
-[   19.282675] snd_hda_codec_realtek hdaudioC0D0:    mono: mono_out=0x0
-[   19.282675] snd_hda_codec_realtek hdaudioC0D0:    inputs:
-[   19.282676] snd_hda_codec_realtek hdaudioC0D0:      Mic=0x18
-[   19.282676] snd_hda_codec_realtek hdaudioC0D0:      Line=0x1b
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu:~$ dmesg | grep snd_hda_codec_realtek</span><br><span class="line">[   19.282672] snd_hda_codec_realtek hdaudioC0D0: autoconfig <span class="keyword">for</span> ALC671: line_outs=1 (0x14/0x0/0x0/0x0/0x0) <span class="built_in">type</span>:line</span><br><span class="line">[   19.282673] snd_hda_codec_realtek hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)</span><br><span class="line">[   19.282674] snd_hda_codec_realtek hdaudioC0D0:    hp_outs=1 (0x21/0x0/0x0/0x0/0x0)</span><br><span class="line">[   19.282675] snd_hda_codec_realtek hdaudioC0D0:    mono: mono_out=0x0</span><br><span class="line">[   19.282675] snd_hda_codec_realtek hdaudioC0D0:    inputs:</span><br><span class="line">[   19.282676] snd_hda_codec_realtek hdaudioC0D0:      Mic=0x18</span><br><span class="line">[   19.282676] snd_hda_codec_realtek hdaudioC0D0:      Line=0x1b</span><br></pre></td></tr></table></figure>
+
 <p>经过整理，有效节点为</p>
 <ul>
 <li>0x14 Speakerout</li>
@@ -241,38 +237,8 @@ ll   # 列表</code></pre>
 <li>0x1b Line in</li>
 </ul>
 <p>这种方法比在Mac下通过<code>verbit.sh codec#0</code>提取信息再整理有效节点方便得多，也不会出错:<br>注意这里Address: 0，后面会用上</p>
-<pre><code class="bash">user$./verbit.sh codec#0
-Verbs from Linux Codec Dump File: codec#0
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">user$./verbit.sh codec<span class="comment">#0</span></span><br><span class="line">Verbs from Linux Codec Dump File: codec<span class="comment">#0</span></span><br><span class="line"></span><br><span class="line">Codec: Realtek ALC671   Address: 0   DevID: 283903601 (0x10ec0671)</span><br><span class="line"></span><br><span class="line">   Jack   Color  Description                  Node     PinDefault             Original Verbs</span><br><span class="line">--------------------------------------------------------------------------------------------------------</span><br><span class="line">Unknown Unknown  Line Out at Ext N/A         18 0x12   0x40000000   01271c00 01271d00 01271e00 01271f40</span><br><span class="line">    1/8   Green  Line Out at Ext Rear        20 0x14   0x01014010   01471c10 01471d40 01471e01 01471f01</span><br><span class="line">    1/8   Black  Speaker at Ext Rear         23 0x17   0x411111f0   01771cf0 01771d11 01771e11 01771f41</span><br><span class="line"> Mic at Ext Rear    0x18 0x18                        27365440 01871c40 01871d90     01871ea1 01871f01  </span><br><span class="line">    1/8   Black  Speaker at Ext Rear         25 0x19   0x411111f0   01971cf0 01971d11 01971e11 01971f41</span><br><span class="line">    1/8   Black  Speaker at Ext Rear         26 0x1a   0x411111f0   01a71cf0 01a71d11 01a71e11 01a71f41</span><br><span class="line"> Line In at Ext Rear    0x1b 0x1b                        25243696 01b71c30 01b71d30     01b71e81 01b71f01  </span><br><span class="line">  ATAPI   Green  SPDIF Out at Ext N/A        29 0x1d   0x40434601   01d71c01 01d71d46 01d71e43 01d71f40</span><br><span class="line">    1/8   Black  Speaker at Ext Rear         30 0x1e   0x411111f0   01e71cf0 01e71d11 01e71e11 01e71f41</span><br><span class="line">    1/8   Black  HP Out at Ext Front         33 0x21   0x02211020   02171c20 02171d10 02171e21 02171f02</span><br><span class="line">--------------------------------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   Jack   Color  Description                  Node     PinDefault             Modified Verbs</span><br><span class="line">--------------------------------------------------------------------------------------------------------</span><br><span class="line">Unknown Unknown  Line Out at Ext N/A         18 0x12   0x40000000   01271c00 01271d00 01271e00 01271f40</span><br><span class="line">    1/8   Green  Line Out at Ext Rear        20 0x14   0x01014010   01471c50 01471d40 01471e01 01471f01</span><br><span class="line"> Mic at Ext Rear    0x18 0x18                        27365440 01871c40 01871d90     01871ea1 01871f01  </span><br><span class="line"> Line In at Ext Rear    0x1b 0x1b                        25243696 01b71c30 01b71d30     01b71e81 01b71f01  </span><br><span class="line">  ATAPI   Green  SPDIF Out at Ext N/A        29 0x1d   0x40434601   01d71c60 01d71d40 01d71e43 01d71f40</span><br><span class="line">    1/8   Black  HP Out at Ext Front         33 0x21   0x02211020   02171c20 02171d10 02171e21 02171f01</span><br><span class="line">--------------------------------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Modified Verbs <span class="keyword">in</span> One Line: 01271c00 01271d00 01271e00 01271f40 01471c50 01471d40 01471e01 01471f01 01871c40 01871d90 01871ea1 01871f01 01b71c30 01b71d30 01b71e81 01b71f01 01d71c60 01d71d40 01d71e43 01d71f40 02171c20 02171d10 02171e21 02171f01</span><br><span class="line">--------------------------------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
 
-Codec: Realtek ALC671   Address: 0   DevID: 283903601 (0x10ec0671)
-
-   Jack   Color  Description                  Node     PinDefault             Original Verbs
---------------------------------------------------------------------------------------------------------
-Unknown Unknown  Line Out at Ext N/A         18 0x12   0x40000000   01271c00 01271d00 01271e00 01271f40
-    1/8   Green  Line Out at Ext Rear        20 0x14   0x01014010   01471c10 01471d40 01471e01 01471f01
-    1/8   Black  Speaker at Ext Rear         23 0x17   0x411111f0   01771cf0 01771d11 01771e11 01771f41
- Mic at Ext Rear    0x18 0x18                        27365440 01871c40 01871d90     01871ea1 01871f01  
-    1/8   Black  Speaker at Ext Rear         25 0x19   0x411111f0   01971cf0 01971d11 01971e11 01971f41
-    1/8   Black  Speaker at Ext Rear         26 0x1a   0x411111f0   01a71cf0 01a71d11 01a71e11 01a71f41
- Line In at Ext Rear    0x1b 0x1b                        25243696 01b71c30 01b71d30     01b71e81 01b71f01  
-  ATAPI   Green  SPDIF Out at Ext N/A        29 0x1d   0x40434601   01d71c01 01d71d46 01d71e43 01d71f40
-    1/8   Black  Speaker at Ext Rear         30 0x1e   0x411111f0   01e71cf0 01e71d11 01e71e11 01e71f41
-    1/8   Black  HP Out at Ext Front         33 0x21   0x02211020   02171c20 02171d10 02171e21 02171f02
---------------------------------------------------------------------------------------------------------
-
-
-   Jack   Color  Description                  Node     PinDefault             Modified Verbs
---------------------------------------------------------------------------------------------------------
-Unknown Unknown  Line Out at Ext N/A         18 0x12   0x40000000   01271c00 01271d00 01271e00 01271f40
-    1/8   Green  Line Out at Ext Rear        20 0x14   0x01014010   01471c50 01471d40 01471e01 01471f01
- Mic at Ext Rear    0x18 0x18                        27365440 01871c40 01871d90     01871ea1 01871f01  
- Line In at Ext Rear    0x1b 0x1b                        25243696 01b71c30 01b71d30     01b71e81 01b71f01  
-  ATAPI   Green  SPDIF Out at Ext N/A        29 0x1d   0x40434601   01d71c60 01d71d40 01d71e43 01d71f40
-    1/8   Black  HP Out at Ext Front         33 0x21   0x02211020   02171c20 02171d10 02171e21 02171f01
---------------------------------------------------------------------------------------------------------
-
-Modified Verbs in One Line: 01271c00 01271d00 01271e00 01271f40 01471c50 01471d40 01471e01 01471f01 01871c40 01871d90 01871ea1 01871f01 01b71c30 01b71d30 01b71e81 01b71f01 01d71c60 01d71d40 01d71e43 01d71f40 02171c20 02171d10 02171e21 02171f01
---------------------------------------------------------------------------------------------------------</code></pre>
 <h2 id="整理有效路径"><a href="#整理有效路径" class="headerlink" title="整理有效路径"></a>整理有效路径</h2><p>先把之前的数据整理成表格</p>
 <table>
 <thead>
@@ -304,39 +270,15 @@ Modified Verbs in One Line: 01271c00 01271d00 01271e00 01271f40 01471c50 01471d4
 </tr>
 </tbody></table>
 <h3 id="生成路径图"><a href="#生成路径图" class="headerlink" title="生成路径图"></a>生成路径图</h3><p>使用<a href="http://helllabs.org/codecgraph/codecgraph-20120114.tar.gz" target="_blank" rel="noopener">codecgraph</a>生成pathmap图</p>
-<pre><code class="bash"># 准备codecgraph命令
-brew install graphviz
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 准备codecgraph命令</span></span><br><span class="line">brew install graphviz</span><br></pre></td></tr></table></figure>
+
 <p>graphviz环境两天没下载成功，只好寻找其他解决办法，还真有</p>
 <h3 id="getdump获取节点"><a href="#getdump获取节点" class="headerlink" title="getdump获取节点"></a>getdump获取节点</h3><p><a href="https://github.com/daliansky/VoodooHDA-2.9.0-Clover-V10/raw/master/getdump" target="_blank" rel="noopener">gitdump</a>是万能声卡驱动VoodooHDA自带的程序</p>
-<pre><code class="bash">sudo cp ~/Downloads/getdump /usr/local/bin  # 将getdump命令复制到/usr/local/bin目录下
-sudo chmod +x /usr/local/bin/getdump        # 为getdump添加执行权限
-getdump &gt; ~/Desktop/voodoo_dump.txt</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ~/Downloads/getdump /usr/<span class="built_in">local</span>/bin  <span class="comment"># 将getdump命令复制到/usr/local/bin目录下</span></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/getdump    	<span class="comment"># 为getdump添加执行权限</span></span><br><span class="line">getdump &gt; ~/Desktop/voodoo_dump.txt</span><br></pre></td></tr></table></figure>
+
 <p>用它可以生成一份<code>voodoo_dump.txt</code>的文件,里面会有两段以<code>DUMPING Playback/Record Paths</code>开头的文字描述,这里面即包括了有效节点,同时也包括了有效的路径，问题迎刃而解</p>
-<pre><code>+-------------------------------+
-| DUMPING Playback/Record Paths |
-+-------------------------------+
-
-Playback:
-
-    nid=33 [pin: Headphones (Black Front)]
-      |
-      + &lt;- nid=13 [audio mixer] [src: mix] bindSeq=00000001
-
-             |
-             + &lt;- nid=3 [audio output] [src: pcm] bindSeq=00000001
-
-
-Record:
-
-    nid=9 [audio input]
-      |
-      + &lt;- nid=34 [audio selector] [src: speaker, mic] bindSeq=00000001
-
-             |
-             + &lt;- nid=24 [pin: Microphone (Pink Rear)] [src: mic] bindSeq=00000001
-
-             + &lt;- nid=29 [beep widget]</code></pre><table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">+-------------------------------+</span><br><span class="line">| DUMPING Playback&#x2F;Record Paths |</span><br><span class="line">+-------------------------------+</span><br><span class="line"></span><br><span class="line">Playback:</span><br><span class="line"></span><br><span class="line">    nid&#x3D;33 [pin: Headphones (Black Front)]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;13 [audio mixer] [src: mix] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">             |</span><br><span class="line">             + &lt;- nid&#x3D;3 [audio output] [src: pcm] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Record:</span><br><span class="line"></span><br><span class="line">    nid&#x3D;9 [audio input]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;34 [audio selector] [src: speaker, mic] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">             |</span><br><span class="line">             + &lt;- nid&#x3D;24 [pin: Microphone (Pink Rear)] [src: mic] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">             + &lt;- nid&#x3D;29 [beep widget]</span><br></pre></td></tr></table></figure>
+<table>
 <thead>
 <tr>
 <th>有效节点</th>
@@ -352,48 +294,9 @@ Record:
 <td>33-&gt;13-&gt;3</td>
 </tr>
 </tbody></table>
-<pre><code>+-------------------------------+
-| DUMPING Playback/Record Paths |
-+-------------------------------+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">+-------------------------------+</span><br><span class="line">| DUMPING Playback&#x2F;Record Paths |</span><br><span class="line">+-------------------------------+</span><br><span class="line"></span><br><span class="line">Playback:</span><br><span class="line"></span><br><span class="line">    nid&#x3D;20 [pin: Line-out (Green Rear)]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;12 [audio mixer] [src: mix] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">             |</span><br><span class="line">             + &lt;- nid&#x3D;2 [audio output] [src: pcm] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Record:</span><br><span class="line"></span><br><span class="line">    nid&#x3D;8 [audio input]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;35 [audio mixer] [src: mix] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">             |</span><br><span class="line">             + &lt;- nid&#x3D;27 [pin: Line-in (Blue Rear)] [src: line] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">             + &lt;- nid&#x3D;29 [beep widget]</span><br><span class="line"></span><br><span class="line">Input Mix:</span><br><span class="line"></span><br><span class="line">    nid&#x3D;12 [audio mixer]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;2 [audio output] [src: pcm] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    nid&#x3D;13 [audio mixer]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;3 [audio output] [src: pcm] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    nid&#x3D;35 [audio mixer]</span><br><span class="line">      |</span><br><span class="line">      + &lt;- nid&#x3D;27 [pin: Line-in (Blue Rear)] [src: line] bindSeq&#x3D;00000001</span><br><span class="line"></span><br><span class="line">      + &lt;- nid&#x3D;29 [beep widget]</span><br></pre></td></tr></table></figure>
 
-Playback:
-
-    nid=20 [pin: Line-out (Green Rear)]
-      |
-      + &lt;- nid=12 [audio mixer] [src: mix] bindSeq=00000001
-
-             |
-             + &lt;- nid=2 [audio output] [src: pcm] bindSeq=00000001
-
-
-Record:
-
-    nid=8 [audio input]
-      |
-      + &lt;- nid=35 [audio mixer] [src: mix] bindSeq=00000001
-
-             |
-             + &lt;- nid=27 [pin: Line-in (Blue Rear)] [src: line] bindSeq=00000001
-
-             + &lt;- nid=29 [beep widget]
-
-Input Mix:
-
-    nid=12 [audio mixer]
-      |
-      + &lt;- nid=2 [audio output] [src: pcm] bindSeq=00000001
-
-
-    nid=13 [audio mixer]
-      |
-      + &lt;- nid=3 [audio output] [src: pcm] bindSeq=00000001
-
-
-    nid=35 [audio mixer]
-      |
-      + &lt;- nid=27 [pin: Line-in (Blue Rear)] [src: line] bindSeq=00000001
-
-      + &lt;- nid=29 [beep widget]</code></pre><table>
+<table>
 <thead>
 <tr>
 <th>有效节点</th>
@@ -415,13 +318,11 @@ Input Mix:
 <p>LayoutID:15<br><code>21771C10 21771D00 21771E13 21771F90 21471C20 21471D10 21471E21 21471F02 21470C02 22171C30 22171D40 22171E11 22171F91 22170C02 21971C50 21971D10 21971E81 21971F02 21871C60 21871D30 21871E81 21871F01</code></p>
 <p>整理一下</p>
 <p>12</p>
-<pre><code>01871C20 01871D30 01871E81 01871F01 
-02171C30 02171D40 02171E01 02171F01 02170C02 </code></pre><p>节点为<code>0x18 0x21</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">01871C20 01871D30 01871E81 01871F01 </span><br><span class="line">02171C30 02171D40 02171E01 02171F01 02170C02</span><br></pre></td></tr></table></figure>
+<p>节点为<code>0x18 0x21</code></p>
 <p>15</p>
-<pre><code>21771C10 21771D00 21771E13 21771F90 21471C20 21471D10 21471E21 21471F02 21470C02 
-22171C30 22171D40 22171E11 22171F91 22170C02 
-21971C50 21971D10 21971E81 21971F02 
-21871C60 21871D30 21871E81 21871F01 </code></pre><p>节点为<code>0x21 0x22 0x21 0x21</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">21771C10 21771D00 21771E13 21771F90 21471C20 21471D10 21471E21 21471F02 21470C02 </span><br><span class="line">22171C30 22171D40 22171E11 22171F91 22170C02 </span><br><span class="line">21971C50 21971D10 21971E81 21971F02 </span><br><span class="line">21871C60 21871D30 21871E81 21871F01</span><br></pre></td></tr></table></figure>
+<p>节点为<code>0x21 0x22 0x21 0x21</code></p>
 <p>怪不得注入这两个id声卡没反应，原来这俩和我们的情况不一样</p>
 <h3 id="提取并整理自己的"><a href="#提取并整理自己的" class="headerlink" title="提取并整理自己的"></a>提取并整理自己的</h3><h4 id="整理格式"><a href="#整理格式" class="headerlink" title="整理格式"></a>整理格式</h4><p>翻出之前的<code>ALC671_dump.txt</code>整理一下格式</p>
 <ul>
@@ -430,17 +331,8 @@ Input Mix:
 <li>[N/A]是其它未知设备</li>
 </ul>
 <p><code>0x411111f0</code>是名字后面带<code>N/A</code>的是[N/A]，因为是台式机没有内部设备，剩下的是[Jack]。<br>两个Jack设备刚好和之前整理的表格对上了</p>
-<pre><code>   Jack   Color  Description                  Node     PinDefault  
--------------------------------------------------------------------
-Unknown Unknown  [N/A]  Line Out             18 0x12   0x40000000  
-    1/8   Green  [Jack] Line Out             20 0x14   0x01014010  
-    1/8   Black  [N/A]  Speaker at Ext Rear  23 0x17   0x411111f0  
-    1/8   Black  [N/A]  Speaker at Ext Rear  25 0x19   0x411111f0  
-    1/8   Black  [N/A]  Speaker at Ext Rear  26 0x1a   0x411111f0  
-  ATAPI   Green  [N/A]  SPDIF Out at Ext N/A 29 0x1d   0x40434601  
-    1/8   Black  [N/A]  Speaker at Ext Rear  30 0x1e   0x411111f0  
-    1/8   Black  [Jack] HP Out               33 0x21   0x02211020  
--------------------------------------------------------------------</code></pre><p>将<code>PinDefault</code>进行小端转换<br>把 0x40000000拆成 0x 40 00 00 00，去掉0x再调换顺序即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   Jack   Color  Description                  Node     PinDefault  </span><br><span class="line">-------------------------------------------------------------------</span><br><span class="line">Unknown Unknown  [N&#x2F;A]  Line Out             18 0x12   0x40000000  </span><br><span class="line">    1&#x2F;8   Green  [Jack] Line Out             20 0x14   0x01014010  </span><br><span class="line">    1&#x2F;8   Black  [N&#x2F;A]  Speaker at Ext Rear  23 0x17   0x411111f0  </span><br><span class="line">    1&#x2F;8   Black  [N&#x2F;A]  Speaker at Ext Rear  25 0x19   0x411111f0  </span><br><span class="line">    1&#x2F;8   Black  [N&#x2F;A]  Speaker at Ext Rear  26 0x1a   0x411111f0  </span><br><span class="line">  ATAPI   Green  [N&#x2F;A]  SPDIF Out at Ext N&#x2F;A 29 0x1d   0x40434601  </span><br><span class="line">    1&#x2F;8   Black  [N&#x2F;A]  Speaker at Ext Rear  30 0x1e   0x411111f0  </span><br><span class="line">    1&#x2F;8   Black  [Jack] HP Out               33 0x21   0x02211020  </span><br><span class="line">-------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<p>将<code>PinDefault</code>进行小端转换<br>把 0x40000000拆成 0x 40 00 00 00，去掉0x再调换顺序即可</p>
 <table>
 <thead>
 <tr>
@@ -542,19 +434,11 @@ Unknown Unknown  [N/A]  Line Out             18 0x12   0x40000000
 </tr>
 </tbody></table>
 <h4 id="整理数据"><a href="#整理数据" class="headerlink" title="整理数据"></a>整理数据</h4><p>最终<code>ConfigData</code>的计算公式为:</p>
-<pre><code>Final Config:
-Address + Node + 71c +【c】
-Address + Node + 71d +【d】
-Address + Node + 71e +【e】
-Address + Node + 71f +【f】</code></pre><p>整理出来之后</p>
-<pre><code>01271cf0 01271d00 01271e00 01271f40
-01471c10 01471d40 01471e01 01471f01
-01771cf0 01771d00 01771e00 01771f40
-01971cf0 01971d00 01971e00 01971f40
-01a71cf0 01a71d00 01a71e00 01a71f40
-01d71cf0 01d71d00 01d71e00 01d71f40
-01e71cf0 01e71d00 01e71e00 01e71f40
-02171c20 02171d10 02171e21 02171f02 02170c02 </code></pre><p>可以发现最后一行多了一段，因为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Final Config:</span><br><span class="line">Address + Node + 71c +【c】</span><br><span class="line">Address + Node + 71d +【d】</span><br><span class="line">Address + Node + 71e +【e】</span><br><span class="line">Address + Node + 71f +【f】</span><br></pre></td></tr></table></figure>
+<p>整理出来之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">01271cf0 01271d00 01271e00 01271f40</span><br><span class="line">01471c10 01471d40 01471e01 01471f01</span><br><span class="line">01771cf0 01771d00 01771e00 01771f40</span><br><span class="line">01971cf0 01971d00 01971e00 01971f40</span><br><span class="line">01a71cf0 01a71d00 01a71e00 01a71f40</span><br><span class="line">01d71cf0 01d71d00 01d71e00 01d71f40</span><br><span class="line">01e71cf0 01e71d00 01e71e00 01e71f40</span><br><span class="line">02171c20 02171d10 02171e21 02171f02 02170c02</span><br></pre></td></tr></table></figure>
+
+<p>可以发现最后一行多了一段，因为</p>
 <blockquote>
 <p>具有<code>EAPD</code>的节点需要添加参数<code>SET_EAPD_BTLENABLE</code>,转换成数值为<code>0x70c</code>,完整的数值为:<code>Address</code>+<code>节点</code>+<code>70c</code>+<code>02</code>,即:<code>01470c02</code>,它通过<code>hda-verb</code>可以执行,比如<code>CodecCommander</code>就是调用的<code>hda-verb</code>执行的命令.<br>一个简单判断<code>EAPD</code>节点的方法:那就是它通常会位于<code>Speaker Out</code>和<code>HP Out</code>这两个输出节点上.至于其它教程提到过的关于<code>01470c02</code>是组神奇的代码,可以让外放发声的说法是错误的,它可能刚好声卡的<code>Speaker Out</code>的输出节点是<code>0x14</code>而已.如果您的<code>Speaker Out</code>输出节点是<code>0x16</code>,那么就需要把它修改为<code>01670c02</code>,当然要遵守这个公式:<code>Address</code>+<code>节点</code>+<code>71c</code>+<code>02</code></p>
 </blockquote>
@@ -622,7 +506,7 @@ var dsqjs = new DisqusJS({
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
-<!--<script src="/js/app.js?v=1583520209656"></script>-->
+<!--<script src="/js/app.js?v=1583688921591"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
