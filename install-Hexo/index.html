@@ -49,7 +49,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1583692510284">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584190638908">-->
 
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -81,7 +81,7 @@
     <div class="nexmoe-count">
         <div><span>文章</span>11</div>
         <!--<div><span>标签</span>0</div>-->
-        <div><span>字数</span>8.5k</div>
+        <div><span>字数</span>8.4k</div>
         <div><span>分类</span>5</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -242,16 +242,15 @@
 <li><a href="http://git-scm.com/" target="_blank" rel="noopener" title="Git">Git</a></li>
 </ul>
 <p>mac系统可以用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener" title="homebrew">homebrew</a>安装</p>
-<h2 id="安装到本地（Mac）"><a href="#安装到本地（Mac）" class="headerlink" title="安装到本地（Mac）"></a>安装到本地（Mac）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="安装到本地（Mac）"><a href="#安装到本地（Mac）" class="headerlink" title="安装到本地（Mac）"></a>安装到本地（Mac）</h2><pre><code class="bash">$ npm install hexo-cli -g</code></pre>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/11/4gmF9XLJh3KENIy.png" alt="1" class="lazyload"></p>
 <p>在电脑中选好一个存放博客的路径 然后</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog <span class="comment">#‘blog’可以自定义</span></span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ hexo init blog #‘blog’可以自定义
+$ cd blog</code></pre>
 <p>显示<code>Start blogging with Hexo!</code>则安装成功</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/11/FITCq2MoQvLjt4Z.png" alt="2" class="lazyload"></p>
 <p>启动本地服务器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ hexo s</code></pre>
 <p>如果出现</p>
 <blockquote>
 <p>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> . Press Ctrl+C to stop.</p>
@@ -259,26 +258,60 @@
 <p>则代表正常启动，它就是属于你的博客，接下来就要修改内容了</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/PsXWH5Tqoyr4zS6.png" alt="3" class="lazyload"></p>
 <p>如果端口被占用有几种办法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">方法1 (Mac)</span><br><span class="line">lsof -i tcp:4000 <span class="comment">#查看端口4000被谁占用</span></span><br><span class="line"><span class="built_in">kill</span> &lt;PID&gt; <span class="comment">#杀死对应进程PID</span></span><br><span class="line"></span><br><span class="line">方法2</span><br><span class="line">hexo server -p &lt;port&gt; <span class="comment">#在其他端口运行</span></span><br><span class="line"></span><br><span class="line">方法3</span><br><span class="line">reboot <span class="comment">#重启你的电脑</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash">方法1 (Mac)
+lsof -i tcp:4000 #查看端口4000被谁占用
+kill &lt;PID&gt; #杀死对应进程PID
 
+方法2
+hexo server -p &lt;port&gt; #在其他端口运行
+
+方法3
+reboot #重启你的电脑</code></pre>
 <h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>按照自己的需求更改<code>../blog/_config.yml</code>中内容，以下是我的配置，主要内容已注释</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;configuration.html</span><br><span class="line">## Source: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo&#x2F;</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: feios time #网站标题</span><br><span class="line">subtitle: &#39;&#39; #网站副标题</span><br><span class="line">description: &#39;feios time&#39; #网站描述</span><br><span class="line">keywords: feios,blog #网站的关键词。使用半角逗号 , 分隔多个关键词。</span><br><span class="line">author: feios #您的名字</span><br><span class="line">language: zh-CN #网站使用的语言</span><br><span class="line">timezone: &#39;Asia&#x2F;Shanghai&#39; #时区</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: http:&#x2F;&#x2F;www.feios.me</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :title&#x2F; #默认 :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br></pre></td></tr></table></figure>
+<pre><code class="ymal"># Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
+# Site
+title: feios time #网站标题
+subtitle: &#39;&#39; #网站副标题
+description: &#39;feios time&#39; #网站描述
+keywords: feios,blog #网站的关键词。使用半角逗号 , 分隔多个关键词。
+author: feios #您的名字
+language: zh-CN #网站使用的语言
+timezone: &#39;Asia/Shanghai&#39; #时区
+
+# URL
+## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39;
+url: http://www.feios.me
+root: /
+permalink: :title/ #默认 :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
+  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</code></pre>
 <p>按照上面的配置修改完之后变成这样，已经有你的样子了。但是不是觉得还少了点什么呢？</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/DZA35SKiQg9YldC.png" alt="4" class="lazyload"></p>
 <p>没错，还缺一个自己喜欢的主题</p>
 <h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>以下是我找主题的几个地方<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener" title="Themes | Hexo">Hexo | Themes</a><br><a href="https://blog.csdn.net/zgd826237710/article/details/99671027" target="_blank" rel="noopener" title="CSDN | Hexo 好看的主题推荐">CSDN | Hexo 好看的主题推荐</a><br><a href="https://www.zhihu.com/question/24422335/answers/updated" target="_blank" rel="noopener" title="知乎 | 有哪些好看的 Hexo 主题？">知乎 | 有哪些好看的 Hexo 主题？</a></p>
 <p>接下来以我选择的Nexmoe主题为例，按照文档执行以下操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd themes # 载入主题目录</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;nexmoe&#x2F;hexo-theme-nexmoe.git nexmoe # 安装</span><br><span class="line">cd nexmoe # 进入 Nexmoe 主题目录</span><br><span class="line">npm i --save hexo-wordcount</span><br><span class="line"># Node 版本 7.6.0 之前,请安装 2.x 版本 (Node.js v7.6.0 and previous) </span><br><span class="line"># npm install hexo-wordcount@2 --save</span><br><span class="line">cp -i _config.example.yml _config.yml</span><br></pre></td></tr></table></figure>
-
+<pre><code class="ymal">cd themes # 载入主题目录
+git clone https://github.com/nexmoe/hexo-theme-nexmoe.git nexmoe # 安装
+cd nexmoe # 进入 Nexmoe 主题目录
+npm i --save hexo-wordcount
+# Node 版本 7.6.0 之前,请安装 2.x 版本 (Node.js v7.6.0 and previous) 
+# npm install hexo-wordcount@2 --save
+cp -i _config.example.yml _config.yml</code></pre>
 <p>参考文档：<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener" title="主题Github">Nexmoe Github</a> | <a href="https://docs.nexmoe.com/" target="_blank" rel="noopener" title="主题文档">Nexmoe Docs</a></p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/ta9sAYqQXRiBoJL.png" alt="5" class="lazyload"></p>
 <p>在站点配置文件<code>_config.yml</code>中修改主题为我们刚安装好的主题<code>nexmoe</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: nexmoe</span><br></pre></td></tr></table></figure>
-
+<pre><code class="ymal"># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: nexmoe</code></pre>
 <p>因为这主题内置代码高亮，为了避免冲突需要禁用<code>_config.yml</code>中的highlight</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: false</span><br></pre></td></tr></table></figure>
-
+<pre><code class="ymal">highlight:
+  enable: false </code></pre>
 <p>重启Hexo服务</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/dm61pzkfPJrsCgv.png" alt="6" class="lazyload"></p>
 <h2 id="Github-page"><a href="#Github-page" class="headerlink" title="Github page"></a>Github page</h2><h3 id="1-注册Github"><a href="#1-注册Github" class="headerlink" title="1.注册Github"></a>1.<a href="https://github.com" target="_blank" rel="noopener" title="注册Github">注册Github</a></h3><h3 id="2-新建repository"><a href="#2-新建repository" class="headerlink" title="2.新建repository"></a>2.新建repository</h3><p>界面右上角+号<br><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/m7BhxZeSLrMwcVO.png" alt="7" class="lazyload"></p>
@@ -294,35 +327,36 @@
 <h3 id="5-clone到Github"><a href="#5-clone到Github" class="headerlink" title="5.clone到Github"></a>5.clone到Github</h3><p><del><a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener" title="Hexo官网教程">Hexo官网教程</a></del><br>因为现在github只能把页面部署在master分支，所以官网通过机器人通过clone到master的文件部署到gh-page的方法已经不能用了</p>
 <p>现在的办法是连接Hexo和git，分两部分：Hexo的设置和通过git连接到github，这时候git的作用就体现出来了。</p>
 <p>在站点配置文件<code>_config.yml</code>底部找到并修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:feiosme&#x2F;feiosme.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
+<pre><code class="ymal"># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:feiosme/feiosme.github.io.git
+  branch: master</code></pre>
 <p><code>repo</code>这一栏可以到github repository页面clone or download中找到<br><strong>注意：</strong>这个弹窗默认是HTTPS链接，点击右上角use SSH（图中因为已经是SSH界面，所以右上角是use HTTPS）</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/1qGH6CMpn3kZaAu.png" alt="11" class="lazyload"></p>
 <p>在终端<code>blog</code>目录中运行如下命令,安装连接插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ npm install hexo-deployer-git --save</code></pre>
 <p>到这一步Hexo这边设置好了<br>开始设置git连接到Github的部分</p>
 <p>如果是第一次用git，需要先设置用户名和邮箱，和github账号一致</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"githubusename"</span></span><br><span class="line">$ git config --global user.email githubusename@example.com</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ git config --global user.name &quot;githubusename&quot;
+$ git config --global user.email githubusename@example.com</code></pre>
 <p>使用ssh-keygen生成私钥和公钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ ssh-keygen -t rsa</code></pre>
 <p>如果不知道什么意思，一路回车就可以了</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/TxaYuBhtUqNwRlV.png" alt="12" class="lazyload"></p>
 <p>我们得到一个<code>id_rsa.pub</code><br>Github 头像菜单下 Setting - SSH and GPG keys - New SSH Key 中把<code>id_rsa.pub</code>中的内容复制过去</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/UFMgHBenSXYTfx2.png" alt="13" class="lazyload"></p>
 <p>测试是否成功添加ssh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ ssh -T git@github.com</code></pre>
 <p>连接成功是这个样子的</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/z4NXKwnkYjGMT2J.png" alt="14" class="lazyload"></p>
 <p>我们打通了git到GitHub的通道，在前面设置Hexo的步骤中又告诉了Hexo你希望把它部署到Github的哪个repository<br>相当于说明了小区和门牌号，现在可以指哪打哪了</p>
-<h2 id="发布第一篇文章"><a href="#发布第一篇文章" class="headerlink" title="发布第一篇文章"></a>发布第一篇文章</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br><span class="line">例如</span><br><span class="line">$ hexo new 安装Hexo小记 <span class="comment">#如果忽略[layout]会设置成post</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="发布第一篇文章"><a href="#发布第一篇文章" class="headerlink" title="发布第一篇文章"></a>发布第一篇文章</h2><pre><code class="bash">$ hexo new [layout] &lt;title&gt;
+例如
+$ hexo new 安装Hexo小记 #如果忽略[layout]会设置成post</code></pre>
 <p>使用makedown编辑好文章之后</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">$ hexo d -g</code></pre>
 <p>以下是我更新这篇文章的截图</p>
 <p><img data-sizes="auto" data-src="https://i.loli.net/2020/01/12/FJ7e5ifm1bS6w2M.png" alt="15" class="lazyload"></p>
 <p>好了，教程到此结束</p>
@@ -389,7 +423,7 @@ var dsqjs = new DisqusJS({
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
-<!--<script src="/js/app.js?v=1583692510291"></script>-->
+<!--<script src="/js/app.js?v=1584190638915"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
