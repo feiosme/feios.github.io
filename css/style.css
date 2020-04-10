@@ -232,18 +232,22 @@ body {
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0px;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: all 0.35s;
   position: relative;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li a {
   padding: 14px 10px;
   display: block;
   color: #606266;
+}
+#nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li:hover {
+  background-color: rgba(0,0,0,0.067);
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li:last-child {
   border-bottom: none;
