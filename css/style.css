@@ -927,7 +927,6 @@ article table {
   box-shadow: 0 0 0 1px #eee;
   display: inline-block;
   max-width: 100%;
-  overflow: auto;
   white-space: nowrap;
   margin: auto;
   border-radius: 6px;

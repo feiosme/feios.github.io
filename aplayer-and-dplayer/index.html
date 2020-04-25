@@ -29,10 +29,12 @@
   <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
   <link rel="stylesheet" href="/css/style.css" crossorigin>
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" crossorigin>
+  <link rel="manifest" href="/pwa/manifest.json">
+
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1587820744482">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1587836120717">-->
 
   
 
@@ -44,7 +46,7 @@
 <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
 <script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
 <script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
-<script src="/assets/js/DPlayer.min.js"></script></head>
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
 
 <body class="mdui-drawer-body-left">
   
@@ -236,12 +238,12 @@ $ npm install hexo-tag-dplayer --save</code></pre>
 
 &lt;!-- 进阶示例 --&gt;
 {% meting "10755" "netease" "album" "autoplay" "mutex:true" "listmaxheight:340px" "preload:none" "theme:#ad7a86"%}</code></pre>
-    <div id="aplayer-QNlOIBJf" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-xcuVdhDS" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="10755" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 
 
-    <div id="aplayer-ITOmNsXV" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-TFpQIweh" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="10755" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
     ></div>
 
@@ -360,12 +362,12 @@ other:
   src: https://cplayer.js.org/8af423669c27d265bb129d04a927044f.mp3 # 音乐资源链接
 - 188550 # 网易云音乐 ID
 {% endcplayer %}</code></pre>
-    <div id="cplayer-13894423"></div>
+    <div id="cplayer-67210321"></div>
     <script>
       (function(){
         function loadcplayer() {
           if (typeof window.cplayerList === 'undefined') window.cplayerList = {};
-          if (typeof window.cplayerList["cplayer-13894423"] !== 'undefined') return;
+          if (typeof window.cplayerList["cplayer-67210321"] !== 'undefined') return;
           if (!cplayer.prototype.add163) cplayer.prototype.add163 = function add163(id) {
             if (!id) throw new Error("Unable Property.");
             return fetch("https://music.huaji8.top/?id=" + id).then(function(res){return res.json()}).then(function(data){
@@ -382,15 +384,15 @@ other:
             }.bind(this))
           }
 
-          window.cplayerList["cplayer-13894423"] = new cplayer({
-            element: document.getElementById("cplayer-13894423"),
+          window.cplayerList["cplayer-67210321"] = new cplayer({
+            element: document.getElementById("cplayer-67210321"),
             playlist: [{"name":"チルドレンレコード","artist":"96猫,伊東歌詞太郎","poster":"https://cplayer.js.org/801422833716a4f0f96ff6dff1f77dfe.jpg","src":"https://cplayer.js.org/8af423669c27d265bb129d04a927044f.mp3"}],
             generateBeforeElement: true,
             deleteElementAfterGenerate: true,
             autoplay: true
           });
 
-          window.cplayerList["cplayer-13894423"].add163(188550)
+          window.cplayerList["cplayer-67210321"].add163(188550)
         }
         
         if (typeof window.cplayer === 'undefined' && !document.getElementById("cplayer-script")) {
@@ -466,11 +468,12 @@ var dsqjs = new DisqusJS({
 
 
 
-    <!--<script src="/js/zoom-inject.js"></script>-->
+    <script src="/js/zoom-inject.js"></script>
     <script src="/js/zoom.js"></script>
+    <script src="/js/transition.js"></script>
 
 
-<!--<script src="/js/app.js?v=1587820744492"></script>-->
+<!--<script src="/js/app.js?v=1587836120726"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>

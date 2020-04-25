@@ -380,7 +380,7 @@ body.mdui-locked {
   left: -5000px;
   z-index: 2000;
   visibility: hidden;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .2);
   opacity: 0;
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
@@ -390,6 +390,8 @@ body.mdui-locked {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   will-change: opacity;
+  backdrop-filter: saturate(180%) blur(5px);
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
 }
 /* 显示遮罩层 */
 .mdui-overlay-show {
