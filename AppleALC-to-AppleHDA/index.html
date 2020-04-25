@@ -34,7 +34,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1587836120685">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1587837200558">-->
 
   
 
@@ -630,7 +630,7 @@ var dsqjs = new DisqusJS({
     <script src="/js/transition.js"></script>
 
 
-<!--<script src="/js/app.js?v=1587836120695"></script>-->
+<!--<script src="/js/app.js?v=1587837200568"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
@@ -638,6 +638,15 @@ var dsqjs = new DisqusJS({
 
 
 
+
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js", {scope: '/'})
+        .then(registration => console.log('SW Registration Success！Scope: ', registration.scope))
+        .catch(err => console.log('SW Registration Failed! Error: ', err))
+    }
+    </script>
   
     <!-- Google Analytics -->
 <script>
