@@ -17,17 +17,20 @@ $("#nexmoe-content article:not(.nexmoe-py) img[alt^='?']").each(function(){
 */
 
 //所有图片开启灯箱
-$("#nexmoe-content img:not(.LinkCard-image)").each(function() {
-  $(this).attr("data-src", $(this).attr("src"));
-  $(this).attr("src", "");
-  $(this).addClass("lazyload");
-  $(this).attr("referrerPolicy", "no-referrer");
+$("#nexmoe-content article:not(.nexmoe-py) img:not(.LinkCard-image)").each(function() {
+  //$(this).attr("data-src", $(this).attr("src"));
+  //$(this).attr("alt", "");
+  //$(this).addClass("lazyload"); 
+  $(this).attr("data-action", "zoom");
+  $(this).attr("title", "点击图片放大");
+  //$(this).attr("size", "");
+  //$(this).attr("referrerPolicy", "no-referrer");
 });
-
+/**
 $("article:not(.nexmoe-py) img:not(.LinkCard-image)").each(function() {
   if($(this).parent()[0].localName!=="a"){
     var element = document.createElement("a");
-    $(element).attr("data-fancybox", "gallery");
+    $(element).attr("data-action", "zoom");
     $(element).attr("href", $(this).attr("data-src"));
     $(this).wrap(element);
     //$("fancybox.bg")
@@ -35,8 +38,8 @@ $("article:not(.nexmoe-py) img:not(.LinkCard-image)").each(function() {
 
   } 
 });
-
-console.log('fancybox.js')
+ */
+console.log('zoom-inject.js')
 
 
 /**
