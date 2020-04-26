@@ -11,5 +11,9 @@ if (workbox) {
 
     workbox.routing.registerRoute(new RegExp('.*.(?:js|css)'), workbox.strategies.staleWhileRevalidate());
 
-    workbox.routing.registerRoute(new RegExp('https://www.feios.me/'), workbox.strategies.cacheFirst());
+    workbox.routing.registerRoute(new RegExp('^https?://cdn.jsdelivr.net/?$'), workbox.strategies.cacheFirst());
+
+    workbox.routing.registerRoute(new RegExp('^https?://i.loli.net/?$'), workbox.strategies.cacheFirst());
+
+    workbox.routing.registerRoute(new RegExp('^https?://blog-1256021060.cos.ap-shanghai.myqcloud.com/?$'), workbox.strategies.cacheFirst());
 }
