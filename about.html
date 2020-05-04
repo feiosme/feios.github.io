@@ -29,12 +29,12 @@
   <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" />
-  <link rel="manifest" href="/pwa/manifest.json">
+  <link rel="manifest" href="/manifest.json">
 
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1587862829095">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1588619562927">-->
 
   
 
@@ -48,7 +48,7 @@
 <script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
 </head>
 
-<body class="mdui-drawer-body-left">
+<!--<body class="mdui-drawer-body-left">-->
   
   <div id="nexmoe-background">
     <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
@@ -56,7 +56,7 @@
       <div class="mdui-toolbar">
         <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
-        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
         <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios"></a>
        </div>
     </div>
@@ -71,7 +71,7 @@
     <div class="nexmoe-count">
         <div><span>文章</span>14</div>
         <!--<div><span>标签</span>0</div>-->
-        <div><span>字数</span>12.8k</div>
+        <div><span>字数</span>15.7k</div>
         <div><span>分类</span>4</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -215,7 +215,7 @@
 
   <article>
     
-    <div id="aplayer-mCajgmuY" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-KINCknet" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="10755" data-server="netease" data-type="album" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 
@@ -283,7 +283,7 @@ var dsqjs = new DisqusJS({
     <script src="/js/transition.js"></script>
 
 
-<!--<script src="/js/app.js?v=1587862829107"></script>-->
+<!--<script src="/js/app.js?v=1588619562939"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
@@ -295,7 +295,7 @@ var dsqjs = new DisqusJS({
 <script type="text/javascript">
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register("/service-worker.js", {scope: '/'})
+        .register("/sw.js", {scope: '/'})
         .then(registration => console.log('SW Registration Success！Scope: ', registration.scope))
         .catch(err => console.log('SW Registration Failed! Error: ', err))
     }
