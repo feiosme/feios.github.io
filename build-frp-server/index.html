@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>驱动DW1820a网卡 | 成功airdrop, Handoff - feios time</title>
+  <title>搭建frp服务器 - feios time</title>
   <meta charset="UTF-8">
   <meta name="description" content="feios time">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -14,21 +14,19 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
   <meta name="description" content=".LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="驱动DW1820a网卡 | 成功airdrop, Handoff">
-<meta property="og:url" content="https://www.feios.me/To-DW1820a/index.html">
+<meta property="og:title" content="搭建frp服务器">
+<meta property="og:url" content="https://www.feios.me/build-frp-server/index.html">
 <meta property="og:site_name" content="feios time">
 <meta property="og:description" content=".LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2020/04/23/NeIqbMR38ElpgLt.png">
-<meta property="og:image" content="https://i.loli.net/2020/04/23/o6lI3SrZPaWJDqj.png">
-<meta property="og:image" content="https://i.loli.net/2020/04/23/3sITHAnvYuyhJbw.png">
-<meta property="article:published_time" content="2020-04-22T03:34:39.000Z">
-<meta property="article:modified_time" content="2020-05-13T15:23:51.000Z">
+<meta property="og:image" content="https://i.loli.net/2021/02/23/TR59dsJ1hjVEbFe.jpg">
+<meta property="article:published_time" content="2021-02-23T12:11:17.000Z">
+<meta property="article:modified_time" content="2021-02-23T14:46:59.000Z">
 <meta property="article:author" content="feios">
 <meta property="article:tag" content="feios">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/04/23/NeIqbMR38ElpgLt.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/23/TR59dsJ1hjVEbFe.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
   <link rel="stylesheet" href="/css/style.css" />
@@ -38,7 +36,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1614091866183">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1614091866151">-->
 
   
 
@@ -196,16 +194,16 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
   
-      <div class="nexmoe-post-cover mdui-shadow-5" style="padding-bottom: 54.6875%;"> 
-          <img data-src="https://i.loli.net/2020/05/13/U6fiN2s5IrzPAol.png" data-sizes="auto" alt="驱动DW1820a网卡 | 成功airdrop, Handoff" class="lazyload">
-          <h1>驱动DW1820a网卡 | 成功airdrop, Handoff</h1>
+      <div class="nexmoe-post-cover mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="搭建frp服务器" class="lazyload">
+          <h1>搭建frp服务器</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>835 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年02月23日</a>
+    <a><i class="nexmoefont icon-areachart"></i>934 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
 </div>
 
   
@@ -216,7 +214,7 @@
       <div class="nexmoe-fixed">
         <div class="nexmoe-valign">
             <div class="nexmoe-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择网卡"><span class="toc-number">1.</span> <span class="toc-text">选择网卡</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载地址"><span class="toc-number">1.</span> <span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stcp"><span class="toc-number">2.</span> <span class="toc-text">stcp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端"><span class="toc-number">2.1.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端-1"><span class="toc-number">2.2.</span> <span class="toc-text">客户端 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端-2"><span class="toc-number">2.3.</span> <span class="toc-text">客户端 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xtcp"><span class="toc-number">3.</span> <span class="toc-text">xtcp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端-1"><span class="toc-number">3.1.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端-1-1"><span class="toc-number">3.2.</span> <span class="toc-text">客户端 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端-2-1"><span class="toc-number">3.3.</span> <span class="toc-text">客户端 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程守护脚本"><span class="toc-number">4.</span> <span class="toc-text">进程守护脚本</span></a></li></ol>
             </div>
         </div>
       </div>
@@ -225,57 +223,184 @@
 
   <article>
     <p>
-    <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>电脑原装的rtl8821ce不支持Hackintosh，购入Trackpad之后想着不能一直插着线用，需要一个可以驱动的网卡</p>
+    <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>通过frp stcp实现windows远程连接<code>更新中。。。</code></p>
 <a id="more"></a>
 
-<h2 id="选择网卡"><a href="#选择网卡" class="headerlink" title="选择网卡"></a>选择网卡</h2><p>有几种网卡可以选择</p>
-<ul>
-<li>DW1820a</li>
-<li>DW1560 免驱</li>
-<li>BCM94360CD pcie拓展卡 免驱</li>
-</ul>
-<p>最后考虑到价格在黑果小兵那里购入DW1820a，此时这款网卡已经涨价到带运费158元人民币的程度了</p>
-<p><a target="_blank" href="https://blog.daliansky.net/DW1820A_BCM94350ZAE-driver-inserts-the-correct-posture.html" class="LinkCard LinkCard-hasImage mdui-ripple">
-          <span class="LinkCard-backdrop" style="background-image:url(https://i.loli.net/2020/04/23/NeIqbMR38ElpgLt.png);"></span>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a target="_blank" href="https://github.com/fatedier/frp/releases" class="LinkCard LinkCard-noImage mdui-ripple">
+          
           <span class="LinkCard-content">
             <span class="LinkCard-text">
-              <span class="LinkCard-title">插入DW1820a的正确姿势 | 黑果小兵</span>
+              <span class="LinkCard-title">fatedier/frp: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.</span>
               <span class="LinkCard-meta">
                 <span style="display:inline-flex;align-items:center;">​
                   <svg fill="currentColor" viewBox="0 0 24 24" width="17" height="17"><path d="M6.77 17.23c-.905-.904-.94-2.333-.08-3.193l3.059-3.06-1.192-1.19-3.059 3.058c-1.489 1.489-1.427 3.954.138 5.519s4.03 1.627 5.519.138l3.059-3.059-1.192-1.192-3.059 3.06c-.86.86-2.289.824-3.193-.08zm3.016-8.673l1.192 1.192 3.059-3.06c.86-.86 2.289-.824 3.193.08.905.905.94 2.334.08 3.194l-3.059 3.06 1.192 1.19 3.059-3.058c1.489-1.489 1.427-3.954-.138-5.519s-4.03-1.627-5.519-.138L9.786 8.557zm-1.023 6.68c.33.33.863.343 1.177.029l5.34-5.34c.314-.314.3-.846-.03-1.176-.33-.33-.862-.344-1.176-.03l-5.34 5.34c-.314.314-.3.846.03 1.177z" fill-rule="evenodd"></path></svg>
                 </span>
-                blog.daliansky.net
+                github.com
               </span>
             </span>
             <span class="LinkCard-imageCell">
-              <img class="LinkCard-image LinkCard-image-square" alt="图标" src="https://i.loli.net/2020/04/23/NeIqbMR38ElpgLt.png">
+              <span class="LinkCard-image LinkCard-image-default">
+                  <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32"><path d="M11.991 3C7.023 3 3 7.032 3 12s4.023 9 8.991 9C16.968 21 21 16.968 21 12s-4.032-9-9.009-9zm6.237 5.4h-2.655a14.084 14.084 0 0 0-1.242-3.204A7.227 7.227 0 0 1 18.228 8.4zM12 4.836A12.678 12.678 0 0 1 13.719 8.4h-3.438A12.678 12.678 0 0 1 12 4.836zM5.034 13.8A7.418 7.418 0 0 1 4.8 12c0-.621.09-1.224.234-1.8h3.042A14.864 14.864 0 0 0 7.95 12c0 .612.054 1.206.126 1.8H5.034zm.738 1.8h2.655a14.084 14.084 0 0 0 1.242 3.204A7.188 7.188 0 0 1 5.772 15.6zm2.655-7.2H5.772a7.188 7.188 0 0 1 3.897-3.204c-.54.999-.954 2.079-1.242 3.204zM12 19.164a12.678 12.678 0 0 1-1.719-3.564h3.438A12.678 12.678 0 0 1 12 19.164zm2.106-5.364H9.894A13.242 13.242 0 0 1 9.75 12c0-.612.063-1.215.144-1.8h4.212c.081.585.144 1.188.144 1.8 0 .612-.063 1.206-.144 1.8zm.225 5.004c.54-.999.954-2.079 1.242-3.204h2.655a7.227 7.227 0 0 1-3.897 3.204zm1.593-5.004c.072-.594.126-1.188.126-1.8 0-.612-.054-1.206-.126-1.8h3.042c.144.576.234 1.179.234 1.8s-.09 1.224-.234 1.8h-3.042z"></path></svg>
+                  </span>
             </span>
           </span>
           </a></p>
-<center>▲驱动教程</center>
+<h2 id="stcp"><a href="#stcp" class="headerlink" title="stcp"></a>stcp</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>在有外网ip的机器上，</p>
+<pre><code># frps.ini
+
+[common]
+bind_port = 20025
+#bind_udp_port = 20026
+authentication_method = token
+token = token
+tls_only = true
+
+dashboard_port = 8888
+dashboard_user = admin
+dashboard_pwd = admin</code></pre><h3 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端 1"></a>客户端 1</h3><p>在需要通过外网访问的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp_visitor]
+type = stcp
+# stcp 的访问者
+role = visitor
+# 要访问的 stcp 代理的名字
+server_name = frp
+# 只有 sk 一致的用户才能访问到此服务
+sk = token
+# 绑定本地端口用于访问 远程桌面 服务
+bind_addr = 127.0.0.1
+bind_port = 6000
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre><h3 id="客户端-2"><a href="#客户端-2" class="headerlink" title="客户端 2"></a>客户端 2</h3><p>在需要连接远程的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp]
+type = stcp
+sk = token
+local_ip = 127.0.0.1
+local_port = 3389
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre><h2 id="xtcp"><a href="#xtcp" class="headerlink" title="xtcp"></a>xtcp</h2><p>把 <code>frpc.ini</code> 中的 <code>type = stcp</code> 改成 <code>xtcp即可</code></p>
+<h3 id="服务端-1"><a href="#服务端-1" class="headerlink" title="服务端"></a>服务端</h3><p>不变</p>
+<h3 id="客户端-1-1"><a href="#客户端-1-1" class="headerlink" title="客户端 1"></a>客户端 1</h3><p>在需要通过外网访问的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp_visitor]
+type = xtcp
+# stcp 的访问者
+role = visitor
+# 要访问的 stcp 代理的名字
+server_name = frp
+# 只有 sk 一致的用户才能访问到此服务
+sk = token
+# 绑定本地端口用于访问 远程桌面 服务
+bind_addr = 127.0.0.1
+bind_port = 6000
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre><h3 id="客户端-2-1"><a href="#客户端-2-1" class="headerlink" title="客户端 2"></a>客户端 2</h3><p>在需要连接远程的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp]
+type = xtcp
+sk = token
+local_ip = 127.0.0.1
+local_port = 3389
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre><h2 id="进程守护脚本"><a href="#进程守护脚本" class="headerlink" title="进程守护脚本"></a>进程守护脚本</h2><p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/23/TR59dsJ1hjVEbFe.jpg" alt="1007AADA-3180-4A59-8E80-738D1F5E0A19.png" class="lazyload"></p>
+<pre><code>@ECHO OFF
+setlocal enabledelayedexpansion
 
 
 
-<details>
-  <summary>我的折腾过程</summary>
-已经屏蔽好针脚，前三后二。插上之后直接可以驱动wifi，这样的话只需要安装蓝牙驱动就行。
+rem 设置进程检测延迟, 单位 (秒)
+set /a check_delay = 30
 
-<p>但是麻烦的事情来了，Clover中放入蓝牙驱动开机依然没有蓝牙。</p>
-<p>排查发现没有识别到网卡的蓝牙usb设备。经过群里大佬指点，需要在在<code>DSDT</code>里打开usb port。<br>对了，黑果小兵那里买来可以加售后群并且提供一定的技术支持，如果没群里大佬指点，我可能因为不能驱动蓝牙放弃这款网卡。对于这钟业余Hackintosh玩家，怎能想到问题出在这上面😂</p>
-<p>这时候电脑里面有两个相关文件</p>
-<ul>
-<li>DSDT.aml</li>
-<li>SSDT-UIAC.aml</li>
-</ul>
-<p>这两个文件不是完全对应我的主板，查看之后发现<code>SDT-UIAC.aml</code>里面有usb接口定义。</p>
-<p>因为dsdt在引导中作为补充加载，所以首先想到删除这个文件，果然成功识别到。</p>
-<p>至此无线和蓝牙成功驱动</p>
-<p>最后添加启动参数<code>brcmfx-country=#a</code>更改国家代码，开启所有信道，不过对我似乎只是多显示了，实际并没有启用。。<br><img data-sizes="auto" data-src="https://i.loli.net/2020/04/23/o6lI3SrZPaWJDqj.png" alt="屏幕快照 2020-04-23 下午9.54.28.png" class="lazyload"></p>
-</details>
 
-<p>目前有一个小bug，重置路由之后，网卡搜到的型号变少（虽然这个问题明显不是重置路由造成的，但重置路由之后立马出现这个问题，中途没有其他操作），并且路由的5gwifi设置成自动信道就无法搜索到，手动添加网络也不行。把路由固定到<code>149</code>信道之后才能正常连接。但问题是，自动信道模式下信道通常也是149</p>
-<p><img data-sizes="auto" data-src="https://i.loli.net/2020/04/23/3sITHAnvYuyhJbw.png" alt="?屏幕快照 2020-04-23 下午9.49.37.png" class="lazyload"></p>
-<!--![1](MCNES.jpg)-->
+
+mode 82,12
+set &quot;d=%~p0&quot;
+set &quot;d=%d:\= %&quot;
+for %%a in (%d%) do set name=%%a
+set /a var=0
+start frpc.exe
+:loop
+set /a var=%1+1
+set /a var2=%var%-1
+if %var2%==0 (set num= ) else (set num= 已重启 !var2! 次 restart_service.txt中具有详细信息)
+title %name% 进程守护%num%
+echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+echo ┃             ______     ______     __  __               ┃ 
+echo ┃            /\___  \   /\___  \   /\ \_\ \              ┃ 
+echo ┃            \/_/  /__  \/_/  /__  \ \____ \              ┃
+echo ┃              /\_____\   /\_____\  \/\_____\             ┃
+echo ┃              \/_____/   \/_____/   \/_____/             ┃
+echo ┃                                        ┃
+echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+echo 正在守护 %name% 进程, 当前 %check_delay%s 检测一次, 延迟可在文件中修改
+tasklist|find /i &quot;frpc.exe&quot;
+if %errorlevel%==0 (
+goto true
+) else (
+goto false
+)
+goto :loop
+
+:true
+echo 日期：%DATE% 时间：%time%  ok
+ping -n %check_delay% -w 500 127.1&gt;nul
+cls
+goto loop
+
+:false
+start frpc.exe
+echo 未检测到进程
+echo 启动 %name% ...
+echo 程序重新启动于 日期：%DATE% 时间：%time% &gt;&gt; restart_service.txt
+ping -n 5 -w 500 127.1&gt;nul
+cls
+call :loop %var%
+</code></pre>
   </p>
   </article>
 
@@ -297,7 +422,7 @@
       
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>feios<br>
-    <strong>本文链接：</strong><a href="https://www.feios.me/To-DW1820a/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;To-DW1820a&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;To-DW1820a&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/build-frp-server/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;build-frp-server&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;build-frp-server&#x2F;</a><br>
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
     
@@ -314,9 +439,9 @@
 var dsqjs = new DisqusJS({
     shortname: 'feios',
     siteName: 'feios time',
-    identifier: 'https://www.feios.me/To-DW1820a/',
-    url: 'https://www.feios.me/To-DW1820a/',
-    title: '驱动DW1820a网卡 | 成功airdrop, Handoff',
+    identifier: 'https://www.feios.me/build-frp-server/',
+    url: 'https://www.feios.me/build-frp-server/',
+    title: '搭建frp服务器',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'zkN3UCgXFTNJmqsAR9ZVFaXaFhFMLBYrK4v8amJDwxMtAxBV544lMBSbkrwmDBJG',
     admin: 'feiosme',
@@ -341,7 +466,7 @@ var dsqjs = new DisqusJS({
     <script src="/js/transition.js"></script>
 
 
-<!--<script src="/js/app.js?v=1614091866195"></script>-->
+<!--<script src="/js/app.js?v=1614091866163"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
