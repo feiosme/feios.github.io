@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>更换系统硬盘-记录-复盘 - feios time</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="feios time">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="电脑用了一年系统分区饱爆满，换2T m2，但因为电脑只有一个m2插槽，所以需要一些奇怪的操作，之后免不了奇怪的问题。这里记录一下踩过的坑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="更换系统硬盘-记录-复盘">
+<meta property="og:url" content="https://www.feios.me/change-system-drive/index.html">
+<meta property="og:site_name" content="feios time">
+<meta property="og:description" content="电脑用了一年系统分区饱爆满，换2T m2，但因为电脑只有一个m2插槽，所以需要一些奇怪的操作，之后免不了奇怪的问题。这里记录一下踩过的坑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/AwJ91t5iTN4fSWM.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/JfH8kb79U42qDzu.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/re2XKS9b4Dzn1kA.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/HNLrlAeXvPUZbOR.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/RqaiSeVPLod5tBY.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/ecQWkjaGbKP523f.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/3SHnPRTVUkyK4uX.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/XzqYjJndACUbKvy.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/Pl8SKxV7RL15yAB.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/ygsUdjG7zHZJSuM.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/26/1zxoG7j5I2YAig8.jpg">
+<meta property="article:published_time" content="2020-03-25T13:02:06.000Z">
+<meta property="article:modified_time" content="2020-03-25T13:02:06.000Z">
+<meta property="article:author" content="feios">
+<meta property="article:tag" content="feios,blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/03/26/AwJ91t5iTN4fSWM.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" />
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1650797701793">-->
+
+  
+
+  
+    <link rel="stylesheet" href="/css/zoom.css" />
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="feios">
+            <img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios" alt="feios">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>18</div>
+        <!--<div><span>标签</span>0</div>-->
+        <div><span>字数</span>23.1k</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple nexmoe-social-buttom-bilibili" href="https://space.bilibili.com/5988128" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);background: radial-gradient(circle farthest-corner at 75% 25%,rgb(255, 239, 243) 0,rgb(234, 171, 189) 100%);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple nexmoe-social-buttom-github" href="https://github.com/feiosme/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);background: radial-gradient(circle farthest-corner at 75% 25%,#ffffff 0,#b1b1b1 100%);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+    <div class="nexmoe-widget-wrap">
+        <h3 class="nexmoe-widget-title">
+            文章分类
+        </h3>
+        <div class="nexmoe-widget">
+
+            <ul class="category-list">
+
+                
+
+
+                    
+
+                        
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/作品/">
+                                    作品
+                                </a>
+                                <span class="category-list-count">3</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/学习/">
+                                    学习
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/折腾/">
+                                    折腾
+                                </a>
+                                <span class="category-list-count">11</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/设备/">
+                                    设备
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+            </ul>
+
+        </div>
+    </div>
+    
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 feios
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://i.loli.net/2020/03/25/uaqbxzC5WBoOR8S.png" data-sizes="auto" alt="更换系统硬盘-记录-复盘" class="lazyload">
+          <h1>更换系统硬盘-记录-复盘</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月25日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+</div>
+
+  
+  
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%AE%B9%E9%87%8F%E5%92%8C%E7%A1%AC%E7%9B%98"><span class="toc-number">1.</span> <span class="toc-text">选择容量和硬盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%AE%B1-amp-%E5%A4%87%E4%BB%BD-amp-%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">开箱&amp;备份&amp;安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E7%AE%B1"><span class="toc-number">2.1.</span> <span class="toc-text">开箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">备份数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E8%8B%B9%E6%9E%9C"><span class="toc-number">2.2.1.</span> <span class="toc-text">黑苹果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-number">2.2.2.</span> <span class="toc-text">Windows</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98"><span class="toc-number">2.3.</span> <span class="toc-text">更换硬盘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text">恢复数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E9%BB%91%E8%8B%B9%E6%9E%9C"><span class="toc-number">3.0.1.</span> <span class="toc-text">无法启动黑苹果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%9C%80%E6%96%B0%E5%A4%87%E4%BB%BD"><span class="toc-number">3.0.2.</span> <span class="toc-text">时间机器不显示最新备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clone%E5%88%86%E5%8C%BA%E8%BD%AF%E4%BB%B6%E9%97%AA%E9%80%80"><span class="toc-number">3.0.3.</span> <span class="toc-text">clone分区软件闪退</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#win%E6%89%BE%E4%B8%8D%E5%88%B0%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="toc-number">3.0.4.</span> <span class="toc-text">win找不到启动文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E4%B8%8D%E6%94%AF%E6%8C%81%E7%9A%84%E5%A4%87%E4%BB%BD%E7%9B%98%E6%A0%BC%E5%BC%8F%E2%80%9D"><span class="toc-number">3.0.5.</span> <span class="toc-text">“不支持的备份盘格式”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%BC%82%E5%B8%B8"><span class="toc-number">3.0.6.</span> <span class="toc-text">文件权限异常</span></a></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>
+    <p>电脑用了一年系统分区饱爆满，换2T m2，但因为电脑只有一个m2插槽，所以需要一些奇怪的操作，之后免不了奇怪的问题。这里记录一下踩过的坑</p>
+<span id="more"></span>
+
+<h2 id="选择容量和硬盘"><a href="#选择容量和硬盘" class="headerlink" title="选择容量和硬盘"></a>选择容量和硬盘</h2><p>原计划是扩充容量，上1T sata的海康威视e200p。1T全部给Mac系统<br>但是经过高人指点，决定把档位固定到2T（回想起来升级容量没有一次是完全够用的）</p>
+<blockquote>
+<p>第一个问题: e200p 2t版本无货</p>
+</blockquote>
+<p><em>后来看了一些论坛和视频，发现这款硬盘固件有问题。还好没货</em></p>
+<p>接下来找其他sata硬盘，三星860 qvo符合我的价位，一查，速度和机械没有什么区别。<br>后面找到一款硬盘测速软件，发现我爆满的系统盘（128g总容量双系统加起来仅剩5g左右）读取速度在1.5g/s，sata的速度似乎不能满足我的日常体验。于是把目光转向sata硬盘，首先映入眼帘的是海康威视c2000p。<br>这时候有一件事情，稍后分解。</p>
+<p>对比了市面上消费者比较认可的型号<br>*只对比我比较关注的参数<br>*没有2t版本选择接近的</p>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>容量</th>
+<th>颗粒</th>
+<th>寿命TBW</th>
+<th>读写</th>
+<th>缓存</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://item.jd.com/100003301498.html">WD SN750</a></td>
+<td>2T</td>
+<td>TLC 原厂</td>
+<td>1200</td>
+<td>3400 MB/s 2900 MB/s</td>
+<td>2GB</td>
+<td>3629</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://item.jd.com/100005926991.html">WD SN550</a></td>
+<td>1T</td>
+<td>TLC 原厂</td>
+<td>600</td>
+<td>2400 MB/s 1950 MB/s</td>
+<td>null</td>
+<td>929</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://item.jd.com/100005813808.html">三星 970 EVO Plus</a></td>
+<td>2T</td>
+<td>TLC 原厂</td>
+<td>1200</td>
+<td>3500 MB/s 3300 MB/s</td>
+<td>2GB</td>
+<td>3999</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://item.jd.com/6287163.html">三星 860 EVO <em>sata</em></a></td>
+<td>2T</td>
+<td>TLC 原厂</td>
+<td>1200</td>
+<td>550 MB/s 520 MB/s</td>
+<td>2GB</td>
+<td>2699</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://item.jd.com/100009602288.html">东芝 RD500</a></td>
+<td>1T</td>
+<td>TLC 原厂</td>
+<td>400</td>
+<td>3400 MB/s 3200 MB/s</td>
+<td>1GB</td>
+<td>1399</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://item.jd.com/50002498733.html">海康 C2000 PRO</a></td>
+<td>2T</td>
+<td>TLC <strong>白片</strong></td>
+<td>1280</td>
+<td>3500 MB/s 3100 MB/s</td>
+<td>null</td>
+<td>1899</td>
+</tr>
+</tbody></table>
+<p>白片成本比原厂低1/3到1/2，所以海康才能这么便宜，但随之而来的问题是坏的风险比原厂片要高，因为缺少原厂的质检，最好的白片也比最差的原厂片质量差。<br><strong>所以我承认我有赌的成分</strong></p>
+<p>为了降低数据损失的潜在风险，我打算买一个pcie转m2接口，再买一个非常稳的m2，但是事实打击了我，主板上pciex4的触点焊上了x1的接口，下面x8的触点直接没动…</p>
+<p>虽然这样，我还是买了两块pciex1转接卡两块。结果上面的m2太紧怕插坏了，搁置。</p>
+<p>所以现在计划是留一块机械盘备份重要数据。这块m2做好随时坏的准备(虽然网上似乎没看见过有谁坏了)，明年换主板换系统盘（你不还是要换！），这块当作游戏仓库盘，坏了不心疼。</p>
+<p>这时候c2000p的兄弟c2000和lite在b站被某up锤，和海康老总直播对线，但我还是头铁入了它。。。。</p>
+<p>下一个问题是在哪家店入手，最好的选择应该是京东自营。但一进入京东自营的商品界面，此地区暂时无货几个大字就甩我脸上，大晚上也不知道自己怎么想到的，既然此地区无货我为什么不试试其他地区呢，全国主要区域都是有亲戚的啊。点来点去发现老家有货，此时刚好送我妹妹生日礼物，这回好说！于是在全国疫情的背景下，不远万里来相见…</p>
+<h2 id="开箱-amp-备份-amp-安装"><a href="#开箱-amp-备份-amp-安装" class="headerlink" title="开箱&amp;备份&amp;安装"></a>开箱&amp;备份&amp;安装</h2><h3 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h3><p><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/AwJ91t5iTN4fSWM.jpg" alt="QQ20200326-1.jpg" class="lazyload"><br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/JfH8kb79U42qDzu.jpg" alt="QQ20200326-0.jpg" class="lazyload"></p>
+<h3 id="备份数据"><a href="#备份数据" class="headerlink" title="备份数据"></a>备份数据</h3><p>我美好的想法是这样的</p>
+<h4 id="黑苹果"><a href="#黑苹果" class="headerlink" title="黑苹果"></a>黑苹果</h4><p>直接使用自带的时间机器备份，用启动盘恢复时间机器备份</p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>clone分区到移动硬盘，更换之后再clone back</p>
+<h3 id="更换硬盘"><a href="#更换硬盘" class="headerlink" title="更换硬盘"></a>更换硬盘</h3><p>没什么可说的，拆开，装上<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/re2XKS9b4Dzn1kA.jpg" alt="QQ20200326-4.jpg" class="lazyload"><br>开机bios设置看是否识别<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/HNLrlAeXvPUZbOR.jpg" alt="QQ20200326-5.jpg" class="lazyload"><br>pe查看lifetime之类的数据确认是否全新（未检测是否清零），然后跑个速度（不上图了）</p>
+<h2 id="恢复数据"><a href="#恢复数据" class="headerlink" title="恢复数据"></a>恢复数据</h2><p>首先恢复黑苹果，毕竟是吃饭的工具。用黑果小兵的<a target="_blank" rel="noopener" href="https://blog.daliansky.net/macOS-High-Sierra-10.13.6-17G65-Release-Version-with-Clover-4596-original-mirror.html">10.13.6 17g65 with cover</a>和<a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">balenaEtcher</a>制作启动盘，然后把cover替换为自己的配置。</p>
+<p>这里说一下我目前的配置</p>
+<ul>
+<li>H370 hp</li>
+<li>i5 8400</li>
+<li>GTX 1066 hp</li>
+</ul>
+<p>因为hp的残缺bios，不仅安装的时候痛苦，并且至今没有方法解决硬件加速的问题。</p>
+<p>啰嗦完了继续安装，开机F9选择u盘上的cover，进入安装程序</p>
+<h4 id="无法启动黑苹果"><a href="#无法启动黑苹果" class="headerlink" title="无法启动黑苹果"></a>无法启动黑苹果</h4><p>读条一小段马上重启，打开cover中的<code>-v</code>啰嗦模式和<code>don&#39;t reboot on panic(debug=0x100)</code>查看原因<br>开机提示<code>ALF, old data swfs_pid_entry &lt;ptr&gt;</code>依然秒重启，甚至第一次来不及拍照。<br>百度搜索这个错误都是10.15.x系统出现的问题。</p>
+<p><em>(此处省略一些字)</em></p>
+<p>我不记得怎么解决了，没动cover配置，可能是操作失误？直到现在开机依然会弹一堆<code>ALF, old data swfs_pid_entry &lt;ptr&gt;</code>错误，但是可以正常开机和使用，猜测可能是硬盘的问题。</p>
+<p>用mac安装程序附带的磁盘工具重新格式化了一遍分区，Mac和Windows各一半（结果ESP分区只给了200m，本来黑苹果应该在300m以上，但目前没遇到问题）</p>
+<p>反正经过什么恢复卡死之类的问题终于成功了，我已身经百战，这点问题不是问题。</p>
+<h4 id="时间机器不显示最新备份"><a href="#时间机器不显示最新备份" class="headerlink" title="时间机器不显示最新备份"></a>时间机器不显示最新备份</h4><p>但是恢复这个操作出了问题 时间机器没有显示我最新备份的文件。显示最新的备份是同一个月的手动备份（我设置手动备份时间机器，一共备份过三次，这个月两次）。<br>我有选择吗？我没得选</p>
+<p>因为上一次没有全盘备份，为了节省移动硬盘的空间，省略了例如桌面、照片等个人文件夹。<br>导致恢复备份之后没有备份的个人文件夹再侧边栏名字变成英文，点开显示“找不到原身”。</p>
+<p>这不是大问题，反正数据都还在原来的硬盘，再倒一遍折腾得起。</p>
+<p>开始折腾windows，比想象中的问题大</p>
+<h4 id="clone分区软件闪退"><a href="#clone分区软件闪退" class="headerlink" title="clone分区软件闪退"></a>clone分区软件闪退</h4><p>使用clone分区的软件<code>DiskGenius</code>clone回去，进度条走20%左右软件闪退，再次打开检测不到所有磁盘，反复两次、切换版本问题依然存在，更换软件恢复如图所示，速度极其慢（16m/s左右）<br>（图）待补充<br>终于恢复好了</p>
+<h4 id="win找不到启动文件"><a href="#win找不到启动文件" class="headerlink" title="win找不到启动文件"></a>win找不到启动文件</h4><p>开机显示 无法加载应用程序或操作系统 0xc000000e。</p>
+<p>当时首先想到的解决办法是买一个m2硬盘盒，接到电脑上直接原盘clone不经过移动硬盘中转（我也不想再经历一遍那么慢的速度了，而且pe系统因为没有显卡驱动，风扇会维持到最大速度，整个机箱轻微震动）<br>经过分析，这个问题是因为硬盘参数变化，从旧硬盘复制过来的引导文件无法找到启动文件导致的。</p>
+<p>但是再下单硬盘盒之前解决了这个问题，首先重新安装同样版本系统，安装程序会重新设置适合的启动项，我们只要这个启动项。安装程序还会把旧系统移动到windows.old文件夹。所以我们可以安装完之后进入pe，从根目录删除并且替换windows.old里的文件（先删除再复制更稳妥）<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/RqaiSeVPLod5tBY.jpg" alt="QQ20200326-2.jpg" class="lazyload"></p>
+<blockquote>
+<p>注意这里只会把系统文件移动到windows.old，如果根目录有其他文件/文件夹，复制前要看好</p>
+</blockquote>
+<p>系统可以进去了，但是除了设置，所有uwp都无法打开（包括Windows Store）<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/ecQWkjaGbKP523f.png" alt="QQ20200326-0.png" class="lazyload"></p>
+<p>这里我错误操作了导致要重新操作上面的步骤，其实到这一步之后打开管理员powershell执行<code>Get-AppxPackage -AllUsers| Foreach&#123;Add-AppxPackage -DisableDevelopmentMode -Register &quot;$($_.InstallLocation)\AppXManifest.xml&quot;&#125;</code>重新注册uwp即可</p>
+<p>下单硬盘盒，到手发现ngff硬盘盒不支持nvme硬盘，退货。结果还是<strong>又</strong>把原硬盘插回电脑了。。。<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/3SHnPRTVUkyK4uX.jpg" alt="QQ20200326-3.jpg" class="lazyload"><br>重新备份时间机器，打开备份界面看读条，发现这次不是全量备份，10g的大小像是补充备份，听到机械硬盘读写时特殊的声音，我相信文件一定复制过去了。结果出乎意料，备份之后的最新备份依然是这个月上一次备份时间。</p>
+<p>折腾的仅要告诉我，哪里出问题就去哪找问题，进入时间机器的磁盘，挨个找文件，查看备份结构。果然文件确实复制过去了，但是隐藏在一个后缀为<code>.inprogress</code>的包内，猜测这是一个补充备份机制，但是不知道为什么这个机制没有在恢复的时候生效。</p>
+<p>不过这不是问题，重新换回新硬盘，从时间机器的磁盘直接复制文件到相应的位置。</p>
+<h4 id="“不支持的备份盘格式”"><a href="#“不支持的备份盘格式”" class="headerlink" title="“不支持的备份盘格式”"></a>“不支持的备份盘格式”</h4><p>直接复制到系统盘提示“不支持的备份盘格式”，只好先复制到电脑里的机械硬盘，再复制需要的文件到系统盘的相应位置，这时候以为解决了。Mac用了不到一年，可能对它的理解还不太深。<br>（后来从大佬那里了解到：timemachine的文件格式可能和mac的磁盘格式有关系）</p>
+<h4 id="文件权限异常"><a href="#文件权限异常" class="headerlink" title="文件权限异常"></a>文件权限异常</h4><p>紧接上一个问题之后。所有复制过来的文件都出现一个问题，目录下所有编辑操作都需要验证管理员密码，导致一些需要读取相应文件的软件无法正常运行<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/XzqYjJndACUbKvy.jpg" alt="1" class="lazyload"><br>Mac和Linux有共通的地方，依照对linux系统的理解，先检查文件夹权限，发现权限异常的文件夹权限不一样<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/Pl8SKxV7RL15yAB.png" alt="屏幕快照 2020-03-26 上午12.40.20.png" class="lazyload"><br>首先执行<code>sudo chmod -R 755 *</code>依然不行<br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/ygsUdjG7zHZJSuM.png" alt="屏幕快照 2020-03-26 上午12.41.09.png" class="lazyload"><br>排查后发现还有一个特征，权限后面有一个@。<br>@代表额外权限<br>通过指令<code>ls -laeO@</code>查看额外权限<br>其中有一条<code>group:everyone deny add_file,delete,add_subdirectory,delete_child,writeattr,writeextattr,chown</code><br>经过百度，使用以下指令解决<br><code>chmod -R -a &quot;group:everyone deny add_file,delete,add_subdirectory,delete_child,writeattr,writeextattr,chown&quot; *</code><br><img data-sizes="auto" data-src="https://i.loli.net/2020/03/26/1zxoG7j5I2YAig8.jpg" alt="QQ20200326-3.png" class="lazyload"></p>
+<blockquote>
+<p>复盘的时候发现（包装、贴纸序列号、发票序列号）和（电脑识别到的序列号）不一致，没想到京东自营会出这种错误，不知道是否翻车</p>
+</blockquote>
+<hr>
+<p>4.23更新</p>
+<p>最后Windows迁移方法是拔掉显卡，通过空出来的pcie插槽用m2转接卡实现同时接连个m2硬盘，然后用DiskGenius克隆、恢复分区，最后检查下分区id是否和之前硬盘一致就大功告成了</p>
+
+  </p>
+  </article>
+
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+    
+    
+</div>
+
+
+  <!--右下角按钮<div class="mdui-container">
+    <button class="mdui-fab mdui-fab-fixed mdui-ripple"><i class="iconfont icontop"></i></button>
+  </div>-->
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>feios<br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/change-system-drive/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;change-system-drive&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;change-system-drive&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'feios',
+    siteName: 'feios time',
+    identifier: 'https://www.feios.me/change-system-drive/',
+    url: 'https://www.feios.me/change-system-drive/',
+    title: '更换系统硬盘-记录-复盘',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'zkN3UCgXFTNJmqsAR9ZVFaXaFhFMLBYrK4v8amJDwxMtAxBV544lMBSbkrwmDBJG',
+    admin: 'feiosme',
+    adminLabel: 'feiosme'
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <!--<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+    <script src="/js/zoom-inject.js"></script>
+    <script src="/js/zoom.js"></script>
+    <script src="/js/transition.js"></script>
+
+
+<!--<script src="/js/app.js?v=1650797701811"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js", {scope: '/'})
+        .then(registration => console.log('SW Registration Success！Scope: ', registration.scope))
+        .catch(err => console.log('SW Registration Failed! Error: ', err))
+    }
+    </script>
+  
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-156065728-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

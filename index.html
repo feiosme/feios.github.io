@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>feios time</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="feios time">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="feios time">
+<meta property="og:type" content="website">
+<meta property="og:title" content="feios time">
+<meta property="og:url" content="https://www.feios.me/index.html">
+<meta property="og:site_name" content="feios time">
+<meta property="og:description" content="feios time">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="feios">
+<meta property="article:tag" content="feios,blog">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" />
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1650797702375">-->
+
+  
+
+  
+    <link rel="stylesheet" href="/css/zoom.css" />
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="feios">
+            <img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios" alt="feios">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>18</div>
+        <!--<div><span>标签</span>0</div>-->
+        <div><span>字数</span>23.1k</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple nexmoe-social-buttom-bilibili" href="https://space.bilibili.com/5988128" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);background: radial-gradient(circle farthest-corner at 75% 25%,rgb(255, 239, 243) 0,rgb(234, 171, 189) 100%);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple nexmoe-social-buttom-github" href="https://github.com/feiosme/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);background: radial-gradient(circle farthest-corner at 75% 25%,#ffffff 0,#b1b1b1 100%);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+    <div class="nexmoe-widget-wrap">
+        <h3 class="nexmoe-widget-title">
+            文章分类
+        </h3>
+        <div class="nexmoe-widget">
+
+            <ul class="category-list">
+
+                
+
+
+                    
+
+                        
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/作品/">
+                                    作品
+                                </a>
+                                <span class="category-list-count">3</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/学习/">
+                                    学习
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/折腾/">
+                                    折腾
+                                </a>
+                                <span class="category-list-count">11</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/设备/">
+                                    设备
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+            </ul>
+
+        </div>
+    </div>
+    
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 feios
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/GPMS-Design/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+                    <img data-src="https://s2.loli.net/2022/04/24/8aPO6F5iYDHnm3W.png" data-sizes="auto" alt="毕业设计管理系统概念设计" class="lazyload">
+                    <h1>毕业设计管理系统概念设计</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月10日</a>
+            <a><i class="nexmoefont icon-areachart"></i>422 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+
+        <article>
+            
+                <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>因为Windows Vista惊艳的效果，导致最喜欢圆角+轻拟物+磨砂玻璃的设计。</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/Dactyl-ManuForm-Keyboard/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+                    <img data-src="https://s2.loli.net/2022/04/24/bpHWDAvdPKOzGQj.jpg" data-sizes="auto" alt="分体、立体人体工学键盘 Dactyl-ManuForm Keyboard" class="lazyload">
+                    <h1>分体、立体人体工学键盘 Dactyl-ManuForm Keyboard</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2022年03月09日</a>
+            <a><i class="nexmoefont icon-areachart"></i>355 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+
+        <article>
+            
+                <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/build-frp-server/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 48.4375%;"> 
+                    <img data-src="https://github.com/fatedier/frp/blob/dev/doc/pic/dashboard.png?raw=true" data-sizes="auto" alt="配置frp内网穿透" class="lazyload">
+                    <h1>配置frp内网穿透</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年02月23日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.2k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+        </div>
+
+        <article>
+            
+                <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>通过frp stcp实现windows远程连接<code>编辑中</code></p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/osx-in-2020/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+                    <img data-src="https://i.loli.net/2020/05/05/ezVTb8FHfG6W1UX.jpg" data-sizes="auto" alt="体验·拟物设计的巅峰" class="lazyload">
+                    <h1>体验·拟物设计的巅峰</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年05月05日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+        </div>
+
+        <article>
+            
+                <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>⚠️超多图片预警，内容包括</p>
+<ol>
+<li><a href="osx-in-2020/#%E5%AE%89%E8%A3%85">PD安装旧版Mac</a></li>
+<li><a href="osx-in-2020/#%E4%BD%93%E9%AA%8C%E6%8B%9F%E7%89%A9">体验拟物化设计</a></li>
+</ol>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/To-DW1820a/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 54.6875%;"> 
+                    <img data-src="https://i.loli.net/2020/05/13/U6fiN2s5IrzPAol.png" data-sizes="auto" alt="驱动DW1820a网卡 | 成功airdrop, Handoff" class="lazyload">
+                    <h1>驱动DW1820a网卡 | 成功airdrop, Handoff</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月22日</a>
+            <a><i class="nexmoefont icon-areachart"></i>835 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+        </div>
+
+        <article>
+            
+                <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>电脑原装的rtl8821ce不支持Hackintosh，购入Trackpad之后想着不能一直插着线用，需要一个可以驱动的网卡</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/Magic-Trackpad-2/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 48.4375%;"> 
+                    <img data-src="https://i.loli.net/2020/04/10/6Kk2MfXTdpqOwPx.jpg" data-sizes="auto" alt="记一次购买 Trackpad 2 的体验" class="lazyload">
+                    <h1>记一次购买 Trackpad 2 的体验</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月10日</a>
+            <a><i class="nexmoefont icon-areachart"></i>974 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+        </div>
+
+        <article>
+            
+                <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>京东自营Trackpad2发了880-100的卷，蹲了很久直接购入</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/change-system-drive/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+                    <img data-src="https://i.loli.net/2020/03/25/uaqbxzC5WBoOR8S.png" data-sizes="auto" alt="更换系统硬盘-记录-复盘" class="lazyload">
+                    <h1>更换系统硬盘-记录-复盘</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月25日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>电脑用了一年系统分区饱爆满，换2T m2，但因为电脑只有一个m2插槽，所以需要一些奇怪的操作，之后免不了奇怪的问题。这里记录一下踩过的坑</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/mc-server-mcnes/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 62.5%;"> 
+                    <img data-src="https://i.loli.net/2020/04/10/Wb9iT2gIULEoj5O.jpg" data-sizes="auto" alt="Minecraft服务器" class="lazyload">
+                    <h1>Minecraft服务器</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月09日</a>
+            <a><i class="nexmoefont icon-areachart"></i>308 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>MCNES可以分开理解，MC代表Minecraft；NES代表最初的乐趣。这是一个送给老朋友的礼物🎁</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/nexmoe-redesign/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="魔改主题：nexmoe质感设计" class="lazyload">
+                    <h1>魔改主题：nexmoe质感设计</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月08日</a>
+            <a><i class="nexmoefont icon-areachart"></i>412 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>首先，感谢大佬开发出<a target="_blank" rel="noopener" href="https://nexmoe.com/hexo-theme-nexmoe.html">本主题</a>，代码思路清晰、格式优雅</p>
+<p>初试Hexo，挑选主题的时候在众多主题中一眼看中它，发现开发者特别眼熟…
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/AppleALC-to-AppleHDA/">
+            
+                <div class="nexmoe-post-cover mdui-ripple mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+                    <img data-src="https://i.loli.net/2020/02/28/yBpH8e4AhWkZYPE.jpg" data-sizes="auto" alt="使用AppleALC自制声卡驱动" class="lazyload">
+                    <h1>使用AppleALC自制声卡驱动</h1>
+                </div>
+            
+        </a>
+
+
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月26日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>Mac下进入网课直播间软件和系统组件卡死，经排查发现问题在万能声卡驱动VoodooHDA，开始研究通过AppleALC原生注入声卡驱动</p>
+            
+        </article>
+    </div>
+    
+</section>
+
+    <nav class="nexmoe-page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="nexmoefont icon-right"></i></a>
+    </nav>
+  
+    </div>
+  </div>
+  <!--<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+    <script src="/js/zoom-inject.js"></script>
+    <script src="/js/zoom.js"></script>
+    <script src="/js/transition.js"></script>
+
+
+<!--<script src="/js/app.js?v=1650797702394"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js", {scope: '/'})
+        .then(registration => console.log('SW Registration Success！Scope: ', registration.scope))
+        .catch(err => console.log('SW Registration Failed! Error: ', err))
+    }
+    </script>
+  
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-156065728-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+
+
+
+
+<script>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+</script></body></html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>配置frp内网穿透 - feios time</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="feios time">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content=".LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置frp内网穿透">
+<meta property="og:url" content="https://www.feios.me/build-frp-server/index.html">
+<meta property="og:site_name" content="feios time">
+<meta property="og:description" content=".LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/PWG4NsoBkayXxVD.png">
+<meta property="og:image" content="https://www.feios.me/build-frp-server/pinned-octocat.svg">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/pCefLd1SagvMHDY.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/LRYkMeltPWusK3a.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/wetMDYLkSPjF29V.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/R3OpzSsQZmu2YPF.png">
+<meta property="og:image" content="https://www.feios.me/build-frp-server/android-192x192.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/23/TR59dsJ1hjVEbFe.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/DCxe78Rd5f6nTNk.jpg">
+<meta property="og:image" content="https://www.feios.me/build-frp-server/pinned-octocat.svg">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/t9Bi3Gz7Kd25NcJ.jpg">
+<meta property="article:published_time" content="2021-02-23T12:11:17.000Z">
+<meta property="article:modified_time" content="2021-02-23T12:11:17.000Z">
+<meta property="article:author" content="feios">
+<meta property="article:tag" content="feios,blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/PWG4NsoBkayXxVD.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" />
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1650797701715">-->
+
+  
+
+  
+    <link rel="stylesheet" href="/css/zoom.css" />
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="feios">
+            <img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios" alt="feios">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>18</div>
+        <!--<div><span>标签</span>0</div>-->
+        <div><span>字数</span>23.1k</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple nexmoe-social-buttom-bilibili" href="https://space.bilibili.com/5988128" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);background: radial-gradient(circle farthest-corner at 75% 25%,rgb(255, 239, 243) 0,rgb(234, 171, 189) 100%);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple nexmoe-social-buttom-github" href="https://github.com/feiosme/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);background: radial-gradient(circle farthest-corner at 75% 25%,#ffffff 0,#b1b1b1 100%);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+    <div class="nexmoe-widget-wrap">
+        <h3 class="nexmoe-widget-title">
+            文章分类
+        </h3>
+        <div class="nexmoe-widget">
+
+            <ul class="category-list">
+
+                
+
+
+                    
+
+                        
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/作品/">
+                                    作品
+                                </a>
+                                <span class="category-list-count">3</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/学习/">
+                                    学习
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/折腾/">
+                                    折腾
+                                </a>
+                                <span class="category-list-count">11</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/设备/">
+                                    设备
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+            </ul>
+
+        </div>
+    </div>
+    
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 feios
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover mdui-shadow-5" style="padding-bottom: 48.4375%;"> 
+          <img data-src="https://github.com/fatedier/frp/blob/dev/doc/pic/dashboard.png?raw=true" data-sizes="auto" alt="配置frp内网穿透" class="lazyload">
+          <h1>配置frp内网穿透</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年02月23日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+</div>
+
+  
+  
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E8%A6%81%E7%94%A8-frp"><span class="toc-number">1.1.</span> <span class="toc-text">为何要用 frp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-number">1.2.</span> <span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%88Windows-%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">基本使用方法（Windows 远程桌面）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">1.3.2.</span> <span class="toc-text">客户端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E7%94%A8%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">生产环境用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stcp"><span class="toc-number">2.1.</span> <span class="toc-text">stcp</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">客户端 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-2"><span class="toc-number">2.1.3.</span> <span class="toc-text">客户端 2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xtcp"><span class="toc-number">2.2.</span> <span class="toc-text">xtcp</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF-2"><span class="toc-number">2.2.1.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-1-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">客户端 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-2-1"><span class="toc-number">2.2.3.</span> <span class="toc-text">客户端 2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0-http-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.3.</span> <span class="toc-text">建立本地 http 服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.3.1.</span> <span class="toc-text">官方示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF-3"><span class="toc-number">2.3.2.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-1"><span class="toc-number">2.3.3.</span> <span class="toc-text">客户端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">更优雅的使用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4%E8%84%9A%E6%9C%AC"><span class="toc-number">3.1.</span> <span class="toc-text">进程守护脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-Windows-%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%90%E8%A1%8C-%E6%8E%A8%E8%8D%90"><span class="toc-number">3.2.</span> <span class="toc-text">通过 Windows 服务的方式运行 (推荐)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-number">3.2.1.</span> <span class="toc-text">优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%BF%E6%8D%B7%E7%AE%A1%E7%90%86"><span class="toc-number">3.2.2.</span> <span class="toc-text">便捷管理</span></a></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>
+    <style type="text/css">.LinkCard{position: relative; display: block; margin: 1em auto; width: 390px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 12px; max-width: 100%; overflow: hidden;}.LinkCard,.LinkCard:hover{text-decoration: none; border: none!important; color: inherit!important;}.LinkCard .LinkCard-backdrop{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; -webkit-filter: blur(20px); filter: blur(20px); background-size: cover; background-position: 50%;}.LinkCard .LinkCard-content{position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 12px; border-radius: inherit; background-color: rgba(246, 246, 246, 0.88);}.LinkCard .LinkCard-content .LinkCard-text{overflow: hidden;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-title{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; max-height: 40px; max-width: 298px; font-size: 16px; font-weight: 500; line-height: 1.25; color: #1a1a1a;}.LinkCard .LinkCard-content .LinkCard-text .LinkCard-meta{display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 4px; font-size: 14px; line-height: 20px; color: #999; white-space: nowrap;}.LinkCard .LinkCard-content .LinkCard-imageCell{margin-left: 8px; border-radius: 6px;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image{display: block; width: 60px; height: 60px; -o-object-fit: cover; object-fit: cover; border-radius: inherit;}.LinkCard .LinkCard-content .LinkCard-imageCell .LinkCard-image.LinkCard-image-default{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-color: #ebebeb; color: #d3d3d3;}.LinkCard.LinkCard-noImage .LinkCard-content{background-color: #f6f6f6;}</style><p>通过frp stcp实现windows远程连接<code>编辑中</code></p>
+<span id="more"></span>
+
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="为何要用-frp"><a href="#为何要用-frp" class="headerlink" title="为何要用 frp"></a>为何要用 frp</h3><p>国内特殊的互联网环境导致个人的家庭宽带很难获得外网ip，导致无法在外网访问自家的内网。通过使用一台具有外网ip的主机进行frp内网穿透，可以方便的在外网访问内网，不过对于远程桌面这种信息敏感的应用场景，需要更安全的配置方法。</p>
+<p>frp带给我们stcp的方法来更安全地突破内网限制。<br>以下是官方给的原理图</p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/24/PWG4NsoBkayXxVD.png" alt="architecture.png" class="lazyload"></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a target="_blank" href="https://github.com/fatedier/frp/releases" class="LinkCard LinkCard-hasImage mdui-ripple">
+          <span class="LinkCard-backdrop" style="background-image:url(pinned-octocat.svg);"></span>
+          <span class="LinkCard-content">
+            <span class="LinkCard-text">
+              <span class="LinkCard-title">fatedier/frp: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.</span>
+              <span class="LinkCard-meta">
+                <span style="display:inline-flex;align-items:center;">​
+                  <svg fill="currentColor" viewBox="0 0 24 24" width="17" height="17"><path d="M6.77 17.23c-.905-.904-.94-2.333-.08-3.193l3.059-3.06-1.192-1.19-3.059 3.058c-1.489 1.489-1.427 3.954.138 5.519s4.03 1.627 5.519.138l3.059-3.059-1.192-1.192-3.059 3.06c-.86.86-2.289.824-3.193-.08zm3.016-8.673l1.192 1.192 3.059-3.06c.86-.86 2.289-.824 3.193.08.905.905.94 2.334.08 3.194l-3.059 3.06 1.192 1.19 3.059-3.058c1.489-1.489 1.427-3.954-.138-5.519s-4.03-1.627-5.519-.138L9.786 8.557zm-1.023 6.68c.33.33.863.343 1.177.029l5.34-5.34c.314-.314.3-.846-.03-1.176-.33-.33-.862-.344-1.176-.03l-5.34 5.34c-.314.314-.3.846.03 1.177z" fill-rule="evenodd"></path></svg>
+                </span>
+                github.com
+              </span>
+            </span>
+            <span class="LinkCard-imageCell">
+              <img class="LinkCard-image LinkCard-image-square" alt="图标" src="pinned-octocat.svg">
+            </span>
+          </span>
+          </a></p>
+<h3 id="基本使用方法（Windows-远程桌面）"><a href="#基本使用方法（Windows-远程桌面）" class="headerlink" title="基本使用方法（Windows 远程桌面）"></a>基本使用方法（Windows 远程桌面）</h3><p>单独使用这种最基本的连接方式不够安全，通常情况下建议只用于入门和测试设备之间是否能连通</p>
+<h4 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h4><p>以当前版本 <code>0.35.1</code> 为例，在linux下配置服务端：</p>
+<pre><code>// 下载
+$ wget https://github.com/fatedier/frp/releases/download/v0.35.1/frp_0.35.1_linux_amd64.tar.gz
+// 解压
+$ tar -zxvf frp_0.35.1_linux_amd64.tar.gz
+// 进入文件目录
+$ cd frp_0.35.1_linux_amd64
+// 编辑服务端配置文件
+$ vi frps.ini
+</code></pre>
+<pre><code>//frps.ini
+
+[common]
+bind_port = 7000
+</code></pre>
+<pre><code>// 启动服务端
+$ ./frps -c ./frps.ini
+</code></pre>
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><p>Windows / Mac 下载解压即可<br>win: <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases/download/v0.35.1/frp_0.35.1_windows_amd64.zip">https://github.com/fatedier/frp/releases/download/v0.35.1/frp_0.35.1_windows_amd64.zip</a><br><code>win+r</code> 打开cmd，在文件目录下执行<code>start frpc.exe</code>即可启动，文章底部有更好的办法</p>
+<p>mac: <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases/download/v0.35.1/frp_0.35.1_darwin_amd64.tar.gz">https://github.com/fatedier/frp/releases/download/v0.35.1/frp_0.35.1_darwin_amd64.tar.gz</a><br>进入“终端”，在目录下输入指令<code>./frpc -c ./frpc.ini</code></p>
+<pre><code>// frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389
+remote_port = 3389
+</code></pre>
+<p>设置“允许远程连接到此计算机”<br><img data-sizes="auto" data-src="https://i.loli.net/2021/02/24/pCefLd1SagvMHDY.jpg" alt="IMG_5297.jpg" class="lazyload"></p>
+<p>通过这些设置之后，你电脑的3389端口会暴露到外网，在任何有网的地方访问<code>x.x.x.x</code>即可连接<br><img data-sizes="auto" data-src="https://i.loli.net/2021/02/24/LRYkMeltPWusK3a.jpg" alt="IMG_5296.jpg" class="lazyload"></p>
+<h2 id="生产环境用法"><a href="#生产环境用法" class="headerlink" title="生产环境用法"></a>生产环境用法</h2><h3 id="stcp"><a href="#stcp" class="headerlink" title="stcp"></a>stcp</h3><p>这是一种更安全的连接方法，相当于连接远程的一方要念对暗号才能打开大门，在此之前，端口不会暴露在互联网上，增加了安全性</p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/24/wetMDYLkSPjF29V.png" alt="IMG_5295.png" class="lazyload"><br>*图片来自网络</p>
+<h4 id="服务端-1"><a href="#服务端-1" class="headerlink" title="服务端"></a>服务端</h4><p>在有外网ip的机器上，</p>
+<pre><code># frps.ini
+
+[common]
+bind_port = 7000
+// token 鉴权
+authentication_method = token
+token = token
+// 只允许 tls 连接
+tls_only = true
+
+// 网页状态面板
+dashboard_port = 8888
+dashboard_user = admin
+dashboard_pwd = admin
+</code></pre>
+<p>通过 <code>./frps -c ./frps.ini</code> 启动服务端</p>
+<h4 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端 1"></a>客户端 1</h4><p>在需要通过外网访问的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp_visitor]
+type = stcp
+# stcp 的访问者
+role = visitor
+# 要访问的 stcp 代理的名字
+server_name = frp
+# 只有 sk 一致的用户才能访问到此服务
+sk = token
+# 绑定本地端口用于访问 远程桌面 服务
+bind_addr = 127.0.0.1
+bind_port = 6000
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre>
+<p>通过 <code>./frpc -c ./frpc.ini</code> 启动客户端</p>
+<h4 id="客户端-2"><a href="#客户端-2" class="headerlink" title="客户端 2"></a>客户端 2</h4><p>在需要连接远程的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp]
+type = stcp
+sk = token
+local_ip = 127.0.0.1
+local_port = 3389
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre>
+<p>通过 <code>./frpc -c ./frpc.ini</code> 启动客户端</p>
+<hr>
+<h3 id="xtcp"><a href="#xtcp" class="headerlink" title="xtcp"></a>xtcp</h3><p>这是一种基于stcp上的p2p（点对点）的连接方法，理论上延迟更低。但是目前功能开发不够完善，还不太稳定，建议还是首选stcp。</p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/24/R3OpzSsQZmu2YPF.png" alt="IMG_5294.png" class="lazyload"><br>*图片来自网络</p>
+<p>把 <code>frpc.ini</code> 中的 <code>type = stcp</code> 改成 <code>xtcp即可</code></p>
+<h4 id="服务端-2"><a href="#服务端-2" class="headerlink" title="服务端"></a>服务端</h4><p>不变</p>
+<h4 id="客户端-1-1"><a href="#客户端-1-1" class="headerlink" title="客户端 1"></a>客户端 1</h4><p>在需要通过外网访问的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp_visitor]
+type = xtcp
+# stcp 的访问者
+role = visitor
+# 要访问的 stcp 代理的名字
+server_name = frp
+# 只有 sk 一致的用户才能访问到此服务
+sk = token
+# 绑定本地端口用于访问 远程桌面 服务
+bind_addr = 127.0.0.1
+bind_port = 6000
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre>
+<p>通过 <code>./frpc -c ./frpc.ini</code> 启动客户端</p>
+<h4 id="客户端-2-1"><a href="#客户端-2-1" class="headerlink" title="客户端 2"></a>客户端 2</h4><p>在需要连接远程的机器上</p>
+<pre><code># frpc.ini
+
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+authentication_method = token
+token = token
+tls_enable = true
+
+[frp]
+type = xtcp
+sk = token
+local_ip = 127.0.0.1
+local_port = 3389
+# true 启用加密
+use_encryption = false
+# true 启用压缩
+use_compression = false
+</code></pre>
+<p>通过 <code>./frpc -c ./frpc.ini</code> 启动客户端</p>
+<hr>
+<h3 id="建立本地-http-服务器"><a href="#建立本地-http-服务器" class="headerlink" title="建立本地 http 服务器"></a>建立本地 http 服务器</h3><h4 id="官方示例"><a href="#官方示例" class="headerlink" title="官方示例"></a>官方示例</h4><p><a target="_blank" href="https://gofrp.org/docs/examples/vhost-http/" class="LinkCard LinkCard-hasImage mdui-ripple">
+          <span class="LinkCard-backdrop" style="background-image:url(android-192x192.png);"></span>
+          <span class="LinkCard-content">
+            <span class="LinkCard-text">
+              <span class="LinkCard-title">通过自定义域名访问内网的 Web 服务</span>
+              <span class="LinkCard-meta">
+                <span style="display:inline-flex;align-items:center;">​
+                  <svg fill="currentColor" viewBox="0 0 24 24" width="17" height="17"><path d="M6.77 17.23c-.905-.904-.94-2.333-.08-3.193l3.059-3.06-1.192-1.19-3.059 3.058c-1.489 1.489-1.427 3.954.138 5.519s4.03 1.627 5.519.138l3.059-3.059-1.192-1.192-3.059 3.06c-.86.86-2.289.824-3.193-.08zm3.016-8.673l1.192 1.192 3.059-3.06c.86-.86 2.289-.824 3.193.08.905.905.94 2.334.08 3.194l-3.059 3.06 1.192 1.19 3.059-3.058c1.489-1.489 1.427-3.954-.138-5.519s-4.03-1.627-5.519-.138L9.786 8.557zm-1.023 6.68c.33.33.863.343 1.177.029l5.34-5.34c.314-.314.3-.846-.03-1.176-.33-.33-.862-.344-1.176-.03l-5.34 5.34c-.314.314-.3.846.03 1.177z" fill-rule="evenodd"></path></svg>
+                </span>
+                gofrp.org
+              </span>
+            </span>
+            <span class="LinkCard-imageCell">
+              <img class="LinkCard-image LinkCard-image-square" alt="图标" src="android-192x192.png">
+            </span>
+          </span>
+          </a></p>
+<h4 id="服务端-3"><a href="#服务端-3" class="headerlink" title="服务端"></a>服务端</h4><pre><code># frps.ini
+
+[common]
+bind_port = 7000
+// token 鉴权
+authentication_method = token
+token = token
+// 只允许 tls 连接
+tls_only = true
+
+// 
+vhost_http_port = 8080
+
+// 网页状态面板
+dashboard_port = 8888
+dashboard_user = admin
+dashboard_pwd = admin
+</code></pre>
+<h4 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a>客户端</h4><pre><code>[common]
+server_addr = x.x.x.x
+server_port = 7000
+token = token
+tls_enable = true
+
+[web]
+type = http
+local_port = #port
+custom_domains = #domains
+</code></pre>
+<h2 id="更优雅的使用方式"><a href="#更优雅的使用方式" class="headerlink" title="更优雅的使用方式"></a>更优雅的使用方式</h2><p>网上其他教程都简单粗暴的地直接运行命令启动frp，但显然不够优雅，基于这个原因我研究了两种更优雅的使用方式</p>
+<h3 id="进程守护脚本"><a href="#进程守护脚本" class="headerlink" title="进程守护脚本"></a>进程守护脚本</h3><p>这个东西一旦不小心关闭，远程就无法进行下去。<br>所以做了一个守护脚本，30s自动检测进程是否存在，一定程度上避免了因为意外关闭导致的麻烦</p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/23/TR59dsJ1hjVEbFe.jpg" alt="1007AADA-3180-4A59-8E80-738D1F5E0A19.png" class="lazyload"></p>
+<pre><code>@ECHO OFF
+setlocal enabledelayedexpansion
+
+
+
+rem 设置进程检测延迟, 单位 (秒)
+set /a check_delay = 30
+
+
+
+mode 82,12
+set &quot;d=%~p0&quot;
+set &quot;d=%d:\= %&quot;
+for %%a in (%d%) do set name=%%a
+set /a var=0
+start frpc.exe
+:loop
+set /a var=%1+1
+set /a var2=%var%-1
+if %var2%==0 (set num= ) else (set num= 已重启 !var2! 次 restart_service.txt中具有详细信息)
+title %name% 进程守护%num%
+echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+echo ┃             ______     ______     __  __               ┃ 
+echo ┃            /\___  \   /\___  \   /\ \_\ \              ┃ 
+echo ┃            \/_/  /__  \/_/  /__  \ \____ \              ┃
+echo ┃              /\_____\   /\_____\  \/\_____\             ┃
+echo ┃              \/_____/   \/_____/   \/_____/             ┃
+echo ┃                                        ┃
+echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+echo 正在守护 %name% 进程, 当前 %check_delay%s 检测一次, 延迟可在文件中修改
+tasklist|find /i &quot;frpc.exe&quot;
+if %errorlevel%==0 (
+goto true
+) else (
+goto false
+)
+goto :loop
+
+:true
+echo 日期：%DATE% 时间：%time%  ok
+ping -n %check_delay% -w 500 127.1&gt;nul
+cls
+goto loop
+
+:false
+start frpc.exe
+echo 未检测到进程
+echo 启动 %name% ...
+echo 程序重新启动于 日期：%DATE% 时间：%time% &gt;&gt; restart_service.txt
+ping -n 5 -w 500 127.1&gt;nul
+cls
+call :loop %var%
+</code></pre>
+<hr>
+<h3 id="通过-Windows-服务的方式运行-推荐"><a href="#通过-Windows-服务的方式运行-推荐" class="headerlink" title="通过 Windows 服务的方式运行 (推荐)"></a>通过 Windows 服务的方式运行 (推荐)</h3><h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>这种方法无运行窗口，开机以服务方式启动。放在启动项的方式，则需要登录之后才能运行</p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/25/DCxe78Rd5f6nTNk.jpg" alt="85915105-5192-4D6B-A265-705339045196.png" class="lazyload"></p>
+<p><a target="_blank" href="https://github.com/winsw/winsw/releases" class="LinkCard LinkCard-hasImage mdui-ripple">
+          <span class="LinkCard-backdrop" style="background-image:url(pinned-octocat.svg);"></span>
+          <span class="LinkCard-content">
+            <span class="LinkCard-text">
+              <span class="LinkCard-title">winsw/winsw: A wrapper executable that can run any executable as a Windows service, in a permissive license.</span>
+              <span class="LinkCard-meta">
+                <span style="display:inline-flex;align-items:center;">​
+                  <svg fill="currentColor" viewBox="0 0 24 24" width="17" height="17"><path d="M6.77 17.23c-.905-.904-.94-2.333-.08-3.193l3.059-3.06-1.192-1.19-3.059 3.058c-1.489 1.489-1.427 3.954.138 5.519s4.03 1.627 5.519.138l3.059-3.059-1.192-1.192-3.059 3.06c-.86.86-2.289.824-3.193-.08zm3.016-8.673l1.192 1.192 3.059-3.06c.86-.86 2.289-.824 3.193.08.905.905.94 2.334.08 3.194l-3.059 3.06 1.192 1.19 3.059-3.058c1.489-1.489 1.427-3.954-.138-5.519s-4.03-1.627-5.519-.138L9.786 8.557zm-1.023 6.68c.33.33.863.343 1.177.029l5.34-5.34c.314-.314.3-.846-.03-1.176-.33-.33-.862-.344-1.176-.03l-5.34 5.34c-.314.314-.3.846.03 1.177z" fill-rule="evenodd"></path></svg>
+                </span>
+                github.com
+              </span>
+            </span>
+            <span class="LinkCard-imageCell">
+              <img class="LinkCard-image LinkCard-image-square" alt="图标" src="pinned-octocat.svg">
+            </span>
+          </span>
+          </a></p>
+<p>我下载的版本: <a target="_blank" rel="noopener" href="https://github.com/winsw/winsw/releases/download/v2.10.2/WinSW.NET4.exe">https://github.com/winsw/winsw/releases/download/v2.10.2/WinSW.NET4.exe</a></p>
+<p>下载之后，把文件放在frp目录下，新建一个<code>‘文件名’+.xml</code>的文件，比如<code>WinSW.NET4.xml</code>，并写上以下内容</p>
+<pre><code>// WinSW.NET4.xml
+
+&lt;service&gt;
+&lt;id&gt;frp&lt;/id&gt;
+&lt;name&gt;frp&lt;/name&gt;
+&lt;description&gt;Frp Client&lt;/description&gt;
+&lt;executable&gt;frpc&lt;/executable&gt;
+&lt;arguments&gt;-c frpc.ini&lt;/arguments&gt;
+&lt;logmode&gt;reset&lt;/logmode&gt;
+&lt;/service&gt;
+</code></pre>
+<h4 id="便捷管理"><a href="#便捷管理" class="headerlink" title="便捷管理"></a>便捷管理</h4><p>新建一个cmd，复制以下内容，就能便捷管理了</p>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2021/02/25/t9Bi3Gz7Kd25NcJ.jpg" alt="7E5DEE14-1725-481F-A1AB-6BADACFAE6D7.png" class="lazyload"></p>
+<pre><code>// 安装服务.cmd
+
+    @ECHO OFF
+    :home
+    title frp 注册成 Windows 服务
+    cls
+    echo 当前服务运行状态：
+    WinSW.NET4.exe status
+    echo ---------------------------------------------------------------
+    echo     请选择任务。
+    echo ---------------------------------------------------------------
+    echo     [1]安装服务
+    echo     [2]安装服务并启动
+    echo     [3]启动服务
+    echo     [4]停止服务并等待，直到它实际上停止为止
+    echo     [5]卸载服务
+    echo     [6]退出脚本。
+    echo ---------------------------------------------------------------
+
+    choice /n /c 12345678 /m &quot;请输入数字选择:&quot;
+    cls
+    if errorlevel 6 exit
+    if errorlevel 5 goto uninstall
+    if errorlevel 4 goto stopwait
+    if errorlevel 3 goto start
+    if errorlevel 2 goto installandstart
+    if errorlevel 1 goto install
+    
+    :install
+    WinSW.NET4.exe install
+    goto choice
+
+    :installandstart
+    WinSW.NET4.exe install
+    WinSW.NET4.exe start
+    goto choice
+
+    :start
+    WinSW.NET4.exe start
+    goto choice
+
+    :stopwait
+    WinSW.NET4.exe stopwait
+    goto choice
+
+    :uninstall
+    WinSW.NET4.exe stop
+    WinSW.NET4.exe uninstall
+    goto choice
+
+    :choice
+    echo ---------------------------------------------------------------
+    echo     [1]返回
+    echo     [2]退出脚本
+    echo ---------------------------------------------------------------
+    choice /n /c 12 /m &quot;请输入数字选择:&quot;
+    cls
+    if errorlevel 2 exit
+    if errorlevel 1 goto home
+</code></pre>
+
+  </p>
+  </article>
+
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+    
+    
+</div>
+
+
+  <!--右下角按钮<div class="mdui-container">
+    <button class="mdui-fab mdui-fab-fixed mdui-ripple"><i class="iconfont icontop"></i></button>
+  </div>-->
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>feios<br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/build-frp-server/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;build-frp-server&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;build-frp-server&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'feios',
+    siteName: 'feios time',
+    identifier: 'https://www.feios.me/build-frp-server/',
+    url: 'https://www.feios.me/build-frp-server/',
+    title: '配置frp内网穿透',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'zkN3UCgXFTNJmqsAR9ZVFaXaFhFMLBYrK4v8amJDwxMtAxBV544lMBSbkrwmDBJG',
+    admin: 'feiosme',
+    adminLabel: 'feiosme'
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <!--<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+    <script src="/js/zoom-inject.js"></script>
+    <script src="/js/zoom.js"></script>
+    <script src="/js/transition.js"></script>
+
+
+<!--<script src="/js/app.js?v=1650797701733"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js", {scope: '/'})
+        .then(registration => console.log('SW Registration Success！Scope: ', registration.scope))
+        .catch(err => console.log('SW Registration Failed! Error: ', err))
+    }
+    </script>
+  
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-156065728-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

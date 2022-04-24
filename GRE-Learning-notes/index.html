@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>GRE笔记 - feios time</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="feios time">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="power">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GRE笔记">
+<meta property="og:url" content="https://www.feios.me/GRE-Learning-notes/index.html">
+<meta property="og:site_name" content="feios time">
+<meta property="og:description" content="power">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/02/28/tqxHUbZ9TnP4o7S.jpg">
+<meta property="article:published_time" content="2020-02-24T00:17:18.000Z">
+<meta property="article:modified_time" content="2020-02-24T00:17:18.000Z">
+<meta property="article:author" content="feios">
+<meta property="article:tag" content="feios,blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/02/28/tqxHUbZ9TnP4o7S.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  <!--https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css-->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css" />
+  <link rel="manifest" href="/manifest.json">
+
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1662940_3bbjnzxez6i.css">
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1650797701870">-->
+
+  
+
+  
+    <link rel="stylesheet" href="/css/zoom.css" />
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="feios" class="mdui-btn mdui-btn-icon"><img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="feios">
+            <img src="https://blog-1256021060.cos.ap-shanghai.myqcloud.com/images/avatar.png" alt="feios" alt="feios">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>18</div>
+        <!--<div><span>标签</span>0</div>-->
+        <div><span>字数</span>23.1k</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:www.feios.me" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple nexmoe-social-buttom-bilibili" href="https://space.bilibili.com/5988128" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);background: radial-gradient(circle farthest-corner at 75% 25%,rgb(255, 239, 243) 0,rgb(234, 171, 189) 100%);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple nexmoe-social-buttom-github" href="https://github.com/feiosme/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);background: radial-gradient(circle farthest-corner at 75% 25%,#ffffff 0,#b1b1b1 100%);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+    <div class="nexmoe-widget-wrap">
+        <h3 class="nexmoe-widget-title">
+            文章分类
+        </h3>
+        <div class="nexmoe-widget">
+
+            <ul class="category-list">
+
+                
+
+
+                    
+
+                        
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/作品/">
+                                    作品
+                                </a>
+                                <span class="category-list-count">3</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/学习/">
+                                    学习
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/折腾/">
+                                    折腾
+                                </a>
+                                <span class="category-list-count">11</span>
+                            </li>
+
+                            
+
+                            <li class="category-list-item">
+                                <a class="category-list-link" href="/categories/设备/">
+                                    设备
+                                </a>
+                                <span class="category-list-count">1</span>
+                            </li>
+
+                            
+            </ul>
+
+        </div>
+    </div>
+    
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 feios
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover mdui-shadow-5" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://i.loli.net/2020/02/28/weiD8fAqZa3YKNv.jpg" data-sizes="auto" alt="GRE笔记" class="lazyload">
+          <h1>GRE笔记</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月24日</a>
+    <a><i class="nexmoefont icon-areachart"></i>6.9k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 35 分钟</a>
+</div>
+
+  
+  
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GRE%E5%86%99%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">GRE写作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-27"><span class="toc-number">1.1.</span> <span class="toc-text">2.27</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BD%E4%BA%BA%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">国人思维模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A01"><span class="toc-number">1.1.2.</span> <span class="toc-text">练习1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A02"><span class="toc-number">1.1.3.</span> <span class="toc-text">练习2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A03"><span class="toc-number">1.1.4.</span> <span class="toc-text">练习3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A04"><span class="toc-number">1.1.5.</span> <span class="toc-text">练习4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5"><span class="toc-number">1.2.</span> <span class="toc-text">3.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12"><span class="toc-number">1.3.</span> <span class="toc-text">3.12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-19"><span class="toc-number">1.4.</span> <span class="toc-text">3.19</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%80%BB%E8%BE%91%E9%94%99%E8%AF%AF%E5%8F%8A%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">常见逻辑错误及分析方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-26"><span class="toc-number">1.5.</span> <span class="toc-text">3.26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2"><span class="toc-number">1.6.</span> <span class="toc-text">4.2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB%E7%B1%BB"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">因果关系类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-9"><span class="toc-number">1.7.</span> <span class="toc-text">4.9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-16"><span class="toc-number">1.8.</span> <span class="toc-text">4.16</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GRE%E6%96%87%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">GRE文化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-24"><span class="toc-number">2.1.</span> <span class="toc-text">2.24</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2"><span class="toc-number">2.2.</span> <span class="toc-text">3.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9"><span class="toc-number">2.3.</span> <span class="toc-text">3.9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-16"><span class="toc-number">2.4.</span> <span class="toc-text">3.16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-23"><span class="toc-number">2.5.</span> <span class="toc-text">3.23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-30"><span class="toc-number">2.6.</span> <span class="toc-text">3.30</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%8E%E5%9B%BD%E5%8F%91%E5%B1%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%97%B6%E6%9C%9F"><span class="toc-number">2.6.0.1.</span> <span class="toc-text">美国发展的重要时期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E9%87%8D%E5%BB%BA%E6%96%B9%E9%9D%A2"><span class="toc-number">2.6.0.2.</span> <span class="toc-text">主要重建方面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ten-Percent-Plan-%EF%BC%88%E8%B5%A6%E5%85%8D%E5%AE%A3%E8%A8%80%EF%BC%89"><span class="toc-number">2.6.0.3.</span> <span class="toc-text">Ten - Percent Plan （赦免宣言）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-13"><span class="toc-number">2.7.</span> <span class="toc-text">4.13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-20"><span class="toc-number">2.8.</span> <span class="toc-text">4.20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-26"><span class="toc-number">2.9.</span> <span class="toc-text">4.26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-27"><span class="toc-number">2.10.</span> <span class="toc-text">4.27</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GRE%E8%AF%AD%E6%96%87"><span class="toc-number">3.</span> <span class="toc-text">GRE语文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-24-1"><span class="toc-number">3.1.</span> <span class="toc-text">2.24</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A1%AB%E7%A9%BA"><span class="toc-number">3.1.1.</span> <span class="toc-text">填空</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E4%B8%80"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">例题一</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-26"><span class="toc-number">3.2.</span> <span class="toc-text">2.26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-1"><span class="toc-number">3.3.</span> <span class="toc-text">3.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4"><span class="toc-number">3.4.</span> <span class="toc-text">3.4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-1"><span class="toc-number">3.5.</span> <span class="toc-text">3.9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11"><span class="toc-number">3.6.</span> <span class="toc-text">3.11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-16-1"><span class="toc-number">3.7.</span> <span class="toc-text">3.16</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%81%E7%95%A5%E5%8F%A5"><span class="toc-number">3.7.0.1.</span> <span class="toc-text">省略句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-number">3.7.0.2.</span> <span class="toc-text">主语从句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-18"><span class="toc-number">3.8.</span> <span class="toc-text">3.18</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-number">3.8.0.1.</span> <span class="toc-text">定语从句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%BE%E8%AF%AD%E4%BB%8E%E5%8F%A5"><span class="toc-number">3.8.0.2.</span> <span class="toc-text">宾语从句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-23-1"><span class="toc-number">3.9.</span> <span class="toc-text">3.23</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%B0%93%E8%AF%AD%E5%8A%A8%E8%AF%8D"><span class="toc-number">3.9.0.1.</span> <span class="toc-text">非谓语动词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%A6%E5%AE%9A%E5%8A%A0%E6%AF%94%E8%BE%83"><span class="toc-number">3.9.0.2.</span> <span class="toc-text">否定加比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Not-until"><span class="toc-number">3.9.0.3.</span> <span class="toc-text">Not-until</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-25"><span class="toc-number">3.10.</span> <span class="toc-text">3.25</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-30-1"><span class="toc-number">3.11.</span> <span class="toc-text">3.30</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7"><span class="toc-number">3.11.0.1.</span> <span class="toc-text">标点符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E8%B4%9F%E8%AF%84%E4%BB%B7"><span class="toc-number">3.11.0.2.</span> <span class="toc-text">正负评价</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1"><span class="toc-number">3.12.</span> <span class="toc-text">4.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8"><span class="toc-number">3.13.</span> <span class="toc-text">4.8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-13-1"><span class="toc-number">3.14.</span> <span class="toc-text">4.13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-15"><span class="toc-number">3.15.</span> <span class="toc-text">4.15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-20-1"><span class="toc-number">3.16.</span> <span class="toc-text">4.20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-22"><span class="toc-number">3.17.</span> <span class="toc-text">4.22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-27-1"><span class="toc-number">3.18.</span> <span class="toc-text">4.27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-29"><span class="toc-number">3.19.</span> <span class="toc-text">4.29</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>
+    <p>power</p>
+<span id="more"></span>
+
+<h1 id="GRE写作"><a href="#GRE写作" class="headerlink" title="GRE写作"></a>GRE写作</h1><h2 id="2-27"><a href="#2-27" class="headerlink" title="2.27"></a>2.27</h2><h3 id="国人思维模式"><a href="#国人思维模式" class="headerlink" title="国人思维模式"></a>国人思维模式</h3><p>i am thinking of a topic</p>
+<p>idon’t want to say mytopic , but i am sure that you know it<br>“只可意会不可言传”</p>
+<h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><p>过去的人冬天没有暖气, 出门见不到汽车, 连吃肉都困难, 哪有什么幸福可言?<br>people used to have no heating in winter and no cars to go out ,even eating meat is difficulr , how can there be any happiness</p>
+<p>翻译可以改成<br>过去的人们感觉不幸福, 因为没有暖气, 他们在冬天会感觉到寒冷; 没有汽车, 难以到达远方; 很难找到肉吃, 没有营养<br>people in the past didn’t feel happy. They felt cold without radiators ; they found it hard to reach remote places without automobiles; they were malnourished without meat on their tables.</p>
+<h3 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h3><p>出国留学可以学习知识, 增强阅历, 为未来打下基础!<br>Study abroad can learn knowledge, stong experience, for future plant basic.<br>主语应该是人,不是不是出国留学这件事</p>
+<p>accumulate积累</p>
+<p>翻译可以改成<br>出国留学帮助我们学习知识, 增强阅历,为未来做准备/<br>通过出国留学,我们可以学习知识, 增强阅历, 为未来作准备</p>
+<ul>
+<li>省略的主宾要还原</li>
+</ul>
+<h3 id="练习3"><a href="#练习3" class="headerlink" title="练习3"></a>练习3</h3><p>越来越多的孩子有网瘾, 分数下降的很厉害, 身心健康也受到危害.</p>
+<p>越来越多的孩子正在承受网瘾的折磨, 这使得他们的分数下降得很厉害, 畏怯使得他们的身心健康也受到危害</p>
+<p>越来越多<br>more and more<br>an increasing number of </p>
+<p>使<br>make<br>let / allow<br>lead to /reslt in </p>
+<p>An increasing number of students are (suffering) from the internet addiction , which results in their falling grades and poor mental and physical conditions.</p>
+<h3 id="练习4"><a href="#练习4" class="headerlink" title="练习4"></a>练习4</h3><p>学习艺术可以陶冶情操</p>
+<p>Apreciating arts and music is a [character education].<br>Appreciating arts and music hlps students [mold(塑造) and shape] their characters.<br>Appreciating arts and music teaches [values and virtues].<br>[陶冶情操]</p>
+<h2 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h2><p>cogent 强有力的<br>well-articulated 表达清晰的<br>insightful 富有洞察力的<br>issue 不一定要绝对的反对或同意<br>combustion 运行<br>quandaries 困境</p>
+<ol>
+<li>The assumption is that an increased reliance on technology negates the need for people to think creatively to love previews quandaries</li>
+<li>This reliance on technology does not necessarily preclude the creativity that marks the human species</li>
+</ol>
+<p>short circuits 短路，漏电<br>preclude 排除，阻止<br>scale 需求<br>proliferation 增殖，扩散<br>horse-and-buggy过时的<br>inconceivable 不可想象的<br>ruling party 统治党派<br>maverick 持不同意见的<br>rebuttal 反驳<br>layman 门外汉<br>vaccines 疫苗</p>
+<h2 id="3-12"><a href="#3-12" class="headerlink" title="3.12"></a>3.12</h2><p>Argument的写作特点<br>conclusion + Assumption + Evidence<br>第1段 —— 开头段：归纳论点，论据，指明逻辑漏洞个数<br>第2-4段 —— 正文段：分类攻击各个逻辑错误（独立与组合结构最好）</p>
+<ol>
+<li>开头 C（结论） —— E（论证） —— F（Flaw：指出原文缺点）</li>
+<li>先提出原文漏洞再给出理由反驳</li>
+</ol>
+<h2 id="3-19"><a href="#3-19" class="headerlink" title="3.19"></a>3.19</h2><h4 id="常见逻辑错误及分析方法"><a href="#常见逻辑错误及分析方法" class="headerlink" title="常见逻辑错误及分析方法"></a>常见逻辑错误及分析方法</h4><ol>
+<li>调查数据相关</li>
+</ol>
+<ul>
+<li>有偏采样<br>抽样对象与结论中的对象不一定是一样的</li>
+</ul>
+<h2 id="3-26"><a href="#3-26" class="headerlink" title="3.26"></a>3.26</h2><p>实验对比(Test and control group Fallacy)是否存在相同性质主客观的对比</p>
+<p>百分比陷阱(Falso Ratio Fallacy) (charitable 慈善)<br>基数不一定相同（没有一定的基数，百分比是无意义的）<br>假设百分比小的基数较小，百分比较大/基数较大，百分比较小</p>
+<h2 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h2><h4 id="因果关系类"><a href="#因果关系类" class="headerlink" title="因果关系类"></a>因果关系类</h4><ol>
+<li>急于概括 (Hasty-Generalization Fallacy)</li>
+<li>后此谬误 (The “After this, therefore” fallacy)</li>
+<li>因果倒置 (The fallacy of confusing the cause and the effect)</li>
+</ol>
+<h2 id="4-9"><a href="#4-9" class="headerlink" title="4.9"></a>4.9</h2><p>比较类比</p>
+<ul>
+<li>错误类比（The fallacy of faulty analogy）(wholesale outlet批发)</li>
+<li>同等谬误（The All things are equal Fallacy）</li>
+</ul>
+<blockquote>
+<p>王大锤去年参加了超级女声得了第一，今年，她应该还会得第一<br>（时间不一样，比赛赛制也不一定一样）<br><em>foam economy 通货膨胀</em><br>The arguer claims that ( Deer haven Acres should adopt resection on lands caping and housing painting ) because ( the nearby Brookville adopted than 7 years ago and their preparing values tripled.)指出这个推断是有问题的：This is an unwarranted assumption because things rarely remain the same from place to place.指出推断不成立的可能性：Important factors cannot be denied for as 房价上升不一定因为这个限制/这个限制并不一定适合DA 结尾：All these factors mentioned above can serve to weaken the larger claim</p>
+</blockquote>
+<h2 id="4-16"><a href="#4-16" class="headerlink" title="4.16"></a>4.16</h2><ol>
+<li>整体推个体（The general doesn’t equal a specific fallacy）</li>
+</ol>
+<p><em>整体情况不等于个体情况，因为可能存在exception</em><br>Lacking evidence that 个体（M镇选民） reflect this general tendiety it is entirely possible that 与整体相方可能性（全国选民） trend of <em>Monreotown</em> might be just the opposite.<br>2. 偷换概念（A fallacy of inconsistent connotation and extension）<br><em>比较题目中所出现的概念和其定义是否能够匹配，是否存在其他合理定义</em><br>The arguer fails to establish the meaning of the vague concept of <em>job satisfaction</em> Accordingly, the author has drawn the conclusion too However, <em>job satisfaction</em> may be defined in other terms such as <em>More career development Travelling</em> rashly due to the due to the ignorance of other of other definitions of <em>job satisfaction</em></p>
+<h1 id="GRE文化"><a href="#GRE文化" class="headerlink" title="GRE文化"></a>GRE文化</h1><h2 id="2-24"><a href="#2-24" class="headerlink" title="2.24"></a>2.24</h2><p>哥伦布 洋流 西印度群岛 葡萄牙 西班牙</p>
+<p>1.The Age of Exploration (大航海时代)<br>哥伦布(1492年第一次航行) 圣萨瓦尔多<br>第一个国家：葡萄牙，黑奴贸易</p>
+<ol>
+<li>自然条件恶劣</li>
+<li>好战</li>
+<li>强大王权</li>
+</ol>
+<p>开启航海时代 —— 葡萄牙<em>、西班牙</em>、荷兰<br>*王室支持</p>
+<p>西经46‘37’为界线（最初）葡萄牙和西班牙<br>印尼<br>衰落的原因： 沉迷消费和享乐/未重视本国工商业<br>哥伦布四次航海</p>
+<ol>
+<li>1492年 - 1492年。发现</li>
+<li>1493年。殖民</li>
+<li>1598年  南美洲</li>
+<li>1502年（水上通道）</li>
+</ol>
+<h2 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h2><p>The Colonial America<br>Nashville -&gt; 法国有关  Saint -&gt; 西班牙有关<br>Emigration/immigration  (迁出)殖民/(迁入)殖民<br>Puritans   清教徒（pure纯洁的）pilgrims 朝圣者<br>puritanism 清教    protestantism 新教</p>
+<h2 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h2><p>美国独立战争 1775-1783<br>参战方：美利坚合众国，法国，西班牙，英国，荷兰<br>主要指挥官：华盛顿<br>性质：资产阶级运动，民族解放运动<br>原因：英国殖民统治阻碍了美国资本主义发展<br>导火索：1773年波士顿倾茶事件<br>审理：约克镇战役（1781年）<br>北美殖民经济分布：北部造船业发达，中部盛产粮食，南部盛行种植园经济</p>
+<ul>
+<li>1775年莱克星顿枪声</li>
+<li>1755年建军</li>
+<li>1776年7月4日《独立宣言》建国</li>
+<li>1787年《1787年宪法》</li>
+<li>1783年英国承认美国独立<br>七年战争后，英国提出向北美殖民地征税，激起北美反抗</li>
+</ul>
+<h2 id="3-16"><a href="#3-16" class="headerlink" title="3.16"></a>3.16</h2><ul>
+<li>1783年后再次以西扩张，通过购买、掠夺、殖民等手段（运动主体）</li>
+<li>1803年，美国从法国1500万买了路易斯安那区域</li>
+<li>1820年和1819从西班牙夺得佛罗里达</li>
+<li>1846年，强迫英国定约，将北纬49‘线延伸到大西洋沿岸</li>
+<li>1846年-1853年，美墨战争爆发，多的墨西哥大片领土</li>
+<li>1853年，美国已将国界延伸到太平洋的沿岸</li>
+<li>1848难，加利福尼亚发现金矿</li>
+<li>1867年以720万美元买下了阿拉斯加</li>
+<li>1894年，美国推翻夏威夷国</li>
+<li>1898年，美西战争后，又兼并了夏威夷群岛</li>
+</ul>
+<h2 id="3-23"><a href="#3-23" class="headerlink" title="3.23"></a>3.23</h2><p>1861年4月12日，林肯怼南方宣战，南北战争爆发<br>1854年被房间里共和党，1860年林肯上台，南方黑奴州纷纷独立，在1861年2月组成“美利坚株洲联盟”定里士满，戴维斯任总统。</p>
+<p>转折：1862年林肯政府颁布《宅地法》《解放黑人》《奴隶制宣言》<br>局限性：只是废除了南北叛乱的奴隶制，虽然黑人被解放了，但没有获得拜仁一样的权利。</p>
+<h2 id="3-30"><a href="#3-30" class="headerlink" title="3.30"></a>3.30</h2><p>Reconstruction (1865 - 1877)</p>
+<h4 id="美国发展的重要时期"><a href="#美国发展的重要时期" class="headerlink" title="美国发展的重要时期"></a>美国发展的重要时期</h4><ul>
+<li>1607 - 1733 英属北美殖民地的建立</li>
+<li>1774 - 1783 独立战争</li>
+<li>1781 - 1814 独立的民族主权国家的建立</li>
+<li>1814 - 1861 南北战争前南北经济、政治、外交政策的不同发展时期</li>
+<li>1861 - 1877 南北战争及战后重建</li>
+<li>1877 - 1900 19世纪后半叶经济迅速发展（镀金时代）</li>
+<li>1889 - 1914 第一次世界大战前的发展</li>
+<li>1914 - 1903 第一次世界大战至20世纪20年末的美国</li>
+<li>1930 - 1940 20世纪30年代的美国</li>
+<li>1941 - 1945 第二次世界大战</li>
+<li>1945 - now  第二次世界大战后</li>
+</ul>
+<h4 id="主要重建方面"><a href="#主要重建方面" class="headerlink" title="主要重建方面"></a>主要重建方面</h4><p>联邦的恢复，南方社会的转型，颁布积极法案来保障黑人的权利</p>
+<h4 id="Ten-Percent-Plan-（赦免宣言）"><a href="#Ten-Percent-Plan-（赦免宣言）" class="headerlink" title="Ten - Percent Plan （赦免宣言）"></a>Ten - Percent Plan （赦免宣言）</h4><ol>
+<li>只要有百分之十的南方州人民投票愿意回到联邦并且接受宪法第十三修正案，他们就能恢复自己在议院的合法席位</li>
+<li>Redical Republican 共和党激进派</li>
+<li>1865 - 1866 年间出台各类“黑人法典”限制和人产权，经营权，限制黑人工种，变相奴隶制</li>
+<li>国会共和党人先后通过了《1866年民权法案》和宪法第十四、十五修正案，保障黑人的公民权和投票权。</li>
+</ol>
+<h2 id="4-13"><a href="#4-13" class="headerlink" title="4.13"></a>4.13</h2><p>镀金时代：<br>1877 - 1917年，由马克·吐温透出“The fold Age”而命名。美国工业迅速发展，走向了集中，垄断。19世纪末20世纪初属于美国资本家强取豪夺时期，为了自己利益不顾工人死活。</p>
+<p>进步主义：<br>只在18 - 19世纪美国盛行的一种社会主义思潮和运动，商业领导着蛇娜方式改变。工业化加强，城市化进程加大，意识形态宗教。商业垄断出行问题：政治腐败严重，资本家一工人，白人与黑人，男人与女人之间的尖锐矛盾  </p>
+<h2 id="4-20"><a href="#4-20" class="headerlink" title="4.20"></a>4.20</h2><p>一战中的美国<br>1914年6月28，奥匈帝国皇储斐迪南大公夫妇被枪杀，成为一战导火索<br>开始标志：奥匈帝国对塞尔维亚宣战/结束，德国宣布投降<br>主要同盟：德、奥匈、奥斯曼<br>主要同盟：英、法、俄罗斯帝国、美国</p>
+<h2 id="4-26"><a href="#4-26" class="headerlink" title="4.26"></a>4.26</h2><p>民族主义：不同民族的思想出现分化，国力强盛民族意志逐渐增强，向境外延伸<br>军国主义：常备军，防备军<br>帝国主义：扩张领土，寻找殖民地<br>1916.5 - 1917.1美国德国冲突不断<br>凡尔赛条约（the Treaty of Versailles）一战结束</p>
+<h2 id="4-27"><a href="#4-27" class="headerlink" title="4.27"></a>4.27</h2><p>The Roaring Twenties(咆哮的20年代)（1919 - 1929）<br>1912：泰坦尼克号沉船<br>1913：不锈钢的发明<br>1914:巴拿马运河完成<br>1920.1.17：美国宪法第18修正案——禁酒法案</p>
+<h1 id="GRE语文"><a href="#GRE语文" class="headerlink" title="GRE语文"></a>GRE语文</h1><h2 id="2-24-1"><a href="#2-24-1" class="headerlink" title="2.24"></a>2.24</h2><p>###长难句</p>
+<blockquote>
+<p>yet those(那些人 着重强调) &lt;-(修饰)[who stress the achievement of a general consensus among the colonists] / cannot fully understand that (consensus) &lt;-(修饰)[without understanding the (conflicts)] &lt;-修饰(that) had to be overcome or repressed in order to reach it.</p>
+</blockquote>
+<p>consensus名词 general 形容词修饰名词<br>repressed动词</p>
+<p>cannot fully understand 不能完全理解<br>overcome克服<br>repressed压迫</p>
+<p>从句的部分不应该成为主干的部分, 所以可以去掉<br>consensus作为主干词,剩余内容都是为了修饰它<br>所以整句的可以简化为<br>yet those cannot fully understand it</p>
+<p>who stress the (achievement肯定general consensus) of a general consensus among the colonists<br>在没能达成一致的意见的情况下, 会出现一些必须要被压迫下去的冲突<br>达成一致意见之前可能会出现一些冲突.<br>在达成一致意见之前首先要了解那些冲突<br>没能完全了解冲突的统一意见,<br>[那些人]&lt;-[在没能达成一致意见的情况下]无法完全{[理解]&lt;-[不了解(冲突)&lt;-(去客服或者压迫)]}它</p>
+<h3 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h3><blockquote>
+<p>(far from) viewing Jefferson as a skeptical (but) enlightened intellectual,== historians of the 1960’s portrayed him as a doctrinaire thinker,==补充说明-&gt; eager to fill the young with his political orthodoxy while censoring ideas he did not like.</p>
+</blockquote>
+<p>far from…but…=not…but…<br>portrayed 把..看成<br>doctronaire 形容词 教条主义<br>eager to do something 渴望做某事</p>
+<hr>
+<blockquote>
+<p>The Chinese, [(who) began systematic astronomical and weather observations shortly after the ancient Egyptians], were assiduous record-keepers, and because of this, can claim humanity’s logest continuous documentation of natural events</p>
+</blockquote>
+<p>中国人紧随古埃及人其后,开启了系统的天文学和天文观测学,可以称之为在自然形象记录方面,是人类目前为止最长的记录保持着</p>
+<p>assiduous形容词<br>because of this正因如此<br>democray</p>
+<hr>
+<p>十五岁的小张<strong>今年十五岁了</strong></p>
+<hr>
+<h4 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h4><p>选两个同义词来适合填空内容</p>
+<blockquote>
+<p>Congress is <strong>having great difficulty developing a consensus</strong> on energy policy, primarily <strong>because</strong> the policy objective of various members of Congress <strong>rest on such _____ assumptions</strong></p>
+</blockquote>
+<p>(A) commonplace 频繁的<br>(B) trivial 琐碎的<br>(C) explicit 清楚的,明白的,明确的<br>(D) disparate 不同的<br>(E) divergent 分歧的<br>(F) fundamental 基本的</p>
+<p>assumptions 假设<br>DE<br>遇到填空题先判定需要填词的词性,可以知道这句话中包括了because,有知道结果部分是一个完整的信息,描述的部分是达成一致方面有困难,结果是没有一致意见<br>要考虑填词的词性, 功能</p>
+<h2 id="2-26"><a href="#2-26" class="headerlink" title="2.26"></a>2.26</h2><blockquote>
+<p>The increase (in the numbers of married women employed outside the home in the twentieth century) had less to do with (the mechanization of housework and an increase in leisure time for those women) than it did with high marriage rates (that shrank the available pool of single women workers , previously, in many cases, the inly women employers would hire) .</p>
+</blockquote>
+<p>后置定语分成三种形式  to do,被动形式, doing非谓语动词<br><code>the best man to do the job</code> 他是做这项工作的最佳人选</p>
+<p>mechanization 机械化</p>
+<p>GRE背景下的同义/反义关系</p>
+<ol>
+<li>广义的同义</li>
+</ol>
+<ul>
+<li>同义词</li>
+<li>上下义词</li>
+<li>感情色彩相同</li>
+<li>正负方向相同</li>
+</ul>
+<ol start="2">
+<li>广义的反义<ul>
+<li>反义词</li>
+<li>感情色彩相反</li>
+<li>正负方向相反</li>
+<li>与极端次相对的中性词</li>
+</ul>
+</li>
+</ol>
+<p>Many welfare reformers would substitute a single , federal<br>Financed income support (system) / (for) the existing ____ of overlapping (programs).<br>A. Welter 混乱<br>B. hodgepode 大杂烩<br>C. Paucity 缺乏<br>D. Core 核心<br>E. Functionalism 功能主义<br>F. participation 参与</p>
+<p>In many science fiction films, the (opposition) of good and evil is portrayed as a ___ between technology, which is ____, and the errant（错误的） will of a depraved(堕落的) intellectual.<br>    blank(i)     blank(ii)<br>A.fusion     D.dehumanizing<br>B.struggle   E.unfettered<br>C.parallel   F.beneficent</p>
+<p>B  F</p>
+<h2 id="3-2-1"><a href="#3-2-1" class="headerlink" title="3.2"></a>3.2</h2><blockquote>
+<p>The physicist rightly dreads precise argument, <strong>since</strong> an argument <strong>that</strong> is convincing only if it is precise / loses all its force if the assumptions <strong>on which it is</strong> based are slightly changed, <strong>whereas</strong> an argument that is convincing <strong>though</strong> imprecise may well be stable under small perturbations of its underlying assumptions.</p>
+</blockquote>
+<blockquote>
+<p><strong>Although</strong> the feeding <strong>activities</strong> of whales and walruses give the seafloor of the bering shelf a ++devastated ++ appearance, these activities seem to e actually beneficial to the area, enhancing its productivity.</p>
+</blockquote>
+<blockquote>
+<p>Heavily perfumed <strong>white flowers</strong>, such as gardenias, were <strong>favorites</strong> with <strong>collectors</strong> in the eighteenth century, when <em>scent</em> was valued much ore highly than it is teal.</p>
+</blockquote>
+<blockquote>
+<p>Dreams are <em>uninformative</em> in and of <strong>themselves</strong>, <strong>but</strong> when <strong>combined with</strong> other data, <strong>they</strong> can tell us much about the dreamer.</p>
+</blockquote>
+<blockquote>
+<p><strong>Queen</strong> Elizabeth I has quite correctly been called a _____ Of the <strong>arts</strong>, because many young artist received <strong>her</strong> patronage.<br>A. Connoisseur 赞赏家<br>B. Critic<br><code>C. friend</code><br>D. scourge<br>E. judge</p>
+</blockquote>
+<blockquote>
+<p>The transition from the Paleolithic to the Neolithic era is viewed by most art historians as a ____ <strong>because</strong> , <strong>instead of</strong> an increasingly ____ pictorial art but we find degeneration.<br>A. milestone … debased<br>B. consolidation … diverse<br>C. calamity … aberrant<br><code>D. regression ... sophisticated</code><br>E. continuation … improved</p>
+</blockquote>
+<blockquote>
+<p><strong>Despite</strong> ___ on taking rare <strong>tamarins</strong> from their habitat the illegal trade in the tiny <strong>monkeys</strong> remains ____<br>A. commendations … obligatory<br>B. consultations … illicit<br><code>C. prohibitions ... active</code></p>
+</blockquote>
+<blockquote>
+<p>representing a round world on a flat surface is impossible without some ____ ; the Mercator projection may shows Greenland as over ten times larger than Mexico, a country in fact only slightly smaller than Greenland<br>A. oversight 疏忽<br>B. simplification 简化<br>C. clarification 澄清<br>D. distortion 歪曲<br>E. superficiality 表面<br>F. warping 歪曲</p>
+</blockquote>
+<h2 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h2><blockquote>
+<p>（In order to understand the <strong>nature</strong> of the ecologist’s investigation）, we may <strong>think of</strong> the density - dependent affects on growth parameters <strong>as</strong> <em>吧..看作</em> the “signal” ecologists are trying to isolate and interpret, / <strong>one</strong> that tends to make the population increase from relatively low values or decrease from <strong>relatively</strong> <em>相对地</em> high ones, while the density independent effects act to produce “noise” in the population dynamics.</p>
+</blockquote>
+<blockquote>
+<p>Yellow fever<em>黄热病</em>, (插入语成分)-&gt;[the disease that killed 4,000 Philadelphians in 11793, and so  ____ Memphis, Thnnessee, that the city lost its charter,] has reappeared<em>再次出现</em> after nearly two decades in ____ in the Weatern Hemisphere.<br>A. terrorized<em>恐怖</em> … contention<em>争论</em><br>B. ravaged<em>损坏</em> … secret<em>秘密</em><br>C. disabled<em>使…无能</em> … quarantine<em>隔离</em><br>D. corrupted<em>腐败</em> … quiescence<em>静止</em><br><code>E. decimated*摧毁* ... abeyance*中止*</code></p>
+</blockquote>
+<blockquote>
+<p>Melodramas<em>音乐剧</em> which did not present neutral situations were popular precisely because they off the audience<em>观众</em> a world ____ of ____<br>A. bereft … theatricality<br>B. composed … adversity<br>C. full … circumstantiality<br>D. deprived … polarity<br><code>E. devoid ... neutrality</code></p>
+</blockquote>
+<blockquote>
+<p>Many <strong>paintings</strong> of the American southwest <strong>convey</strong> a feeling of iodation and <strong>loneliness</strong> that mirrors<em>映射(对等关系)</em> the ____ lands they <strong>depict</strong> <em>描绘</em><br>A. lush 丰富的<br>B. sprawling 不规则的<br><code>C. desdate 荒凉的</code><br>D. gaudy 华而不实的<br>E. monumental </p>
+</blockquote>
+<blockquote>
+<p>Old age, <strong>even</strong> in cultures where it is <strong>, is often vital with</strong><br><code>A. venerated*受人尊敬的* ... ambivalence*矛盾*</code><br>B. rara … surprise<br>C. ignored … condescension<br>D. feared … dismay<br>E. honored … respect</p>
+</blockquote>
+<h2 id="3-9-1"><a href="#3-9-1" class="headerlink" title="3.9"></a>3.9</h2><blockquote>
+<p>This preference for exogamy, gutman suggests, may have derived from West African rules / governing marriage, <strong>which</strong>, (though they differed from one tribal group to another, <strong>all</strong> involved some kind of prohibition against unions with close kin.)主从复合句 which引导主句all</p>
+</blockquote>
+<blockquote>
+<p>Many <em>industries</em> are <strong>so</strong> ____ by the impact of government sanctions, equipment failure, and foreign competition <strong>that</strong> <em>they</em> are beginning to <strong>rely on</strong> industrial psychologists to ____ what remains of employee morale.<br>A. estranged<em>疏远</em> … guard<em>护卫</em><br><code>B. beleaguered*围困* ... salvage*救赎*</code><br>C. overruled … undermine<br>D. encouraged … determine<br>E. restrained … confirm</p>
+</blockquote>
+<blockquote>
+<p><strong>Whereas</strong> biologists must maintain a ____ attitude toward the subjects of their research, social scientists must, <strong>paradoxically</strong> <em>与之相互矛盾的是</em>, combine personal involvement<em>参与度</em> and scholarly<em>学术的</em> ____<br>A. scorupulous<em>小心翼翼</em> … sympathy<br>B. careful … abandon<br>C. casual … precision<em>精确</em><br>D. passive … passion<br><code>E. disinterested*客观的，公正的* ... detachment*分离*</code></p>
+</blockquote>
+<blockquote>
+<p><strong>Although</strong> the revelation <strong>that</strong> one of the contestants<em>竞争者</em> was a friend left the judge (open to)<em>处于…境地</em> charges<em>指控</em> of lack of the judge remained ailment   in her assertion<em>观点</em> that acquaintance<em>熟识的关系</em> did <strong>not</strong> necessarily imply ____<br>A. prudence<em>谨慎</em> … rdeance<br>B. detachment …foreknowledge<em>预言</em><br>C. exoneration<em>免罪</em> … impropriety<em>不适当</em><br>D. prejudice<em>偏见</em> … preference<br><code>E. disinterestedness ... partiality*部分*</code></p>
+</blockquote>
+<blockquote>
+<p>The highly publicized redesign of the car is essentially ____ the exterior<em>外部的</em> has been updated <strong>but</strong> the engine remains unchanged.<br>A. intuitive<em>直觉的</em><br><code>B. cosmetic*化妆品*</code><br>C. superficial<em>表面的</em><br>D. consequential<em>重要的</em><br>E. retroactive<em>可追溯的</em><br>F. momentous<em>极其重要的</em></p>
+</blockquote>
+<blockquote>
+<p>Many of our memories are ____, escaping our consciousness just as we strain to recall a face or a name.<br><code>A. elusive*难懂的*</code><br>B. pervasive<em>普遍的</em><br>C. unvaried<br>D. insensitive<em>感觉迟钝的</em><br>E. unaffected<br><code>F. slippery*滑的*</code></p>
+</blockquote>
+<blockquote>
+<p><strong>Although</strong> Caroline Gordon was rigorously <strong>objective</strong> in her journalistic writing, her lively and ____ <strong>private</strong> correspondence ____ a delightful capacity<em>能力</em> for biting commentary on the social scene.<br>A. incisive<em>敏锐的</em><br>B. dispassicnate<em>客观的</em><br>C. exuberant<em>热情的</em><br>D. exhibited<em>展现</em><br>E. decried<em>公开谴责</em><br>F. minimized<em>最小化</em></p>
+</blockquote>
+<h2 id="3-11"><a href="#3-11" class="headerlink" title="3.11"></a>3.11</h2><blockquote>
+<p>The historian Frederick j,Turner wrote in the 1890’s [ <strong>that</strong> the agrarian discontent<em>不满</em> <strong>that</strong> had been developing steadily in the united states since about 1870 ] had been precipitated by the closing of the internal frontier that is, the depletion<em>消耗</em> of available new land needed for further expansion of the American farming system. </p>
+</blockquote>
+<p>两大原则： 公平原则，重复原则<br>self-isolation 自我隔离<br>quarantine 隔离<br>confirmed case 确诊病例<br>suspected case 疑似<br>imported case 输入型病例<br>close contact 密切接触<br>incubation period 潜伏期<br>disinfection 消毒<br>postpone the reopening of schools 延迟开学</p>
+<blockquote>
+<p>For more than a century, geologists have felt comfortable with the idea that geological processes, <strong>although</strong> very, <strong>are also</strong> ____ and so are capable of shaping the Earth given enough time.<br>A. minute<em>微小的</em> … sporadic<em>零星的</em><br><code>B. slow ... steady*可识别的*</code><br>C. complex … discernible<br>D. unpredictable … constant<br>E. ponderous<em>沉重的</em> … intermittent<em>间隙的</em></p>
+</blockquote>
+<blockquote>
+<p>An effective member of a debating team must for clearly on the ____ issue and avoid ____ argument.<br>A. equivocal<em>可疑的</em><br>B. principal<em>主要的</em><br>C. comprehensive<em>综合的</em><br>D. obstreperous<em>吵闹的</em><br>E. peripheral<em>次要的</em><br><code>F. pertinent*相关的*</code></p>
+</blockquote>
+<blockquote>
+<p>The ____ with <strong>which</strong> merchants and landowners in early-nineteenth-century Maryland and Virginia ____ <strong>Joshua Johnstair</strong> professional services attests<em>证实</em> to his artistic skill as a portrait painter.<br>A. avidness<em>渴望</em><br>B. diffidence<br>C. disgust<br>D. sought<br>E. replaced<br>F. overlooked</p>
+</blockquote>
+<blockquote>
+<p>The man’s colleagues characterized him as ____ because he imitable, quarrelsome<em>坏脾气</em> disposition<br><code>A. crabby</code><br>B. disingenuous<br>C. sanctimonious<br><code>D. cantankerous</code><br>E. artful<br>F. tyrannical</p>
+</blockquote>
+<h2 id="3-16-1"><a href="#3-16-1" class="headerlink" title="3.16"></a>3.16</h2><blockquote>
+<p>But <strong>these</strong> <em>主</em> of <strong>who</strong> <em>宾从</em> hoped, with Kolb, <strong>that</strong> <em>宾从</em> Kolb’s,newly published complete edition of Proust’s correspondence for 1909 would document*=record* the process in greater detail are disappointed.</p>
+</blockquote>
+<blockquote>
+<p>____ <strong>as</strong> <em>=though(倒装句中)</em> Mario’s misdeed was. his grandmother, always blind to his faults, pretended to be unaware of it,<br>A. accidental<br>B. apt<br>C. random<br><code>D. flagrant</code><br>E. covert</p>
+</blockquote>
+<h4 id="省略句"><a href="#省略句" class="headerlink" title="省略句"></a>省略句</h4><blockquote>
+<p>The most frustrating periods of any diet<em>节食</em> are the inevitable<em>不可避免</em> ____, when weight loss ____ if not stops.<br>A. moods … accelerates<br>B. feasts … halts<br>C. holidays … contracts<br><code>D. plateaus ... slows</code><br>E. meals … ceases</p>
+</blockquote>
+<h4 id="主语从句"><a href="#主语从句" class="headerlink" title="主语从句"></a>主语从句</h4><blockquote>
+<p>(It is ironic<em>讽刺</em> <strong>that</strong> the ____ <strong>insights</strong> of the great thinkers) are voiced so often that <strong>they</strong> have become were ____.<br>A. original … cliches<br>B. banal … beliefs<br>C. dubious … habits<br><code>D. philosophical ... questions</code><br>E. abstract … ideas</p>
+</blockquote>
+<blockquote>
+<p>If it true <strong>that</strong> <em>主从</em> morality cannot exist without religion, then does not the. erosion<em>侵蚀</em> of religion herald<em>预示</em> the ____ of morality?<br>A. regulation<br>B. basis<br>C. belief<br><code>D. collapse</code><br>E. value</p>
+</blockquote>
+<blockquote>
+<p>After winning the lottery, John bought sports cars, built a mansion, and wore designer suit; however, by thus ____ his ____, he alienated his friends.<br>A. enduring<em>忍受</em><br><code>B. flaunting*炫耀*</code><br>C. calculating<em>计算</em><br>D. hardship<br><code>E. prosperity*财产*</code><br>F. image</p>
+</blockquote>
+<blockquote>
+<p>The study of biology, once considered they key to solving nature’s mysteries, has instead served to emphasize nature’s incredible ____.<br>A. tranquility<em>安静</em><br>B. immobility<em>静止</em><br><code>C. intricacy*复杂*</code><br>D. desirability<br><code>E. complexity</code><br>F. stability</p>
+</blockquote>
+<blockquote>
+<p>In 1575 Venetians instituted an annual celebration to ____ the end of the ____ that had struck the city.<br>A. commemorate<em>纪念</em><br>B. lament<em>抱怨</em><br>C. solemnize<br>D. prospenity<em>富有</em><br><code>E. plague*瘟疫*</code><br>F. fame<em>流言</em></p>
+</blockquote>
+<h2 id="3-18"><a href="#3-18" class="headerlink" title="3.18"></a>3.18</h2><blockquote>
+<p>But these beliefs about (peptide hormones) were questioned after laboratory found <strong>that</strong> [antiserums to peptide hormones],when injected into the brain, bind in places. Other than the hypothalamus, indicating <strong>that</strong> either the hormones or substances <strong>that</strong> cross-react<em>交叉反应</em> with the antiserums are present.</p>
+</blockquote>
+<h4 id="定语从句"><a href="#定语从句" class="headerlink" title="定语从句"></a>定语从句</h4><blockquote>
+<p>(The disjunction between educational objectives <strong>that</strong> stress independence and individuality and those <strong>that</strong> emphasize obedience to rules and cooperation with others)<em>主</em> reflects a ____ <strong>that</strong> arises from the values on <strong>which</strong> these objectives are based.<br><code>A. conflict</code><br>B. redundancy<br>C. gain<br>D. [redoctabo;otu<br>E. wisdom</p>
+</blockquote>
+<h4 id="宾语从句"><a href="#宾语从句" class="headerlink" title="宾语从句"></a>宾语从句</h4><blockquote>
+<p>The poet W.H Auden believed <strong>that</strong> the greatest poets of his age were almost irresponsible ,<strong>that</strong> the possession of goat gifts ____ to abuse them.<br>A. negates<em>使…否定</em> … temptation<em>诱惑</em><br>B. controls … resolution<br><code>C. engenders*使...导致* ... propensity*倾向*</code><br>D. tempers<em>调和</em> … proclivity<em>倾向</em><br>E. obviates<em>消除</em> … inclination<em>倾向</em></p>
+</blockquote>
+<blockquote>
+<p>Most pioneers ____ this alley on their journey to the west because its rugged terrain an frequent Landslides made it a ____ place for travelers.<br>A. skirted<em>绕行</em><br>B. enjoyed<br>C. encompassed<br>D. fascinating<br>E. necessary<br><code>F. hazardous</code></p>
+</blockquote>
+<blockquote>
+<p>Ballads often <strong>praise</strong> popular figures who have performed feats that many perceive as, such as defending the poor or <strong>resisting</strong>  authority<em>权威</em>.<br><code>A. admirable</code><br>B. inescapable<br>C. plausible<br><code>D. unjust</code><br>E. legitimate<br>F. derate</p>
+</blockquote>
+<h2 id="3-23-1"><a href="#3-23-1" class="headerlink" title="3.23"></a>3.23</h2><blockquote>
+<p><strong>It is</strong> one of nature’s great ironies <strong>that</strong> the availability of nitrogen in the soil frequently sets an <em>upper limit上限</em> on plant growth <strong>even though</strong> (the plants leaves are bathed<em>沉浸</em> in a sea of <em>nitrogen gas氮气</em>).<br>–</p>
+</blockquote>
+<h4 id="非谓语动词"><a href="#非谓语动词" class="headerlink" title="非谓语动词"></a>非谓语动词</h4><blockquote>
+<p>No longer <strong>considered</strong> ____, <strong>the belief</strong> that all of puerto Rico’s indigenous Taino people perished centuries ago appears to be a ____ now that modern Taino descendants have come froward<br>A. conclusive … reality<em>出现</em><br><code>B. tenable ... misconception</code><br>C. mythical … possibility<br>D. erroneous … delusion<br>E. hypothetical … digression</p>
+</blockquote>
+<h4 id="否定加比较"><a href="#否定加比较" class="headerlink" title="否定加比较"></a>否定加比较</h4><blockquote>
+<p>Camuther’s latest literary criticism ____ her reputation<em>名声</em> for trenchant commentary<em>评论</em>; <strong>despite</strong> its intriguing<em>有趣</em> title and the fulsome praise on its dust jacket<em>外表</em>, it is nothing more than a collection of ____.<br>A. reinforces<em>加强</em> … pronouncements<em>声明</em><br><code>B. belies ... platitudes*陈词滥调*</code><br>C. prejudices … insights<br>D. advances … aphorisms<em>格言</em><br>E. undermines<em>破坏</em> … judgments</p>
+</blockquote>
+<h4 id="Not-until"><a href="#Not-until" class="headerlink" title="Not-until"></a>Not-until</h4><blockquote>
+<p>We ad not realized how much people ____ the library’s old borrowing policy until we received complaints once it had been ____.<br>A. enjoyed … continued<br>B. disliked … administered<br>C. respected … imitated<br>D. ignored … lauded<br><code>E. appreciated ... superseded</code></p>
+</blockquote>
+<blockquote>
+<p>The rover’s imposition of <em>martial law婚姻法</em> on the once peaceful community was the last straw, so far as the lawmakers were concerned, the legislature refuser to function until martial law was ____.<br>A. reaffirmed<em>重申</em><br>B. reiterated<br>C. inaugurated<em>创新</em><br><code>D. rescinded*解除*</code><br>E. prolonged<em>延长</em></p>
+</blockquote>
+<blockquote>
+<p>the serious purpose of the paper-airplane flying contest, which attracted many <strong>novel</strong> and sometimes truly ____ entires, was too determine whether<em>是否</em> any ____ aerodynamic<em>空气动力学</em> designs could be discover.<br>A. derivative<em>非原创的</em><br><code>B. bizarre*古怪的*</code><br>C. mundane<em>平凡的</em><br>D. conventional<em>传统的</em><br>E. aesthetic<em>美感的</em><br>F. revolutionary</p>
+</blockquote>
+<blockquote>
+<p>Carson presents her case so strongly and logically that only the prejudiced or the ____ will attempt to ____ her.<br>A. gullible<em>容易被骗的</em><br>B. contradict<em>理性的</em><br>C. obstinate<em>固执的</em><br>D. contradict<em>反驳</em><br>E. champion<em>支持</em><br>F. safeguard<em>保护</em></p>
+</blockquote>
+<h2 id="3-25"><a href="#3-25" class="headerlink" title="3.25"></a>3.25</h2><blockquote>
+<p><strong>If</strong> she defines feminist criticism as objective and scientific a said, verifiable, intellectual method / <strong>that</strong> anyone, whether man or woman, can perform - the definition not only preludes the critic - as - artist approach, bur may, also impede (accomplishment of the utilitarian objectives of those) <strong>who</strong> seek to change the academic establishment and <strong>its</strong> thinking especially about sex roles.</p>
+</blockquote>
+<blockquote>
+<p>Irony can, <em>after a fashion勉强</em>, become a mode of escape: to laugh at terrors fo life is in some sense to ____ them.<br>A. overstate<em>夸张</em><br>B. revitalize<em>使…复活</em><br>C. corroborate<em>证实</em><br><code>D. evade*逃避*</code><br>E. license<em>许可</em></p>
+</blockquote>
+<blockquote>
+<p>Lotoya’s ____ is shown by her ability to be ____ :she can see her own faults more clearly than anyone else can.<br>A. cynicism<em>洞察力</em> … self-destructive<br>B. open-mindedness<em>愤世嫉俗</em> … complacent<br>C. insightfulness<em>开放</em> … self-destructive<em>自满</em><br>D. open-mindedness … complacent<br><code>E. insightfulness ... self-critical</code></p>
+</blockquote>
+<blockquote>
+<p>Paradoxically<em>自相矛盾的</em>, the senator was both a ____ and ____, she publicly defended the rights and wisdom of the people, but she often spoke with a disdainful air of superiority.<br>A. demagogue<em>煽动者</em> … a maverick<em>持不同意见的人</em><br>B. conservative<em>保守派</em> … an anarch<em>无政府主义</em><br>C. populist<em>平凡主义者</em> … an elitist<em>精英主义</em><br>D. moderate<em>稳健的</em> … a reactionary<em>反动派</em><br>E. partisan<em>‌党羽</em> … a snob<em>势力小人</em></p>
+</blockquote>
+<blockquote>
+<p>Over the year the anthropologist’s opinions had ____ , he refused to derate new ideas and nothing could change his mind.<br>A. digressed<em>离题</em><br>B. proliferate<em>增殖</em><br>C. ossified<em>硬化</em><br>D. deviated<em>脱离</em><br>E. calcified<em>钙化</em><br>F. incubated<em>孵化</em></p>
+</blockquote>
+<h2 id="3-30-1"><a href="#3-30-1" class="headerlink" title="3.30"></a>3.30</h2><blockquote>
+<p>In the early twentieth century, the idea that pianists should be musician - scholars whose playing reflected the way composers wanted their music to sound replaced the notion that pianists should be virtuosos whose perform thrilled audiences with emotional daring and showy displays of technique</p>
+</blockquote>
+<h4 id="标点符号"><a href="#标点符号" class="headerlink" title="标点符号"></a>标点符号</h4><p>The mountain <strong>road</strong> wad distinctly ____, <strong>it</strong> twisted back and forth along the contours of the hillside<br>A. panoramic<em>全景的</em><br>B. precipitous<em>急剧的</em><br><code>C. serpentine*蛇形的*</code><br>D. circumscribed<em>受限制的</em><br>E. retrograde<em>倒退的</em></p>
+<h4 id="正负评价"><a href="#正负评价" class="headerlink" title="正负评价"></a>正负评价</h4><blockquote>
+<p>Given the ____ state of the published evidence we do not argue have that exposure to low-level microwave energy is <strong>either</strong> hazardous <strong>or</strong> safe.<br>A. inconclusive<em>不确定的</em><br>B. satisfactory<em>满意的</em><br>C. definitive<br>D. immaculate<em>完美的</em><br>E. exemplary<em>典范的</em></p>
+</blockquote>
+<blockquote>
+<p>The <strong>success</strong> of votes of a native son ____ author James Baldwin as one of the most ____ essayists of his time<br>A. buoyed<em>鼓励</em> … irrelevant<em>无关的</em><br><code>B. established*确定* ... prominent*有名望的*</code><br>C. surrendered<em>投降</em> … prolific<em>多产的</em><br>D. decried<em>谴责</em> … cynical<em>怀疑的</em><br>E. categorized<em>分类</em> … mundane<em>平凡的</em></p>
+</blockquote>
+<blockquote>
+<p>Unfortunately, his damaging attacks on the ramifications<em>影响</em> of the economic policy have been ____ by his wholehearted acceptance of that policy’s underlying assumptions.<br>A. aupplemented<br>B. undermined<em>削弱</em><br>C. wasted<br>D. diverted<em>转移</em><br>E. redeemed<em>补救</em></p>
+</blockquote>
+<h2 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h2><blockquote>
+<p><strong>Although</strong> the passenger <em>pigeons鸽子</em>, now extinct<em>灭绝</em>, <em>were</em> <em>abundant</em> in eighteenth-and nineteenth-century America, archaeological at twelfth-century cahokia <em>sites</em> in the present day united states <em>examined</em> household food trash and <em>found</em> <strong>that</strong> traces of passenger pigeon were quite rare.</p>
+</blockquote>
+<blockquote>
+<p>Parts of seventeenth-century Chinese pleasure gardens were not necessarily intended<em>打算</em> to look ____; they were designed expressly to evoke the agreeable melancholy<em>忧伤</em> resulting from a sense of the ____ of natural beauty and human glory<br>A. beautiful … immutability<br><code>B. cheerful ... transitorirtess</code><br>C. colorful … abstractness<br>D. luxuriant … simplicity<br>E. conventional … wildness</p>
+</blockquote>
+<blockquote>
+<p>Toni Cade Bambara’s novels are engrossing because the protagonists, in striving to achieve, are not simply ____ character.<br>A. passive<em>顺从的</em><br>B. independent<br>C. abandoned<br>D. redundant<br>E. resigned<em>放纵的</em><br>F. autonomous<em>独立的</em></p>
+</blockquote>
+<h2 id="4-8"><a href="#4-8" class="headerlink" title="4.8"></a>4.8</h2><blockquote>
+<p>During periods of social and cultural stability, many academies are so firmly contumely controlled by ____ that all real creative work must be done by the ____.<br><code>A. dogmatists ... disenfranchised</code><br>B. managers … reactionaries<br>C. reformers …dissatisfied<br>D. imposters … academicions<br>E. specialists … elite</p>
+</blockquote>
+<blockquote>
+<p>New data measuring the ____ of land beneath the oceans permit accurate<em>精确的</em> generalizations about the topography<em>地势</em> of the seafloor.<br>A. models<br>B. contours<em>轮廓</em><br>C. remnants<br>D. outlines<br>E. pigments<br>F. vestige<em>残余</em></p>
+</blockquote>
+<blockquote>
+<p>Excessive secrecy tends to ____ excessive curiosity and thus serves to ____ the very impulses against which it guards<br>A. inhibit<br>B. satisfy<br>C. invite<br>D. deride<br>E. provoke<br>F. limit</p>
+</blockquote>
+<h2 id="4-13-1"><a href="#4-13-1" class="headerlink" title="4.13"></a>4.13</h2><blockquote>
+<p>Edith wharton sought<em>寻求</em> in her memoir to present herself as having achieved a harmonious<em>和谐</em> wholeness by having ____ the conflicting elements<em>元素</em> of her lift<br>A. affirmed<em>判定</em><br>B. highlighted<em>强调</em><br><code>C. reconciled</code><br>D. confined<br>E. identified</p>
+</blockquote>
+<blockquote>
+<p>Once a duckling<em>小鸭子</em> has identified a parent, the instinctive<em>本能的</em> bona becomes<em>纽带</em> a powerful ____ for additional learning since, by ____ the parent, the duckling can acquire further information that is not genetically transmitted.<br>A. impulse<em>推动</em> … surpassing<br>B. referent … recognizing<br>C. force … acknowledging<br>D. inspiration … emulating<em>模仿</em><br><code>E. channel ... mimicking</code></p>
+</blockquote>
+<blockquote>
+<p>He felt it would be ____, <strong>in view of考虑到</strong> the intense ____ that would likely follow, to make the sacrifice / required ignorer to gain such little advantage<em>负面的表达</em>.<br>A. charitable … growth<br>B. welcomed … prejudice<br>C. futile … encouragement<br>D. academic … acclaim<em>称赞</em><br><code>E. unrealistic*不切实际的* ... turmoil*混乱*</code></p>
+</blockquote>
+<blockquote>
+<p>In frigid regions a layer of permafrost under the soil surface prevents water from sinking deep into the soil, and so the water ____ the land, helping to create bog<em>沼泽地</em> and ____ conditions.<br><code>A. freezes*凝固*</code><br>B. parches<em>干燥</em><br>C. inundates<em>淹没</em><br>D. tropical<em>热带</em><br>E. swamp<em>沼泽地</em><br>F. desert</p>
+</blockquote>
+<h2 id="4-15"><a href="#4-15" class="headerlink" title="4.15"></a>4.15</h2><p>impartiality <em>公正</em><br>sham <em>骗局</em><br>take side <em>站…一边</em><br>feel free to do <em>随意做某事</em><br>provided <em>假如</em><br>ascribed to <em>归因于</em><br>dichotomies <em>分歧</em><br>rank with <em>与…并列</em><br>confront <em>面子</em><br>preternatural <em>超自然的</em><br>odds <em>不平等</em><br>minor <em>小众的</em></p>
+<h2 id="4-20-1"><a href="#4-20-1" class="headerlink" title="4.20"></a>4.20</h2><blockquote>
+<p>Dominant interests often benefit most from ____ of governmental interference in business, since they are able to take care of themselves if left alone.<br>A. intensification<em>强烈</em><br>B. authorization<em>权威</em><br>C. centralization<em>中心化</em><br>D. improvisation<em>即兴创作</em><br><code>E. elmination*削弱*</code></p>
+</blockquote>
+<h2 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h2><blockquote>
+<p>Kagan maintains that an infant’s reactions to its first stressful experiences are part of a natural process o development, not harbingers<em>先驱</em> of childhood unhappiness or ____ signs of adolescent<em>青春期</em> anxiety.<br><code>A. prophetic</code><br>B. normal<br>C. monotonous<em>单调的</em><br>D. virtual<br>E. typical</p>
+</blockquote>
+<blockquote>
+<p>An investigation that is ____ can occasionally yield new facts, even notable ones, but typically the appear of such facts is the result of a search in a define direction.<br>A. timely<br><code>B. unguided</code><br>C. consistent<br>D. uncomplicated<br>E. subjective</p>
+</blockquote>
+<h2 id="4-27-1"><a href="#4-27-1" class="headerlink" title="4.27"></a>4.27</h2><p>apparent <em>显然的</em><br>fluid <em>流动的</em><br>egalitarian <em>平等主义的</em><br>ephemeral <em>短暂的</em><br>iconoclastic <em>打破旧习的</em><br>inordinately <em>过渡地</em><br>mercurial <em>活泼的</em><br>plutocratic <em>财阀的</em></p>
+<h2 id="4-29"><a href="#4-29" class="headerlink" title="4.29"></a>4.29</h2><blockquote>
+<p>It is (i) ____ <strong>that</strong> so many portrait<em>肖像</em> paintings hang in art museums, since the <em>subject matter主题</em> seems to dictate a status closer to pictures in the family photograph album than to high art. <strong>But</strong> perhaps it is the artistic skill with which the portraits are painted that (ii) ____ their presence in art museums.<br>i : <code>A. surprising</code>   B. understandable   C. irrelevant<br>ii: D. challenge    <code>E. justifies</code>        F. changes</p>
+</blockquote>
+<blockquote>
+<p><em>In stark contrast形成鲜明对比</em> to his later <strong>, Simpson was largely</strong>  politics during his colleges years, despite the fact that the campus he attended was <em>rife with充满着</em> political activity.<br><code>A. activism*行动主义*</code><br>B. apathy<em>冷漠</em><br>C. affability<em>亲切</em><br>D. devoted to<em>致力于</em><br>E. indifferent to<em>无兴趣</em><br>F. shaped by</p>
+</blockquote>
+<blockquote>
+<p>As my eyesight began to ____, I spent a lot of time writing about it - both forms and “ eye journals “ - desiring what I caw as I looked out through damaged eyes.<br><code>A. deteriorate*恶化*</code><br>B. sharpen<br>C. improve<br><code>D. decline</code><br>E. recover<br>F. adjust</p>
+</blockquote>
+<blockquote>
+<p>The judge’s standing in the legal community though shaken by <em>phony allegations虚假的指控</em> of wrongdoing<em>请</em>, emerged, at <em>long last最后</em>, ____.<br>A. unqualified<em>不合格的</em><br><code>B. undiminished</code><br>C. undecided<br><code>D. undamaged</code><br>E. unresolved<br>F. unprincipled</p>
+</blockquote>
+<blockquote>
+<p>Mordem agricultural practices have been extremely sully in increasing the productivity of major food crops, yet despite heavy use of pesticides, ____ losses to diseases and insect pests are sustained each year.<br>A. incongruous<em>不协调的</em><br><code>B. reasonable</code><br>C. significant<br><code>D. considerable</code><br>E. equitable<br>F. forturtous</p>
+</blockquote>
+<p><img data-sizes="auto" data-src="https://i.loli.net/2020/02/28/tqxHUbZ9TnP4o7S.jpg" alt="gre.jpg" class="lazyload"></p>
+
+  </p>
+  </article>
+
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+</div>
+
+
+  <!--右下角按钮<div class="mdui-container">
+    <button class="mdui-fab mdui-fab-fixed mdui-ripple"><i class="iconfont icontop"></i></button>
+  </div>-->
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>feios<br>
+    <strong>本文链接：</strong><a href="https://www.feios.me/GRE-Learning-notes/" title="https:&#x2F;&#x2F;www.feios.me&#x2F;GRE-Learning-notes&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.feios.me&#x2F;GRE-Learning-notes&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'feios',
+    siteName: 'feios time',
+    identifier: 'https://www.feios.me/GRE-Learning-notes/',
+    url: 'https://www.feios.me/GRE-Learning-notes/',
+    title: 'GRE笔记',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'zkN3UCgXFTNJmqsAR9ZVFaXaFhFMLBYrK4v8amJDwxMtAxBV544lMBSbkrwmDBJG',
+    admin: 'feiosme',
+    adminLabel: 'feiosme'
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <!--<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+    <script src="/js/zoom-inject.js"></script>
+    <script src="/js/zoom.js"></script>
+    <script src="/js/transition.js"></script>
+
+
+<!--<script src="/js/app.js?v=1650797701888"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js", {scope: '/'})
+        .then(registration => console.log('SW Registration Success！Scope: ', registration.scope))
+        .catch(err => console.log('SW Registration Failed! Error: ', err))
+    }
+    </script>
+  
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-156065728-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
